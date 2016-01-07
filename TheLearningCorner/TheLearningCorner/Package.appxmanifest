@@ -7,11 +7,11 @@
   IgnorableNamespaces="uap mp">
 
   <Identity
-    Name="96f33e1a-c2fc-4dd2-8e04-0ad56a7f3843"
+    Name="fab1c62c-f380-4704-b434-69b55449b109"
     Publisher="CN=dbrown"
     Version="1.0.0.0" />
 
-  <mp:PhoneIdentity PhoneProductId="96f33e1a-c2fc-4dd2-8e04-0ad56a7f3843" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
+  <mp:PhoneIdentity PhoneProductId="fab1c62c-f380-4704-b434-69b55449b109" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
 
   <Properties>
     <DisplayName>TheLearningCorner</DisplayName>
