@@ -110,10 +110,39 @@
     <None Include="TheLearningCorner_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\Alphabet\letter_A.png" />
+    <Content Include="Assets\Alphabet\letter_B.png" />
+    <Content Include="Assets\Alphabet\letter_C.png" />
+    <Content Include="Assets\Alphabet\letter_D.png" />
+    <Content Include="Assets\Alphabet\letter_E.png" />
+    <Content Include="Assets\Alphabet\letter_F.png" />
+    <Content Include="Assets\Alphabet\letter_G.png" />
+    <Content Include="Assets\Alphabet\letter_H.png" />
+    <Content Include="Assets\Alphabet\letter_I.png" />
+    <Content Include="Assets\Alphabet\letter_J.png" />
+    <Content Include="Assets\Alphabet\letter_K.png" />
+    <Content Include="Assets\Alphabet\letter_L.png" />
+    <Content Include="Assets\Alphabet\letter_M.png" />
+    <Content Include="Assets\Alphabet\letter_N.png" />
+    <Content Include="Assets\Alphabet\letter_O.png" />
+    <Content Include="Assets\Alphabet\letter_P.png" />
+    <Content Include="Assets\Alphabet\letter_Q.png" />
+    <Content Include="Assets\Alphabet\letter_R.png" />
+    <Content Include="Assets\Alphabet\letter_S.png" />
+    <Content Include="Assets\Alphabet\letter_T.png" />
+    <Content Include="Assets\Alphabet\letter_U.png" />
+    <Content Include="Assets\Alphabet\letter_V.png" />
+    <Content Include="Assets\Alphabet\letter_W.png" />
+    <Content Include="Assets\Alphabet\letter_X.png" />
+    <Content Include="Assets\Alphabet\letter_Y.png" />
+    <Content Include="Assets\Alphabet\letter_Z.png" />
     <Content Include="Assets\Colors\color_black.png" />
     <Content Include="Assets\Colors\color_blue.png" />
+    <Content Include="Assets\Colors\color_brown.png" />
     <Content Include="Assets\Colors\color_green.png" />
     <Content Include="Assets\Colors\color_orange.png" />
+    <Content Include="Assets\Colors\color_pink.png" />
+    <Content Include="Assets\Colors\color_purple.png" />
     <Content Include="Assets\Colors\color_red.png" />
     <Content Include="Assets\Colors\color_white.png" />
     <Content Include="Assets\Colors\color_yellow.png" />
@@ -137,6 +166,9 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <SDKReference Include="WindowsDesktop, Version=10.0.10240.0">
+      <Name>Windows Desktop Extensions for the UWP</Name>
+    </SDKReference>
     <SDKReference Include="WindowsPreview.Kinect, Version=2.0">
       <Name>WindowsPreview.Kinect</Name>
     </SDKReference>
