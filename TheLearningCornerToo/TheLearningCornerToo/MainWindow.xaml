@@ -7,6 +7,10 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
     <Grid>
-        
+        <Label x:Name="label" Content="Let's get started!" HorizontalAlignment="Left" Margin="94,35,0,0" VerticalAlignment="Top" Height="71" Width="344" FontSize="45"/>
+        <Button x:Name="ColorButton" Content="Button" HorizontalAlignment="Left" Margin="213,134,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button x:Name="AlphabetButton" Content="Button" HorizontalAlignment="Left" Margin="213,178,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button x:Name="WordButton" Content="Button" HorizontalAlignment="Left" Margin="213,222,0,0" VerticalAlignment="Top" Width="75"/>
+
     </Grid>
 </Window>

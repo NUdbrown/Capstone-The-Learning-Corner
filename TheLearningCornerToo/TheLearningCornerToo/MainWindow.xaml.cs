@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Microsoft.Kinect;
 
 namespace TheLearningCornerToo
 {
@@ -20,9 +21,30 @@ namespace TheLearningCornerToo
     /// </summary>
     public partial class MainWindow : Window
     {
+        private KinectSensor kinectSensor = null;
+
         public MainWindow()
         {
+            //turning on the kinect on program start up.
+            kinectSensor = KinectSensor.GetDefault();
+            kinectSensor.Open();
             InitializeComponent();
+           
+        }
+
+        private void ColorButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void AlphabetButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void WordButton_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
