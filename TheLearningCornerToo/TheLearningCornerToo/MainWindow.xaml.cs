@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -28,6 +29,13 @@ namespace TheLearningCornerToo
             //turning on the kinect on program start up.
             kinectSensor = KinectSensor.GetDefault();
             kinectSensor.Open();
+
+            //sleeping to make the splash screen last longer
+            Thread.Sleep(4000);
+
+            //adding buttons here
+            
+
             InitializeComponent();
            
         }

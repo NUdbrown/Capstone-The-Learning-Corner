@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TheLearningCornerToo"
         mc:Ignorable="d"
-        Title="The Learning Corner" Height="350" Width="525">
+        Title="The Learning Corner" Height="350" Width="525"
+        WindowStartupLocation="CenterScreen" Icon="/Images/icon_TLC.png">
     <StackPanel>
         <StackPanel.Background>
             <ImageBrush ImageSource="Images/treehouse.jpg" Opacity="0.66"/>
@@ -14,22 +15,23 @@
             <DropShadowEffect Color="#FFF6BD0D" Opacity="0.925"/>
         </StackPanel.Effect>
         <Label x:Name="mainTitle" Content="Hello, Friend!" HorizontalAlignment="Center" Margin="111,0,94.4,0" VerticalAlignment="Top" Height="79" Width="313" FontSize="48" FontFamily="Javanese Text" Foreground="#FFFEFFFB" FontWeight="Bold"/>
-        <Grid Margin="0,0,0.4,0" Height="200">
-            <Button x:Name="ColorButton" Content="Colors Lesson" HorizontalAlignment="Left" Margin="194,34,0,0" VerticalAlignment="Top" Width="129" Height="34" FontFamily="Javanese Text" FontSize="18.667" Foreground="#FF935E67" Click="ColorButton_Click" >
+        <StackPanel Height="150" Margin="0,0,0.4,0" Orientation="Horizontal">
+            <Button x:Name="ColorButton" Content="Colors Lesson" Width="150" Height="34" FontFamily="Javanese Text" FontSize="18.667" Foreground="#FF935E67" Click="ColorButton_Click">
+                <Button.Background>
+                    <SolidColorBrush Color="#FF55CC77" Opacity="0.755" />
+                </Button.Background>
+            </Button>
+            <Button x:Name="AlphabetButton" Content="Alphabet Lesson" Width="150" Height="34" FontFamily="Javanese Text" FontSize="18.667" Foreground="#FF935E67" Click="AlphabetButton_Click">
+                <Button.Background>
+                    <SolidColorBrush Color="#FF55CC77" Opacity="0.755"/>
+                </Button.Background>
+                <Button.BorderBrush>Aquamarine</Button.BorderBrush>
+            </Button>
+            <Button x:Name="WordButton" Content="Words Lesson" Width="150" Height="34" FontFamily="Javanese Text" FontSize="18.667" Foreground="#FF935E67" Click="WordButton_Click">
                 <Button.Background>
                     <SolidColorBrush Color="#FF55CC77" Opacity="0.755"/>
                 </Button.Background>
             </Button>
-            <Button x:Name="AlphabetButton" Content="Alphabet Lesson" HorizontalAlignment="Left" Margin="183,87,0,0" VerticalAlignment="Top" Width="150" Height="34" FontFamily="Javanese Text" FontSize="18.667" Foreground="#FF935E67" Click="AlphabetButton_Click">
-                <Button.Background>
-                    <SolidColorBrush Color="#FF55CC77" Opacity="0.755"/>
-                </Button.Background>
-            </Button>
-            <Button x:Name="WordButton" Content="Words Lesson" HorizontalAlignment="Left" Margin="194,141,0,0" VerticalAlignment="Top" Width="129" Height="34" FontFamily="Javanese Text" FontSize="18.667" Foreground="#FF935E67" Click="WordButton_Click" >
-                <Button.Background>
-                    <SolidColorBrush Color="#FF55CC77" Opacity="0.755"/>
-                </Button.Background>
-            </Button>
-        </Grid>
+        </StackPanel>
     </StackPanel>
 </Window>
