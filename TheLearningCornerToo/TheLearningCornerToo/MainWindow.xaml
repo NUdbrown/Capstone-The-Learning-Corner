@@ -3,9 +3,11 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:k="http://schemas.microsoft.com/kinect/2014"
         mc:Ignorable="d"
         Title="The Learning Corner" Height="900" Width="1000"
         WindowStartupLocation="CenterScreen" Icon="/Images/icon_TLC.png" WindowStyle="None">
+    <k:KinectRegion x:Name="KinectArea">
     <StackPanel>
         <StackPanel.Background>
             <ImageBrush ImageSource="Images/treehouse.jpg" Opacity="0.66"/>
@@ -13,19 +15,20 @@
         <StackPanel.Effect>
             <DropShadowEffect Color="#FFF6BD0D" Opacity="0.925"/>
         </StackPanel.Effect>
-        <Label x:Name="mainTitle" Content="Hello, Friend!" HorizontalAlignment="Center" Margin="111,0,94.4,0" VerticalAlignment="Top" Height="79" Width="313" FontSize="48" FontFamily="Javanese Text" Foreground="#FFFEFFFB" FontWeight="Bold"/>
-        <StackPanel Height="494" Margin="100,100,100,0" Orientation="Horizontal">
-            <Button x:Name="ColorButton" Content="Colors Lesson" Width="150" Height="34" FontFamily="Javanese Text" FontSize="18.667" Foreground="#FF935E67" Click="ColorButton_Click" Margin="100,230,0,229.6">
+        <Label x:Name="MainTitle" Content="Hello, Friend!" HorizontalAlignment="Center" Margin="111,60,94.4,0" VerticalAlignment="Top" Height="79" Width="313" FontSize="48" FontFamily="Javanese Text" Foreground="#FFFEFFFB" FontWeight="Bold"/>
+        <k:KinectUserViewer Height="100" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,100,0,0" />
+        <StackPanel Height="374" Margin="100,10,99.6,0" Orientation="Horizontal">
+            <Button x:Name="ColorButton" Content="Colors Lesson" Width="150" Height="34" FontFamily="Javanese Text" FontSize="18.667" Foreground="#FF935E67" Click="ColorButton_Click" Margin="100,100,0,229.6">
                 <Button.Background>
                     <SolidColorBrush Color="#FF55CC77" Opacity="0.755" />
                 </Button.Background>
             </Button>
-            <Button x:Name="AlphabetButton" Content="Alphabet Lesson" Width="150" Height="34" FontFamily="Javanese Text" FontSize="18.667" Foreground="#FF935E67" Click="AlphabetButton_Click" BorderBrush="#FF667A77" Margin="100,230,0,229.6">
+            <Button x:Name="AlphabetButton" Content="Alphabet Lesson" Width="150" Height="34" FontFamily="Javanese Text" FontSize="18.667" Foreground="#FF935E67" Click="AlphabetButton_Click" BorderBrush="#FF667A77" Margin="100,100,0,229.6">
                 <Button.Background>
                     <SolidColorBrush Color="#FF55CC77" Opacity="0.755"/>
                 </Button.Background>
             </Button>
-            <Button x:Name="WordButton" Content="Words Lesson" Width="150" Height="34" FontFamily="Javanese Text" FontSize="18.667" Foreground="#FF935E67" Click="WordButton_Click" Margin="100,230,0,229.6">
+            <Button x:Name="WordButton" Content="Words Lesson" Width="150" Height="34" FontFamily="Javanese Text" FontSize="18.667" Foreground="#FF935E67" Click="WordButton_Click" Margin="100,100,0,229.6">
                 <Button.Background>
                     <SolidColorBrush Color="#FF55CC77" Opacity="0.755"/>
                 </Button.Background>
@@ -35,6 +38,7 @@
             <Button.Background>
                 <SolidColorBrush Color="WhiteSmoke" Opacity="0.755"/>
             </Button.Background>
-        </Button> 
+        </Button>
     </StackPanel>
+    </k:KinectRegion>
 </Window>

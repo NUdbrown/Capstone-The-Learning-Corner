@@ -75,21 +75,21 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="AlphabetLesson.xaml.cs">
+    <Compile Include="Pages\AlphabetLesson.xaml.cs">
       <DependentUpon>AlphabetLesson.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ColorLesson.xaml.cs">
+    <Compile Include="Pages\ColorLesson.xaml.cs">
       <DependentUpon>ColorLesson.xaml</DependentUpon>
     </Compile>
     <Compile Include="Settings.cs" />
-    <Compile Include="WordsLesson.xaml.cs">
+    <Compile Include="Pages\WordsLesson.xaml.cs">
       <DependentUpon>WordsLesson.xaml</DependentUpon>
     </Compile>
-    <Page Include="AlphabetLesson.xaml">
+    <Page Include="Pages\AlphabetLesson.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="ColorLesson.xaml">
+    <Page Include="Pages\ColorLesson.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -105,7 +105,7 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="WordsLesson.xaml">
+    <Page Include="Pages\WordsLesson.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

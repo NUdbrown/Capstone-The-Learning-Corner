@@ -11,6 +11,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Microsoft.Kinect;
+using Microsoft.Kinect.Wpf.Controls;
 
 namespace TheLearningCornerToo
 {
@@ -22,6 +24,16 @@ namespace TheLearningCornerToo
         public ColorLesson()
         {
             InitializeComponent();
+
+            KinectRegion.SetKinectRegion(this, KinectArea);
+
+            //show person's body
+
+            App app = ((App)Application.Current);
+            app.KinectRegion = KinectArea;
+
+            // Use the default sensor
+            this.KinectArea.KinectSensor = KinectSensor.GetDefault();
         }
 
         private void HomeButton_OnClick(object sender, RoutedEventArgs e)

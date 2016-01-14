@@ -1,6 +1,7 @@
 ﻿using System.Threading;
 using System.Windows;
 using Microsoft.Kinect;
+using Microsoft.Kinect.Wpf.Controls;
 
 namespace TheLearningCornerToo
 {
@@ -9,22 +10,28 @@ namespace TheLearningCornerToo
     /// </summary>
     public partial class MainWindow : Window
     {
-        private readonly KinectSensor kinectSensor;
-
         public MainWindow()
         {
-            //turning on the kinect on program start up.
-            kinectSensor = KinectSensor.GetDefault();
-            kinectSensor.Open();
-
             //sleeping to make the splash screen last longer
             Thread.Sleep(4000);
-
-            //adding buttons here
-            //try kinects scroller?
-
-
             InitializeComponent();
+
+            //turning on the kinect on program start up.
+            //KinectSensor kinectSensor = KinectSensor.GetDefault();
+            //kinectSensor.Open();
+
+            KinectRegion.SetKinectRegion(this, KinectArea);
+            
+           //show person's body
+
+            App app = ((App)Application.Current);
+            app.KinectRegion = KinectArea;
+
+            // Use the default sensor
+            this.KinectArea.KinectSensor = KinectSensor.GetDefault();
+            
+
+            
         }
 
         private void ColorButton_Click(object sender, RoutedEventArgs e)
