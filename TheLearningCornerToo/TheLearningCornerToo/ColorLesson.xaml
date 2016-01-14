@@ -5,12 +5,22 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
         Icon="/Images/icon_TLC.png"
-        Title="Color Lessons" Height="900" Width="1000" WindowStartupLocation="CenterScreen" BorderBrush="#FFEAF4F2" BorderThickness="5" WindowStyle="None" AllowsTransparency="True">
+        Title="Color Lessons" Height="900" Width="1000" WindowStartupLocation="CenterScreen" BorderBrush="#FFEAF4F2"
+        BorderThickness="5" WindowStyle="None" AllowsTransparency="True">
     <Window.Background>
-        <ImageBrush ImageSource="Images/colorsbackground.jpg"/>
+        <ImageBrush ImageSource="Images/colorsbackground.jpg" />
     </Window.Background>
-    <Grid >
-        <Button x:Name="HomeButton" Content="Return Home" HorizontalAlignment="Left" Margin="63,47,0,0" VerticalAlignment="Top" Width="154" Height="34" FontFamily="Sitka Text" FontSize="21.333" Click="HomeButton_OnClick"/>
-        <Button x:Name="ExitButton" Content="Exit" HorizontalAlignment="Left" Margin="778,47,0,0" VerticalAlignment="Top" Width="154" Height="34" FontFamily="Sitka Text" FontSize="21.333" Click="ExitButton_Click"/>
-    </Grid>
+    <StackPanel>
+        <Grid>
+            <Button x:Name="HomeButton" Content="Return Home" HorizontalAlignment="Left" Margin="63,47,0,0"
+                    VerticalAlignment="Top" Width="154" Height="34" FontFamily="Sitka Text" FontSize="21.333"
+                    Click="HomeButton_OnClick" />
+            <Button x:Name="ExitButton" Content="Exit" HorizontalAlignment="Left" Margin="778,47,0,0"
+                    VerticalAlignment="Top" Width="154" Height="34" FontFamily="Sitka Text" FontSize="21.333"
+                    Click="ExitButton_Click" />
+        </Grid>
+        
+
+    </StackPanel>
 </Window>
+

@@ -3,7 +3,6 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:TheLearningCornerToo"
         mc:Ignorable="d"
         Title="The Learning Corner" Height="900" Width="1000"
         WindowStartupLocation="CenterScreen" Icon="/Images/icon_TLC.png" WindowStyle="None">
@@ -32,7 +31,7 @@
                 </Button.Background>
             </Button>
         </StackPanel>
-        <Button x:Name="button" Content="Exit" Height="52" Margin="226,0,287.6,0" FontFamily="Javanese Text" FontSize="26.667">
+        <Button x:Name="button" Content="Exit" Height="52" Margin="226,0,287.6,0" FontFamily="Javanese Text" FontSize="26.667" Click="ExitButton_Click">
             <Button.Background>
                 <SolidColorBrush Color="WhiteSmoke" Opacity="0.755"/>
             </Button.Background>
