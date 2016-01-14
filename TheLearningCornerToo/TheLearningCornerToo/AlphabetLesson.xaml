@@ -1,0 +1,16 @@
+﻿<Window x:Class="TheLearningCornerToo.AlphabetLesson"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Icon="/Images/icon_TLC.png"
+        Title="AlphabetLesson" Height="900" Width="1000" WindowStartupLocation="CenterScreen" BorderBrush="#FFE41D24" BorderThickness="5" WindowStyle="None" AllowsTransparency="True">
+    <Window.Background>
+        <ImageBrush ImageSource="Images/AlphabetBackground.jpg"/>
+    </Window.Background>
+    <Grid >
+        <Button x:Name="HomeButton" Content="Return Home" HorizontalAlignment="Left" Margin="63,47,0,0" VerticalAlignment="Top" Width="154" Height="34" FontFamily="Sitka Text" FontSize="21.333" Click="HomeButton_OnClick"/>
+        <Button x:Name="ExitButton" Content="Exit" HorizontalAlignment="Left" Margin="778,47,0,0" VerticalAlignment="Top" Width="154" Height="34" FontFamily="Sitka Text" FontSize="21.333" Click="ExitButton_Click"/>
+    </Grid>
+</Window>
