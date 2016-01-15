@@ -1,6 +1,8 @@
-﻿using System.Threading;
+﻿using System;
+using System.Threading;
 using System.Windows;
 using Microsoft.Kinect;
+using Microsoft.Kinect.Toolkit.Input;
 using Microsoft.Kinect.Wpf.Controls;
 
 namespace TheLearningCornerToo
@@ -20,13 +22,13 @@ namespace TheLearningCornerToo
             //KinectSensor kinectSensor = KinectSensor.GetDefault();
             //kinectSensor.Open();
 
-            KinectRegion.SetKinectRegion(this, KinectArea);
-            
-           //show person's body
-
+            //show person's body, create kinect movement area via xaml & cs
+            KinectRegion.SetKinectRegion(this, KinectArea);       
+           
             App app = ((App)Application.Current);
             app.KinectRegion = KinectArea;
-
+            //changing cursor
+            app.KinectRegion.CursorSpriteSheetDefinition = new CursorSpriteSheetDefinition(new System.Uri("pack://application:,,,/Images/CursorSpriteSheetPurple.png"), 4, 20, 137, 137);
             // Use the default sensor
             this.KinectArea.KinectSensor = KinectSensor.GetDefault();
             

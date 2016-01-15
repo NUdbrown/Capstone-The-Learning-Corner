@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using Microsoft.Kinect;
+using Microsoft.Kinect.Toolkit.Input;
 using Microsoft.Kinect.Wpf.Controls;
 
 namespace TheLearningCornerToo
@@ -25,13 +26,13 @@ namespace TheLearningCornerToo
         {
             InitializeComponent();
 
+            //show person's body & moving cursor
             KinectRegion.SetKinectRegion(this, KinectArea);
-
-            //show person's body
-
+   
             App app = ((App)Application.Current);
             app.KinectRegion = KinectArea;
 
+            app.KinectRegion.CursorSpriteSheetDefinition = new CursorSpriteSheetDefinition(new System.Uri("pack://application:,,,/Images/CursorSpriteSheetPurple.png"), 4, 20, 137, 137);
             // Use the default sensor
             this.KinectArea.KinectSensor = KinectSensor.GetDefault();
         }

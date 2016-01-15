@@ -12,24 +12,34 @@
         <ImageBrush ImageSource="/Images/colorsbackground.jpg" />
     </Window.Background>
     <k:KinectRegion x:Name="KinectArea">
-        <StackPanel>
-            <Grid>
-                <Button x:Name="HomeButton" Content="Return Home" HorizontalAlignment="Left" Margin="63,47,0,0"
+        <Grid x:Name ="ColorGrid">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Button x:Name="HomeButton" Content="Return Home" Grid.Row="0" HorizontalAlignment="Left" Margin="63,47,0,0"
                     VerticalAlignment="Top" Width="154" Height="34" FontFamily="Sitka Text" FontSize="21.333"
                     Click="HomeButton_OnClick" />
-                <k:KinectUserViewer Height="100" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,50,0,0" >
-                    <k:KinectUserViewer.ImageBackground>
-                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                            <GradientStop Color="#FFC8E350" Offset="0"/>
-                            <GradientStop Color="#FF56E64B" Offset="1"/>
-                        </LinearGradientBrush>
-                    </k:KinectUserViewer.ImageBackground>
-                </k:KinectUserViewer>
-                <Button x:Name="ExitButton" Content="Exit" HorizontalAlignment="Left" Margin="778,47,0,0"
+            <k:KinectUserViewer Height="100" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,50,0,0" >
+                <k:KinectUserViewer.ImageBackground>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FFC8E350" Offset="0"/>
+                        <GradientStop Color="#FF56E64B" Offset="1"/>
+                    </LinearGradientBrush>
+                </k:KinectUserViewer.ImageBackground>
+            </k:KinectUserViewer>
+            <Button x:Name="ExitButton" Content="Exit" Grid.Row="0" HorizontalAlignment="Left" Margin="778,47,0,0"
                     VerticalAlignment="Top" Width="154" Height="34" FontFamily="Sitka Text" FontSize="21.333"
                     Click="ExitButton_Click" />
-            </Grid>
-        </StackPanel>
+            <StackPanel Grid.Row="1">
+                <ScrollViewer Name="Scroller" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Disabled" k:KinectRegion.IsScrollInertiaEnabled="true">
+                    
+                </ScrollViewer>
+            </StackPanel>
+        </Grid>
     </k:KinectRegion>
 </Window>
+
+
 
