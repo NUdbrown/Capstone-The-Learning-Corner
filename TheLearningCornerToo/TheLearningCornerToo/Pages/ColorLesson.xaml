@@ -32,11 +32,61 @@
             <Button x:Name="ExitButton" Content="Exit" Grid.Row="0" HorizontalAlignment="Left" Margin="778,47,0,0"
                     VerticalAlignment="Top" Width="154" Height="34" FontFamily="Sitka Text" FontSize="21.333"
                     Click="ExitButton_Click" />
-            <StackPanel Grid.Row="1">
-                <ScrollViewer Name="Scroller" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Disabled" k:KinectRegion.IsScrollInertiaEnabled="true">
-                    
-                </ScrollViewer>
-            </StackPanel>
+
+            <ScrollViewer Name="Scroller" Grid.Row="1" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Disabled" k:KinectRegion.IsScrollInertiaEnabled="true">
+                <StackPanel Orientation="Horizontal" x:Name="ScrollContent" Margin="0,0,0,0">
+                    <Button Content="" Height="200" Width="200">
+                        <Button.Background>
+                            <ImageBrush ImageSource="/TheLearningCornerToo;component/Images/Colors/color_black.png"/>
+                        </Button.Background>
+                    </Button>
+                    <Button Content="" Height="200" Width="200">
+                        <Button.Background>
+                            <ImageBrush ImageSource="/TheLearningCornerToo;component/Images/Colors/color_brown.png"/>
+                        </Button.Background>
+                    </Button>
+                    <Button Content="" Height="200" Width="200">
+                        <Button.Background>
+                            <ImageBrush ImageSource="/TheLearningCornerToo;component/Images/Colors/color_red.png"/>
+                        </Button.Background>
+                    </Button>
+                    <Button Content="" Height="200" Width="200">
+                        <Button.Background>
+                            <ImageBrush ImageSource="/TheLearningCornerToo;component/Images/Colors/color_orange.png"/>
+                        </Button.Background>
+                    </Button>
+                    <Button Content="" Height="200" Width="200">
+                        <Button.Background>
+                            <ImageBrush ImageSource="/TheLearningCornerToo;component/Images/Colors/color_yellow.png"/>
+                        </Button.Background>
+                    </Button>
+                    <Button Content="" Height="200" Width="200">
+                        <Button.Background>
+                            <ImageBrush ImageSource="/TheLearningCornerToo;component/Images/Colors/color_green.png"/>
+                        </Button.Background>
+                    </Button>
+                    <Button Content="" Height="200" Width="200">
+                        <Button.Background>
+                            <ImageBrush ImageSource="/TheLearningCornerToo;component/Images/Colors/color_blue.png"/>
+                        </Button.Background>
+                    </Button>
+                    <Button Content="" Height="200" Width="200">
+                        <Button.Background>
+                            <ImageBrush ImageSource="/TheLearningCornerToo;component/Images/Colors/color_purple.png"/>
+                        </Button.Background>
+                    </Button>
+                    <Button Content="" Height="200" Width="200">
+                        <Button.Background>
+                            <ImageBrush ImageSource="/TheLearningCornerToo;component/Images/Colors/color_pink.png"/>
+                        </Button.Background>
+                    </Button>
+                    <Button Content="" Height="200" Width="200">
+                        <Button.Background>
+                            <ImageBrush ImageSource="/TheLearningCornerToo;component/Images/Colors/color_white.png"/>
+                        </Button.Background>
+                    </Button>
+                </StackPanel>
+            </ScrollViewer>
         </Grid>
     </k:KinectRegion>
 </Window>

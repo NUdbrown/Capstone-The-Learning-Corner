@@ -3,14 +3,25 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:k="http://schemas.microsoft.com/kinect/2014"
         mc:Ignorable="d"
         Icon="/Images/icon_TLC.png"
         Title="AlphabetLesson" Height="900" Width="1000" WindowStartupLocation="CenterScreen" BorderBrush="#FFE41D24" BorderThickness="5" WindowStyle="None" AllowsTransparency="True">
     <Window.Background>
         <ImageBrush ImageSource="/Images/AlphabetBackground.jpg"/>
     </Window.Background>
+    <k:KinectRegion x:Name="KinectRegion">
     <Grid >
         <Button x:Name="HomeButton" Content="Return Home" HorizontalAlignment="Left" Margin="63,47,0,0" VerticalAlignment="Top" Width="154" Height="34" FontFamily="Sitka Text" FontSize="21.333" Click="HomeButton_OnClick"/>
-        <Button x:Name="ExitButton" Content="Exit" HorizontalAlignment="Left" Margin="778,47,0,0" VerticalAlignment="Top" Width="154" Height="34" FontFamily="Sitka Text" FontSize="21.333" Click="ExitButton_Click"/>
+         <k:KinectUserViewer Height="100" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,50,0,0" >
+                <k:KinectUserViewer.ImageBackground>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FF90DCF3" Offset="0"/>
+                        <GradientStop Color="#FFE9F7FA" Offset="1"/>
+                    </LinearGradientBrush>
+                </k:KinectUserViewer.ImageBackground>
+            </k:KinectUserViewer>
+            <Button x:Name="ExitButton" Content="Exit" HorizontalAlignment="Left" Margin="778,47,0,0" VerticalAlignment="Top" Width="154" Height="34" FontFamily="Sitka Text" FontSize="21.333" Click="ExitButton_Click"/>
     </Grid>
+    </k:KinectRegion>
 </Window>

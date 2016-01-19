@@ -11,6 +11,9 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Microsoft.Kinect;
+using Microsoft.Kinect.Toolkit.Input;
+using Microsoft.Kinect.Wpf.Controls;
 
 namespace TheLearningCornerToo
 {
@@ -21,6 +24,11 @@ namespace TheLearningCornerToo
     {
         public AlphabetLesson()
         {
+            KinectRegion.SetKinectRegion(this, KinectRegion);
+            App app = (App) Application.Current;
+            app.KinectRegion = KinectRegion;
+            app.KinectRegion.CursorSpriteSheetDefinition = new CursorSpriteSheetDefinition(new System.Uri("pack://application:,,,/Images/CursorSpriteSheetPurple.png"), 4, 20, 137, 137);
+            this.KinectRegion.KinectSensor = KinectSensor.GetDefault();
             InitializeComponent();
         }
 
