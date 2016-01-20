@@ -11,6 +11,7 @@
     <Window.Background>
         <ImageBrush ImageSource="/Images/colorsbackground.jpg" />
     </Window.Background>
+
     <k:KinectRegion x:Name="KinectArea">
         <Grid x:Name ="ColorGrid">
             <Grid.RowDefinitions>
@@ -18,24 +19,52 @@
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
-            <Button x:Name="HomeButton" Content="Return Home" Grid.Row="0" HorizontalAlignment="Left" Margin="63,47,0,0"
+            <Button x:Name="HomeButton" Content="Home" Grid.Row="0" HorizontalAlignment="Left" Margin="63,47,0,0"
                     VerticalAlignment="Top" Width="154" Height="34" FontFamily="Sitka Text" FontSize="21.333"
-                    Click="HomeButton_OnClick" />
+                    Click="HomeButton_OnClick" BorderBrush="#FFEDE4E4" BorderThickness="3" Opacity="0.905" >
+                <Button.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FFE56969" Offset="0"/>
+                        <GradientStop Color="#FFE79243" Offset="1"/>
+                    </LinearGradientBrush>
+                </Button.Background>
+            </Button>
+            <Button x:Name="InstructButton" Content="Instructions" Grid.Row="0" Width="154" Height="34" FontFamily="Sitka Text" FontSize="21.333" Click="Instructions_OnClick" Margin="419,207,417.4,55.8" BorderBrush="#FFF4F2F2" BorderThickness="3" Opacity="0.91">
+                <Button.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FF56DB00" Offset="0"/>
+                        <GradientStop Color="#FF7DEEA9" Offset="1"/>
+                    </LinearGradientBrush>
+                </Button.Background>
+            </Button>
             <k:KinectUserViewer Height="100" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,50,0,0" >
                 <k:KinectUserViewer.ImageBackground>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                        <GradientStop Color="#FFC8E350" Offset="0"/>
-                        <GradientStop Color="#FF56E64B" Offset="1"/>
+                        <GradientStop Color="#FFEBED8C" Offset="0"/>
+                        <GradientStop Color="#FF20D522" Offset="1"/>
                     </LinearGradientBrush>
                 </k:KinectUserViewer.ImageBackground>
             </k:KinectUserViewer>
             <Button x:Name="ExitButton" Content="Exit" Grid.Row="0" HorizontalAlignment="Left" Margin="778,47,0,0"
                     VerticalAlignment="Top" Width="154" Height="34" FontFamily="Sitka Text" FontSize="21.333"
-                    Click="ExitButton_Click" />
+                    Click="ExitButton_Click" BorderThickness="3" Opacity="0.905" >
+                <Button.BorderBrush>
+                    <SolidColorBrush Color="#FFF6F1F1"/>
+                </Button.BorderBrush>
+                <Button.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FF81EDCE" Offset="0"/>
+                        <GradientStop Color="#FF1BC2D5" Offset="1"/>
+                    </LinearGradientBrush>
+                </Button.Background>
+            </Button>
 
-            <ScrollViewer Name="Scroller" Grid.Row="1" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Disabled" k:KinectRegion.IsScrollInertiaEnabled="true">
+            <ScrollViewer Name="Scroller" Grid.Row="1" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Disabled" k:KinectRegion.IsScrollInertiaEnabled="true" BorderThickness="10">
                 <StackPanel Orientation="Horizontal" x:Name="ScrollContent" Margin="0,0,0,0">
-                    <Button Content="" Height="200" Width="200">
+                    <StackPanel.Effect>
+                        <DropShadowEffect Color="#FF0B0C0C" BlurRadius="10"/>
+                    </StackPanel.Effect>
+                    <!--<Button Content="" x:Name="BlackButton" Height="200" Width="200" Click="Button_Click">
                         <Button.Background>
                             <ImageBrush ImageSource="/TheLearningCornerToo;component/Images/Colors/color_black.png"/>
                         </Button.Background>
@@ -84,7 +113,7 @@
                         <Button.Background>
                             <ImageBrush ImageSource="/TheLearningCornerToo;component/Images/Colors/color_white.png"/>
                         </Button.Background>
-                    </Button>
+                    </Button>-->
                 </StackPanel>
             </ScrollViewer>
         </Grid>

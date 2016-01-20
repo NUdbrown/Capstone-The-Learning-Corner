@@ -24,12 +24,17 @@ namespace TheLearningCornerToo
     {
         public WordsLesson()
         {
+            InitializeComponent();
+            Loaded += OnLoad;
+        }
+
+        private void OnLoad(object sender, RoutedEventArgs e)
+        {
             KinectRegion.SetKinectRegion(this, KinectRegion);
-            App app = (App) Application.Current;
+            App app = (App)Application.Current;
             app.KinectRegion = KinectRegion;
             app.KinectRegion.CursorSpriteSheetDefinition = new CursorSpriteSheetDefinition(new System.Uri("pack://application:,,,/Images/CursorSpriteSheetPurple.png"), 4, 20, 137, 137);
             this.KinectRegion.KinectSensor = KinectSensor.GetDefault();
-            InitializeComponent();
         }
 
         private void HomeButton_OnClick(object sender, RoutedEventArgs e)
