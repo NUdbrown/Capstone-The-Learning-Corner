@@ -214,9 +214,6 @@
     <Resource Include="Images\CursorSpriteSheetPurple.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\color_instructions.wav" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\black.wav" />
   </ItemGroup>
   <ItemGroup>
@@ -251,6 +248,53 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Schooldays_intro.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Colors\apple_red.png" />
+    <Resource Include="Images\Colors\blackbberries_black.png" />
+    <Resource Include="Images\Colors\blueberrys_blue.png" />
+    <Resource Include="Images\Colors\cupcake_pink.png" />
+    <Resource Include="Images\Colors\Gallon_of_Milk_white.png" />
+    <Resource Include="Images\Colors\Grapes_purple.png" />
+    <Resource Include="Images\Colors\kiwi_brown.png" />
+    <Resource Include="Images\Colors\orange_orange.png" />
+    <Resource Include="Images\Colors\pear_green.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Colors\banana_yellow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\apples.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bananas.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\blackberries.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\blueberries.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\color_instructions.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cupcake.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\grapes.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\kiwis.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\milk.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\oranges.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pears.wav" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -127,9 +127,6 @@
   <data name="brown" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\brown.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="color_instructions" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\color_instructions.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="green" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\green.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
@@ -153,5 +150,38 @@
   </data>
   <data name="yellow" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\yellow.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="apples" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\apples.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="bananas" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bananas.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="blackberries" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\blackberries.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="blueberries" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\blueberries.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="color_instructions" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\color_instructions.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="cupcake" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cupcake.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="grapes" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\grapes.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="kiwis" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\kiwis.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="milk" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\milk.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="oranges" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\oranges.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="pears" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\pears.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
 </root>

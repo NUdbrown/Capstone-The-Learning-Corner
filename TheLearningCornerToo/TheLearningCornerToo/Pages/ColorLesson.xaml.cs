@@ -291,5 +291,196 @@ namespace TheLearningCornerToo
         {
             Application.Current.Shutdown();
         }
+
+        //private void FoodButton_Click(object sender, RoutedEventArgs e)
+        //{
+        //    foreach (var button in LogicalTreeHelper.GetChildren(FoodGrid).Cast<object>().Where(item => item.GetType() == typeof(Button)).Cast<Button>())
+        //    {
+        //        switch (button.Name)
+        //        {
+
+        //            case "BlackberryButton":
+        //            {
+        //                break;
+        //            }
+        //            case "KiwiButton":
+        //            {
+        //                Player.Stream = Properties.Resources.kiwis;
+        //                {
+        //                    Player.Load();
+        //                    Player.Play();
+        //                }
+        //                break;
+        //            }
+        //            case "AppleButton":
+        //            {
+        //                Player.Stream = Properties.Resources.apples;
+        //                {
+        //                    Player.Load();
+        //                    Player.Play();
+        //                Player.Stream = Properties.Resources.blackberries;
+        //                {
+        //                    Player.Load();
+        //                    Player.Play();
+        //                }
+        //                }
+        //                break;
+        //            }
+        //            case"OrangesButton":
+        //            {
+        //                Player.Stream = Properties.Resources.oranges;
+        //                {
+        //                    Player.Load();
+        //                    Player.Play();
+        //                }
+        //                break;
+        //            }
+        //            case "BananaButton":
+        //            {
+        //                Player.Stream = Properties.Resources.bananas;
+        //                {
+        //                    Player.Load();
+        //                    Player.Play();
+        //                }
+        //                break;
+        //            }
+        //            case "PearButton":
+        //            {
+        //                Player.Stream = Properties.Resources.pears;
+        //                {
+        //                    Player.Load();
+        //                    Player.Play();
+        //                }
+        //                break;
+        //            }
+        //            case "BlueberryButton":
+        //            {
+        //                Player.Stream = Properties.Resources.blue;
+        //                {
+        //                    Player.Load();
+        //                    Player.Play();
+        //                }
+        //                break;
+        //            }
+        //            case "GrapeButton":
+        //            {
+        //                Player.Stream = Properties.Resources.grapes;
+        //                {
+        //                    Player.Load();
+        //                    Player.Play();
+        //                }
+        //                break;
+        //            }
+        //            case"CupcakeButton":
+        //            {
+        //                Player.Stream = Properties.Resources.cupcake;
+        //                {
+        //                    Player.Load();
+        //                    Player.Play();
+        //                }
+        //                break;
+        //            }
+        //            case "MilkButton":
+        //            {
+        //                Player.Stream = Properties.Resources.milk;
+        //                {
+        //                    Player.Load();
+        //                    Player.Play();
+        //                }
+        //                break;
+        //            }
+        //        }
+        //    }
+        //}
+        private void BlackberryButton_OnClickButton_Click(object sender, RoutedEventArgs e)
+        {
+            Player.Stream = Properties.Resources.blackberries;
+            {
+                Player.Load();
+                Player.Play();
+            }
+        }
+
+        private void KiwiButton_OnClickButton_Click(object sender, RoutedEventArgs e)
+        {
+            Player.Stream = Properties.Resources.kiwis;
+            {
+                Player.Load();
+                Player.Play();
+            }
+        }
+
+        private void AppleButton_OnClickButton_Click(object sender, RoutedEventArgs e)
+        {
+            Player.Stream = Properties.Resources.apples;
+            {
+                Player.Load();
+                Player.Play();
+            }
+        }
+
+        private void OrangeButton_OnClickButton_Click(object sender, RoutedEventArgs e)
+        {
+            Player.Stream = Properties.Resources.oranges;
+            {
+                Player.Load();
+                Player.Play();
+            }
+        }
+        private void BananaButton_OnClickButton_Click(object sender, RoutedEventArgs e)
+        {
+            Player.Stream = Properties.Resources.bananas;
+            {
+                Player.Load();
+                Player.Play();
+            }
+        }
+
+        private void PearButton_OnClickButton_Click(object sender, RoutedEventArgs e)
+        {
+            Player.Stream = Properties.Resources.pears;
+            {
+                Player.Load();
+                Player.Play();
+            }
+        }
+
+        private void BlueberryButton_OnClickButton_Click(object sender, RoutedEventArgs e)
+        {
+            Player.Stream = Properties.Resources.blueberries;
+            {
+                Player.Load();
+                Player.Play();
+            }
+        }
+
+        private void GrapeButton_OnClickButton_Click(object sender, RoutedEventArgs e)
+        {
+            Player.Stream = Properties.Resources.grapes;
+            {
+                Player.Load();
+                Player.Play();
+            }
+        }
+
+        private void CupcakeButton_OnClickButton_Click(object sender, RoutedEventArgs e)
+        {
+            Player.Stream = Properties.Resources.cupcake;
+            {
+                Player.Load();
+                Player.Play();
+            }
+        }
+
+        private void MilkButton_OnClickButton_Click(object sender, RoutedEventArgs e)
+        {
+            Player.Stream = Properties.Resources.milk;
+            {
+                Player.Load();
+                Player.Play();
+            }
+        }
     }
+
+
 }

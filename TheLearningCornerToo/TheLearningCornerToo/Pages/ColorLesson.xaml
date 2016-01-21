@@ -65,60 +65,10 @@
                     <StackPanel.Effect>
                         <DropShadowEffect Color="#FF0B0C0C" BlurRadius="10"/>
                     </StackPanel.Effect>
-                    <!--<Button Content="" x:Name="BlackButton" Height="200" Width="200" Click="Button_Click">
-                        <Button.Background>
-                            <ImageBrush ImageSource="/TheLearningCornerToo;component/Images/Colors/color_black.png"/>
-                        </Button.Background>
-                    </Button>
-                    <Button Content="" Height="200" Width="200">
-                        <Button.Background>
-                            <ImageBrush ImageSource="/TheLearningCornerToo;component/Images/Colors/color_brown.png"/>
-                        </Button.Background>
-                    </Button>
-                    <Button Content="" Height="200" Width="200">
-                        <Button.Background>
-                            <ImageBrush ImageSource="/TheLearningCornerToo;component/Images/Colors/color_red.png"/>
-                        </Button.Background>
-                    </Button>
-                    <Button Content="" Height="200" Width="200">
-                        <Button.Background>
-                            <ImageBrush ImageSource="/TheLearningCornerToo;component/Images/Colors/color_orange.png"/>
-                        </Button.Background>
-                    </Button>
-                    <Button Content="" Height="200" Width="200">
-                        <Button.Background>
-                            <ImageBrush ImageSource="/TheLearningCornerToo;component/Images/Colors/color_yellow.png"/>
-                        </Button.Background>
-                    </Button>
-                    <Button Content="" Height="200" Width="200">
-                        <Button.Background>
-                            <ImageBrush ImageSource="/TheLearningCornerToo;component/Images/Colors/color_green.png"/>
-                        </Button.Background>
-                    </Button>
-                    <Button Content="" Height="200" Width="200">
-                        <Button.Background>
-                            <ImageBrush ImageSource="/TheLearningCornerToo;component/Images/Colors/color_blue.png"/>
-                        </Button.Background>
-                    </Button>
-                    <Button Content="" Height="200" Width="200">
-                        <Button.Background>
-                            <ImageBrush ImageSource="/TheLearningCornerToo;component/Images/Colors/color_purple.png"/>
-                        </Button.Background>
-                    </Button>
-                    <Button Content="" Height="200" Width="200">
-                        <Button.Background>
-                            <ImageBrush ImageSource="/TheLearningCornerToo;component/Images/Colors/color_pink.png"/>
-                        </Button.Background>
-                    </Button>
-                    <Button Content="" Height="200" Width="200">
-                        <Button.Background>
-                            <ImageBrush ImageSource="/TheLearningCornerToo;component/Images/Colors/color_white.png"/>
-                        </Button.Background>
-                    </Button>-->
                 </StackPanel>
             </ScrollViewer>
             <ScrollViewer x:Name="ObjectScroller" Grid.Row="3" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto" k:KinectRegion.IsVerticalRailEnabled="True" k:KinectRegion.IsScrollInertiaEnabled="True">
-                <Grid Margin="0,0,0,0" VerticalAlignment="Center">
+                <Grid x:Name="FoodGrid" Margin="0,0,0,0" VerticalAlignment="Center">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*"/>
                         <ColumnDefinition Width="*"/>
@@ -128,55 +78,56 @@
                         <RowDefinition Height="*"/>
                         <RowDefinition Height="*"/>
                         <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
                     </Grid.RowDefinitions>
-                    <Button Content="" x:Name="BlackButton" Height="200" Width="200" Grid.Column="0" Grid.Row="0" BorderBrush="{x:Null}">
+                    <Button Content="" Name="BlackberryButton" Height="200" Width="200" Grid.Column="0" Grid.Row="0" Click="BlackberryButton_OnClickButton_Click" BorderBrush="#FF232123" BorderThickness="2,10">
                         <Button.Background>
-                            <ImageBrush ImageSource="/TheLearningCornerToo;component/Images/Colors/color_black.png"/>
+                            <ImageBrush ImageSource="/TheLearningCornerToo;component/Images/Colors/blackbberries_black.png"/>
                         </Button.Background>
                     </Button>
-                    <Button Content="" Height="200" Width="200" Grid.Column="1" Grid.Row="0" BorderBrush="{x:Null}">
+                    <Button Content="" Name="KiwiButton" Height="200" Width="200" Grid.Column="1" Grid.Row="0" Click="KiwiButton_OnClickButton_Click" BorderBrush="#FFAC9A44" BorderThickness="2,10">
                         <Button.Background>
-                            <ImageBrush ImageSource="/TheLearningCornerToo;component/Images/Colors/color_brown.png"/>
+                            <ImageBrush ImageSource="/TheLearningCornerToo;component/Images/Colors/kiwi_brown.png"/>
                         </Button.Background>
                     </Button>
-                    <Button Content="" Height="200" Width="200" Grid.Column="2" Grid.Row="0" BorderBrush="{x:Null}">
+                    <Button Content="" Name="AppleButton" Height="200" Width="200" Grid.Column="2" Grid.Row="0" Click="AppleButton_OnClickButton_Click" BorderBrush="#FFC70C00" BorderThickness="2,10">
                         <Button.Background>
-                            <ImageBrush ImageSource="/TheLearningCornerToo;component/Images/Colors/color_red.png"/>
+                            <ImageBrush ImageSource="/TheLearningCornerToo;component/Images/Colors/apple_red.png"/>
                         </Button.Background>
                     </Button>
-                    <Button Content="" Height="200" Width="200" Grid.Column="0" Grid.Row="1">
+                    <Button Content="" Name="OrangesButton" Height="200" Width="200" Grid.Column="0" Grid.Row="1" Click="OrangeButton_OnClickButton_Click" BorderBrush="#FFFBA907" BorderThickness="2,10">
                         <Button.Background>
-                            <ImageBrush ImageSource="/TheLearningCornerToo;component/Images/Colors/color_orange.png"/>
+                            <ImageBrush ImageSource="/TheLearningCornerToo;component/Images/Colors/orange_orange.png"/>
                         </Button.Background>
                     </Button>
-                    <Button Content="" Height="200" Width="200" Grid.Column="1" Grid.Row="1">
+                    <Button Content="" Name="BananaButton" Height="200" Width="200" Grid.Column="1" Grid.Row="1" Click="BananaButton_OnClickButton_Click" BorderBrush="#FFF9FF00" BorderThickness="2,10">
                         <Button.Background>
-                            <ImageBrush ImageSource="/TheLearningCornerToo;component/Images/Colors/color_yellow.png"/>
+                            <ImageBrush ImageSource="/TheLearningCornerToo;component/Images/Colors/banana_yellow.png"/>
                         </Button.Background>
                     </Button>
-                    <Button Content="" Height="200" Width="200" Grid.Column="2" Grid.Row="1">
+                    <Button Content="" Name="PearButton" Height="200" Width="200" Grid.Column="2" Grid.Row="1" Click="PearButton_OnClickButton_Click" BorderBrush="#FFCFED4C" BorderThickness="2,10">
                         <Button.Background>
-                            <ImageBrush ImageSource="/TheLearningCornerToo;component/Images/Colors/color_green.png"/>
+                            <ImageBrush ImageSource="/TheLearningCornerToo;component/Images/Colors/pear_green.png"/>
                         </Button.Background>
                     </Button>
-                    <Button Content="" Height="200" Width="200" Grid.Column="0" Grid.Row="2">
+                    <Button Content="" Name="BlueberryButton" Height="200" Width="200" Grid.Column="0" Grid.Row="2" Click="BlueberryButton_OnClickButton_Click" BorderBrush="#4470A1" BorderThickness="2,10">
                         <Button.Background>
-                            <ImageBrush ImageSource="/TheLearningCornerToo;component/Images/Colors/color_blue.png"/>
+                            <ImageBrush ImageSource="/TheLearningCornerToo;component/Images/Colors/blueberrys_blue.png"/>
                         </Button.Background>
                     </Button>
-                    <Button Content="" Height="200" Width="200" Grid.Column="1" Grid.Row="2">
+                    <Button Content="" Name="GrapeButton" Height="200" Width="200" Grid.Column="1" Grid.Row="2" Click="GrapeButton_OnClickButton_Click" BorderBrush="#703D68" BorderThickness="2,10">
                         <Button.Background>
-                            <ImageBrush ImageSource="/TheLearningCornerToo;component/Images/Colors/color_purple.png"/>
+                            <ImageBrush ImageSource="/TheLearningCornerToo;component/Images/Colors/Grapes_purple.png"/>
                         </Button.Background>
                     </Button>
-                    <Button Content="" Height="200" Width="200" Grid.Column="1" Grid.Row="2">
+                    <Button Content="" Name="CupcakeButton" Height="200" Width="200" Grid.Column="2" Grid.Row="2" Click="CupcakeButton_OnClickButton_Click" BorderBrush="#F498A3" BorderThickness="2,10">
                         <Button.Background>
-                            <ImageBrush ImageSource="/TheLearningCornerToo;component/Images/Colors/color_pink.png"/>
+                            <ImageBrush ImageSource="/TheLearningCornerToo;component/Images/Colors/cupcake_pink.png"/>
                         </Button.Background>
                     </Button>
-                    <Button Content="" Height="200" Width="200" Grid.Column="2" Grid.Row="2">
+                    <Button Content="" Name="MilkButton" Height="200" Width="200" Grid.Column="1" Grid.Row="3" Click="MilkButton_OnClickButton_Click" BorderBrush="White" BorderThickness="2,10">
                         <Button.Background>
-                            <ImageBrush ImageSource="/TheLearningCornerToo;component/Images/Colors/color_white.png"/>
+                            <ImageBrush ImageSource="/TheLearningCornerToo;component/Images/Colors/Gallon_of_Milk_white.png"/>
                         </Button.Background>
                     </Button>
                 </Grid>
