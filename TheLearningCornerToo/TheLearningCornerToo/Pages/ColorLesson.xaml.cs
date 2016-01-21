@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Media;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -11,6 +12,7 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Microsoft.Kinect;
 using Microsoft.Kinect.Toolkit.Input;
@@ -44,8 +46,8 @@ namespace TheLearningCornerToo
             InitializeComponent();
 
             Loaded += OnLoad;
-        }
 
+        }
         private void OnLoad(object sender, RoutedEventArgs e)
         {
             //show person's body & moving cursor
@@ -57,6 +59,7 @@ namespace TheLearningCornerToo
             // Use the default sensor
             this.KinectArea.KinectSensor = KinectSensor.GetDefault();
 
+
             //add buttons to screen
             for (int i = 1; i <= 10; i++)
             {
@@ -65,7 +68,7 @@ namespace TheLearningCornerToo
                     button.Height = 250;
                     button.Width = 250;
                     button.Focusable = false;
-                    
+
                     button.BorderThickness = new Thickness(0,0,0,0);
                     button.Name = "Button" + i;
                     
@@ -157,13 +160,15 @@ namespace TheLearningCornerToo
                 };
                 button.Click += (sender1, routedEventArgs) => ButtonOnClick(button, sender1, routedEventArgs);
                 //button.Click += (o, args) => MessageBox.Show("You clicked button #" + button.Name);
-                ScrollContent.Children.Add(button);
+                ScrollContent.Children.Add(button);  
+                             
             }
-
+            //give instructions once page is shown
             Player.Stream = Properties.Resources.color_instructions;
             {
                 Player.Load();
                 Player.Play();
+
             }
 
         }

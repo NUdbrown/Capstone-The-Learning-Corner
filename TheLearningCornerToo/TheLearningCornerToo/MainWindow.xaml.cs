@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Media;
 using System.Threading;
 using System.Windows;
 using Microsoft.Kinect;
@@ -12,16 +13,34 @@ namespace TheLearningCornerToo
     /// </summary>
     public partial class MainWindow : Window
     {
+        private SoundPlayer _player = new SoundPlayer();
+
+        public SoundPlayer Player
+        {
+            get
+            {
+                return _player;
+            }
+
+            set
+            {
+                _player = value;
+            }
+        }
+
         public MainWindow()
         {
-            //sleeping to make the splash screen last longer
+            //offical theme music     
+            Player.Stream = Properties.Resources.Schooldays_intro;
+            {
+                Player.PlayLooping();
+            }
+
+            //sleeping to make the splash screen last longer 
             Thread.Sleep(4000);
             InitializeComponent();
 
             //turning on the kinect on program start up.
-            //KinectSensor kinectSensor = KinectSensor.GetDefault();
-            //kinectSensor.Open();
-
             //show person's body, create kinect movement area via xaml & cs
             KinectRegion.SetKinectRegion(this, KinectArea);       
            
@@ -32,30 +51,32 @@ namespace TheLearningCornerToo
             // Use the default sensor
             this.KinectArea.KinectSensor = KinectSensor.GetDefault();
             
-
-            
         }
 
         private void ColorButton_Click(object sender, RoutedEventArgs e)
         {
             var colorlesson = new ColorLesson();
-            colorlesson.Show();
+            Player.Stop();
             Close();
+            colorlesson.Show();
+
         }
 
 
         private void AlphabetButton_Click(object sender, RoutedEventArgs e)
         {
             var alphabet = new AlphabetLesson();
-            alphabet.Show();
+            Player.Stop();
             Close();
+            alphabet.Show();
         }
 
         private void WordButton_Click(object sender, RoutedEventArgs e)
         {
             var words = new WordsLesson();
-            words.Show();
+            Player.Stop();
             Close();
+            words.Show();
 
         }
 

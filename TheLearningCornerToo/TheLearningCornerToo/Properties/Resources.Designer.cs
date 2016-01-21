@@ -144,6 +144,15 @@ namespace TheLearningCornerToo.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
         /// </summary>
+        internal static System.IO.UnmanagedMemoryStream Schooldays_intro {
+            get {
+                return ResourceManager.GetStream("Schooldays_intro", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
         internal static System.IO.UnmanagedMemoryStream white {
             get {
                 return ResourceManager.GetStream("white", resourceCulture);

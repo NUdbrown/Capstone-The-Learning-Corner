@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Icon="/Images/icon_TLC.png"
         Title="Color Lessons" Height="900" Width="1000" WindowStartupLocation="CenterScreen" BorderBrush="#FFEAF4F2"
-        BorderThickness="5" WindowStyle="None" AllowsTransparency="True">
+        BorderThickness="5" WindowStyle="None">
     <Window.Background>
         <ImageBrush ImageSource="/Images/colorsbackground.jpg" />
     </Window.Background>
@@ -15,9 +15,10 @@
     <k:KinectRegion x:Name="KinectArea">
         <Grid x:Name ="ColorGrid">
             <Grid.RowDefinitions>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
+                <RowDefinition Height="176*"/>
+                <RowDefinition Height="76*"/>
+                <RowDefinition Height="315*"/>
+                <RowDefinition Height="313*"/>
             </Grid.RowDefinitions>
             <Button x:Name="HomeButton" Content="Home" Grid.Row="0" HorizontalAlignment="Left" Margin="63,47,0,0"
                     VerticalAlignment="Top" Width="154" Height="34" FontFamily="Sitka Text" FontSize="21.333"
@@ -29,7 +30,7 @@
                     </LinearGradientBrush>
                 </Button.Background>
             </Button>
-            <Button x:Name="InstructButton" Content="Instructions" Grid.Row="0" Width="154" Height="34" FontFamily="Sitka Text" FontSize="21.333" Click="Instructions_OnClick" Margin="419,207,417.4,55.8" BorderBrush="#FFF4F2F2" BorderThickness="3" Opacity="0.91">
+            <Button x:Name="InstructButton" Content="Instructions" Grid.Row="1" FontFamily="Sitka Text" FontSize="21.333" Click="Instructions_OnClick" Margin="415,10,415,32" BorderBrush="#FFF4F2F2" BorderThickness="3" Opacity="0.91">
                 <Button.Background>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                         <GradientStop Color="#FF56DB00" Offset="0"/>
@@ -37,7 +38,7 @@
                     </LinearGradientBrush>
                 </Button.Background>
             </Button>
-            <k:KinectUserViewer Height="100" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,50,0,0" >
+            <k:KinectUserViewer Height="100" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="432,50,432,0" Width="120" >
                 <k:KinectUserViewer.ImageBackground>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                         <GradientStop Color="#FFEBED8C" Offset="0"/>
@@ -59,7 +60,7 @@
                 </Button.Background>
             </Button>
 
-            <ScrollViewer Name="Scroller" Grid.Row="1" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Disabled" k:KinectRegion.IsScrollInertiaEnabled="true" BorderThickness="10">
+            <ScrollViewer Name="Scroller" Grid.Row="2" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Disabled" k:KinectRegion.IsScrollInertiaEnabled="true" BorderThickness="10" Margin="0,5,0,294.2" Grid.RowSpan="2">
                 <StackPanel Orientation="Horizontal" x:Name="ScrollContent" Margin="0,0,0,0">
                     <StackPanel.Effect>
                         <DropShadowEffect Color="#FF0B0C0C" BlurRadius="10"/>
@@ -115,6 +116,70 @@
                         </Button.Background>
                     </Button>-->
                 </StackPanel>
+            </ScrollViewer>
+            <ScrollViewer x:Name="ObjectScroller" Grid.Row="3" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto" k:KinectRegion.IsVerticalRailEnabled="True" k:KinectRegion.IsScrollInertiaEnabled="True">
+                <Grid Margin="0,0,0,0" VerticalAlignment="Center">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Button Content="" x:Name="BlackButton" Height="200" Width="200" Grid.Column="0" Grid.Row="0" BorderBrush="{x:Null}">
+                        <Button.Background>
+                            <ImageBrush ImageSource="/TheLearningCornerToo;component/Images/Colors/color_black.png"/>
+                        </Button.Background>
+                    </Button>
+                    <Button Content="" Height="200" Width="200" Grid.Column="1" Grid.Row="0" BorderBrush="{x:Null}">
+                        <Button.Background>
+                            <ImageBrush ImageSource="/TheLearningCornerToo;component/Images/Colors/color_brown.png"/>
+                        </Button.Background>
+                    </Button>
+                    <Button Content="" Height="200" Width="200" Grid.Column="2" Grid.Row="0" BorderBrush="{x:Null}">
+                        <Button.Background>
+                            <ImageBrush ImageSource="/TheLearningCornerToo;component/Images/Colors/color_red.png"/>
+                        </Button.Background>
+                    </Button>
+                    <Button Content="" Height="200" Width="200" Grid.Column="0" Grid.Row="1">
+                        <Button.Background>
+                            <ImageBrush ImageSource="/TheLearningCornerToo;component/Images/Colors/color_orange.png"/>
+                        </Button.Background>
+                    </Button>
+                    <Button Content="" Height="200" Width="200" Grid.Column="1" Grid.Row="1">
+                        <Button.Background>
+                            <ImageBrush ImageSource="/TheLearningCornerToo;component/Images/Colors/color_yellow.png"/>
+                        </Button.Background>
+                    </Button>
+                    <Button Content="" Height="200" Width="200" Grid.Column="2" Grid.Row="1">
+                        <Button.Background>
+                            <ImageBrush ImageSource="/TheLearningCornerToo;component/Images/Colors/color_green.png"/>
+                        </Button.Background>
+                    </Button>
+                    <Button Content="" Height="200" Width="200" Grid.Column="0" Grid.Row="2">
+                        <Button.Background>
+                            <ImageBrush ImageSource="/TheLearningCornerToo;component/Images/Colors/color_blue.png"/>
+                        </Button.Background>
+                    </Button>
+                    <Button Content="" Height="200" Width="200" Grid.Column="1" Grid.Row="2">
+                        <Button.Background>
+                            <ImageBrush ImageSource="/TheLearningCornerToo;component/Images/Colors/color_purple.png"/>
+                        </Button.Background>
+                    </Button>
+                    <Button Content="" Height="200" Width="200" Grid.Column="1" Grid.Row="2">
+                        <Button.Background>
+                            <ImageBrush ImageSource="/TheLearningCornerToo;component/Images/Colors/color_pink.png"/>
+                        </Button.Background>
+                    </Button>
+                    <Button Content="" Height="200" Width="200" Grid.Column="2" Grid.Row="2">
+                        <Button.Background>
+                            <ImageBrush ImageSource="/TheLearningCornerToo;component/Images/Colors/color_white.png"/>
+                        </Button.Background>
+                    </Button>
+                </Grid>
             </ScrollViewer>
         </Grid>
     </k:KinectRegion>
