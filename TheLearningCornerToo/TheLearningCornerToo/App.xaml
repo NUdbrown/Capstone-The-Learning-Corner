@@ -4,5 +4,8 @@
              xmlns:local="clr-namespace:TheLearningCornerToo"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
+        <ResourceDictionary>
+            
+        </ResourceDictionary>
     </Application.Resources>
 </Application>

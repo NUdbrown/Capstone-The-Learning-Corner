@@ -160,8 +160,9 @@ namespace TheLearningCornerToo
                 };
                 button.Click += (sender1, routedEventArgs) => ButtonOnClick(button, sender1, routedEventArgs);
                 //button.Click += (o, args) => MessageBox.Show("You clicked button #" + button.Name);
-                ScrollContent.Children.Add(button);  
-                             
+                ScrollContent.Children.Add(button);
+                //ScrollContent.Focusable = false;
+
             }
             //give instructions once page is shown
             Player.Stream = Properties.Resources.color_instructions;
