@@ -1,11 +1,61 @@
 ﻿<Application x:Class="TheLearningCornerToo.App"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:local="clr-namespace:TheLearningCornerToo"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
         <ResourceDictionary>
-            
+            <Style x:Key="MainWindowButtonStyle" TargetType="Button">
+                <Setter Property="FontWeight" Value="DemiBold"/>
+                <Setter Property="FontSize" Value="22"/>
+                <Setter Property="Foreground" Value="#FF935E67"/>
+                <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                <Setter Property="VerticalContentAlignment" Value="Center"/>
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="Button">
+                            <Border x:Name="Border" CornerRadius="8,8,8,8" BorderThickness="4" Background="#FF55CC77" Opacity="0.755" BorderBrush="#FF3EEEA7">
+                                <Border.Effect>
+                                    <DropShadowEffect Color="#FFF86565" />
+                                </Border.Effect>
+                                <ContentPresenter Margin="2" HorizontalAlignment="Center" VerticalAlignment="Center" RecognizesAccessKey="True"/>
+                            </Border>
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="IsMouseOver" Value="true">
+                                    <Setter TargetName="Border" Property="Background" Value="#FFFAB689" />
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+
+            <Style x:Key="NavigationButtonStyle" TargetType="Button">
+                <Setter Property="FontSize" Value="22"/>
+                <Setter Property="Width" Value="154"/>
+                <Setter Property="Height" Value="34"/>                  
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="Button">
+                            <Border x:Name="Border" CornerRadius="10,5,10,5" Opacity="0.905">
+                                <Border.Effect>
+                                    <DropShadowEffect Color="White" />
+                                </Border.Effect>
+                                <ContentPresenter Margin="2" HorizontalAlignment="Center" VerticalAlignment="Center" RecognizesAccessKey="True"/>
+                            </Border>
+                            
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="IsMouseOver" Value="true">
+                                    <Setter TargetName="Border" Property="Background" Value="CornflowerBlue" />
+                                </Trigger>
+                                <Trigger Property="IsPressed" Value="true">
+                                    <Setter TargetName="Border" Property="Background" Value="DeepPink" />
+                                    <Setter TargetName="Border" Property="BorderBrush" Value="Transparent" />
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
         </ResourceDictionary>
     </Application.Resources>
 </Application>

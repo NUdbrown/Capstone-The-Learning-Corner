@@ -5,18 +5,26 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:k="http://schemas.microsoft.com/kinect/2014"
         mc:Ignorable="d"
-        Title="The Learning Corner" Height="900" Width="1000"
-        WindowStartupLocation="CenterScreen" Icon="/Images/icon_TLC.png" WindowStyle="None">
+        Title="The Learning Corner" 
+        d:DesignWidth="1200"
+        d:DesignHeight="700"
+        MinHeight="900" 
+        MinWidth="1000"
+        FontFamily="Javanese Text"
+        WindowState="Maximized"
+        WindowStartupLocation="CenterScreen" 
+        Icon="/Images/icon_TLC.png" 
+        WindowStyle="None">
     <k:KinectRegion x:Name="KinectArea">
-    <StackPanel>
-        <StackPanel.Background>
-            <ImageBrush ImageSource="Images/treehouse.jpg" Opacity="0.66"/>
-        </StackPanel.Background>
-        <StackPanel.Effect>
-            <DropShadowEffect Color="#FFF6BD0D" Opacity="0.925"/>
-        </StackPanel.Effect>
-        <Label x:Name="MainTitle" Content="Hello, Friend!" HorizontalAlignment="Center" Margin="111,60,94.4,0" VerticalAlignment="Top" Height="79" Width="313" FontSize="48" FontFamily="Javanese Text" Foreground="#FFFEFFFB" FontWeight="Bold"/>
-        <k:KinectUserViewer Height="100" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,100,0,0" >
+        <StackPanel>
+            <StackPanel.Background>
+                <ImageBrush ImageSource="Images/treehouse.jpg" Opacity="0.66"/>
+            </StackPanel.Background>
+            <StackPanel.Effect>
+                <DropShadowEffect Color="#FFF6BD0D" Opacity="0.925"/>
+            </StackPanel.Effect>
+            <Label x:Name="MainTitle" Content="Hello, Friend!" HorizontalAlignment="Center" Margin="111,60,94.4,0" VerticalAlignment="Top" Height="95" Width="400" FontSize="60" Foreground="#FFFEFFFB" FontWeight="Bold"/>
+            <k:KinectUserViewer Height="100" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,100,0,0" >
                 <k:KinectUserViewer.ImageBackground>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                         <GradientStop Color="#FFDABFA1" Offset="0"/>
@@ -24,28 +32,33 @@
                     </LinearGradientBrush>
                 </k:KinectUserViewer.ImageBackground>
             </k:KinectUserViewer>
-            <StackPanel Height="374" Margin="100,10,99.6,0" Orientation="Horizontal">
-            <Button x:Name="ColorButton" Content="Colors Lesson" Width="150" Height="34" FontFamily="Javanese Text" FontSize="18.667" Foreground="#FF935E67" Click="ColorButton_Click" Margin="100,100,0,229.6">
-                <Button.Background>
-                    <SolidColorBrush Color="#FF55CC77" Opacity="0.755" />
-                </Button.Background>
-            </Button>
-            <Button x:Name="AlphabetButton" Content="Alphabet Lesson" Width="150" Height="34" FontFamily="Javanese Text" FontSize="18.667" Foreground="#FF935E67" Click="AlphabetButton_Click" BorderBrush="#FF667A77" Margin="100,100,0,229.6">
-                <Button.Background>
-                    <SolidColorBrush Color="#FF55CC77" Opacity="0.755"/>
-                </Button.Background>
-            </Button>
-            <Button x:Name="WordButton" Content="Words Lesson" Width="150" Height="34" FontFamily="Javanese Text" FontSize="18.667" Foreground="#FF935E67" Click="WordButton_Click" Margin="100,100,0,229.6">
-                <Button.Background>
-                    <SolidColorBrush Color="#FF55CC77" Opacity="0.755"/>
-                </Button.Background>
+            <StackPanel Height="80" Margin="100,100,99.6,0" Orientation="Horizontal" HorizontalAlignment="Center">
+                <Button x:Name="ColorButton" Content="Colors Lesson" Width="210" Style="{StaticResource MainWindowButtonStyle}" Click="ColorButton_Click" Margin="60,0"/>
+                <Button x:Name="AlphabetButton" Content="Alphabet Lesson" Width="240" Style="{StaticResource MainWindowButtonStyle}" Click="AlphabetButton_Click" Margin="50,0"/>
+                <Button x:Name="WordButton" Content="Words Lesson" Width="210" Style="{StaticResource MainWindowButtonStyle}" Click="WordButton_Click" Margin="60,0"/>
+            </StackPanel>
+            <Button x:Name="ExitButton" Content="Exit" Height="52" Width="100" HorizontalAlignment="Center" FontSize="26.667" Click="ExitButton_Click" Margin="0,150, 0,0" Foreground="#FF6F3126">
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border x:Name="Border" CornerRadius="10,8,10,8" BorderThickness="2" Background="#FFF4A875" BorderBrush="#FFA24F46">
+                            <Border.Effect>
+                                <DropShadowEffect />
+                            </Border.Effect>
+                            <ContentPresenter Margin="2" HorizontalAlignment="Center" VerticalAlignment="Center" RecognizesAccessKey="True"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="true">
+                                <Setter TargetName="Border" Property="BorderBrush" Value="Transparent" />
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="true">
+                                <Setter TargetName="Border" Property="Background" Value="White" />
+                                <Setter TargetName="Border" Property="BorderBrush" Value="Black" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Button.Template>
             </Button>
         </StackPanel>
-        <Button x:Name="ExitButton" Content="Exit" Height="52" Margin="226,0,287.6,0" FontFamily="Javanese Text" FontSize="26.667" Click="ExitButton_Click">
-            <Button.Background>
-                <SolidColorBrush Color="WhiteSmoke" Opacity="0.755"/>
-            </Button.Background>
-        </Button>
-    </StackPanel>
     </k:KinectRegion>
 </Window>
+

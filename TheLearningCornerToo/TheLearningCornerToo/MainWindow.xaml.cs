@@ -13,20 +13,7 @@ namespace TheLearningCornerToo
     /// </summary>
     public partial class MainWindow : Window
     {
-        private SoundPlayer _player = new SoundPlayer();
-
-        public SoundPlayer Player
-        {
-            get
-            {
-                return _player;
-            }
-
-            set
-            {
-                _player = value;
-            }
-        }
+        public SoundPlayer Player { get; set; } = new SoundPlayer();
 
         public MainWindow()
         {

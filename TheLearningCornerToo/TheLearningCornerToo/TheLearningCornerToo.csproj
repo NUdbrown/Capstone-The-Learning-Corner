@@ -79,6 +79,9 @@
     <Compile Include="Pages\AlphabetLesson.xaml.cs">
       <DependentUpon>AlphabetLesson.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\ColorControl.xaml.cs">
+      <DependentUpon>ColorControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\ColorLesson.xaml.cs">
       <DependentUpon>ColorLesson.xaml</DependentUpon>
     </Compile>
@@ -87,6 +90,10 @@
       <DependentUpon>WordsLesson.xaml</DependentUpon>
     </Compile>
     <Page Include="Pages\AlphabetLesson.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\ColorControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -192,6 +199,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Images\Words\" />
+    <Folder Include="Styles\" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\treehouse.jpg" />

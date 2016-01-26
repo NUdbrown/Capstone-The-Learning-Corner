@@ -4,10 +4,18 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:k="http://schemas.microsoft.com/kinect/2014"
+        xmlns:control="clr-namespace:TheLearningCornerToo.Pages"
         mc:Ignorable="d"
-        Icon="/Images/icon_TLC.png"
-        Title="Color Lessons" Height="890" Width="1200" WindowStartupLocation="CenterScreen" BorderBrush="#FFEAF4F2"
-        BorderThickness="5" WindowStyle="None">
+        d:DesignWidth="1200"
+        d:DesignHeight="700"
+        MinHeight="900" 
+        MinWidth="1000"
+        FontFamily="Javanese Text"
+        WindowState="Maximized"
+        WindowStartupLocation="CenterScreen" 
+        Title="Color Lesson"
+        Icon="/Images/icon_TLC.png" 
+        WindowStyle="None">
     <Window.Background>
         <ImageBrush ImageSource="/Images/colorsbackground.jpg" />
     </Window.Background>
@@ -21,8 +29,8 @@
                 <RowDefinition Height="408*"/>
             </Grid.RowDefinitions>
             <Button x:Name="HomeButton" Content="Home" Grid.Row="0" HorizontalAlignment="Left" Margin="63,47,0,0"
-                    VerticalAlignment="Top" Width="154" Height="34" FontFamily="Sitka Text" FontSize="21.333"
-                    Click="HomeButton_OnClick" BorderBrush="#FFEDE4E4" BorderThickness="3" Opacity="0.905">
+                    VerticalAlignment="Top"  Style="{StaticResource NavigationButtonStyle}"
+                    Click="HomeButton_OnClick">
                 <Button.Background>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                         <GradientStop Color="#FFE56969" Offset="0"/>
@@ -30,7 +38,7 @@
                     </LinearGradientBrush>
                 </Button.Background>
             </Button>
-            <Button x:Name="InstructButton" Content="Instructions" Grid.Row="0" FontFamily="Sitka Text" FontSize="21.333" Click="Instructions_OnClick" Margin="468,149,479,0.2" BorderBrush="#FFF4F2F2" BorderThickness="3" Opacity="0.91" UseLayoutRounding="False">
+            <Button x:Name="InstructButton" Content="Instructions" Grid.Row="0" Width="154" Height="34" FontFamily="Sitka Text" FontSize="21.333" Click="Instructions_OnClick" Margin="468,149,479,0.2" BorderBrush="#FFF4F2F2" BorderThickness="3" Opacity="0.91" UseLayoutRounding="False">
                 <Button.Background>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                         <GradientStop Color="#FF56DB00" Offset="0"/>
@@ -67,58 +75,7 @@
                     </StackPanel.Effect>
                 </StackPanel>
             </ScrollViewer>
-            <WrapPanel x:Name="Food" Grid.Row="2" Width="1000" Margin="0,0.4,0,-0.4">
-                <Button Content="" Name="BlackberryButton" Height="200" Width="200" Click="BlackberryButton_OnClickButton_Click" BorderBrush="#FF232123" BorderThickness="2,10">
-                    <Button.Background>
-                        <ImageBrush ImageSource="/TheLearningCornerToo;component/Images/Colors/blackbberries_black.png"/>
-                    </Button.Background>
-                </Button>
-                <Button Content="" Name="KiwiButton" Height="200" Width="200" Click="KiwiButton_OnClickButton_Click" BorderBrush="#FFAC9A44" BorderThickness="2,10">
-                    <Button.Background>
-                        <ImageBrush ImageSource="/TheLearningCornerToo;component/Images/Colors/kiwi_brown.png"/>
-                    </Button.Background>
-                </Button>
-                <Button Content="" Name="AppleButton" Height="200" Width="200" Click="AppleButton_OnClickButton_Click" BorderBrush="#FFC70C00" BorderThickness="2,10">
-                    <Button.Background>
-                        <ImageBrush ImageSource="/TheLearningCornerToo;component/Images/Colors/apple_red.png"/>
-                    </Button.Background>
-                </Button>
-                <Button Content="" Name="OrangesButton" Height="200" Width="200" Click="OrangeButton_OnClickButton_Click" BorderBrush="#FFFBA907" BorderThickness="2,10">
-                    <Button.Background>
-                        <ImageBrush ImageSource="/TheLearningCornerToo;component/Images/Colors/orange_orange.png"/>
-                    </Button.Background>
-                </Button>
-                <Button Content="" Name="BananaButton" Height="200" Width="200" Click="BananaButton_OnClickButton_Click" BorderBrush="#FFF9FF00" BorderThickness="2,10">
-                    <Button.Background>
-                        <ImageBrush ImageSource="/TheLearningCornerToo;component/Images/Colors/banana_yellow.png"/>
-                    </Button.Background>
-                </Button>
-                <Button Content="" Name="PearButton" Height="200" Width="200" Click="PearButton_OnClickButton_Click" BorderBrush="#FFCFED4C" BorderThickness="2,10">
-                    <Button.Background>
-                        <ImageBrush ImageSource="/TheLearningCornerToo;component/Images/Colors/pear_green.png"/>
-                    </Button.Background>
-                </Button>
-                <Button Content="" Name="BlueberryButton" Height="200" Width="200" Click="BlueberryButton_OnClickButton_Click" BorderBrush="#4470A1" BorderThickness="2,10">
-                    <Button.Background>
-                        <ImageBrush ImageSource="/TheLearningCornerToo;component/Images/Colors/blueberrys_blue.png"/>
-                    </Button.Background>
-                </Button>
-                <Button Content="" Name="GrapeButton" Height="200" Width="200" Click="GrapeButton_OnClickButton_Click" BorderBrush="#703D68" BorderThickness="2,10">
-                    <Button.Background>
-                        <ImageBrush ImageSource="/TheLearningCornerToo;component/Images/Colors/Grapes_purple.png"/>
-                    </Button.Background>
-                </Button>
-                <Button Content="" Name="CupcakeButton" Height="200" Width="200" Click="CupcakeButton_OnClickButton_Click" BorderBrush="#F498A3" BorderThickness="2,10">
-                    <Button.Background>
-                        <ImageBrush ImageSource="/TheLearningCornerToo;component/Images/Colors/cupcake_pink.png"/>
-                    </Button.Background>
-                </Button>
-                <Button Content="" Name="MilkButton" Height="200" Width="200" Click="MilkButton_OnClickButton_Click" BorderBrush="White" BorderThickness="2,10">
-                    <Button.Background>
-                        <ImageBrush ImageSource="/TheLearningCornerToo;component/Images/Colors/Gallon_of_Milk_white.png"/>
-                    </Button.Background>
-                </Button>
-            </WrapPanel>
+            <control:ColorControl Grid.Row="2"/>
         </Grid>
     </k:KinectRegion>
 </Window>
