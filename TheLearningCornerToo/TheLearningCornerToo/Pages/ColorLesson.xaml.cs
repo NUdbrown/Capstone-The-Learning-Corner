@@ -53,15 +53,8 @@ namespace TheLearningCornerToo
             {
                 var button = new Button();
                 {
-                    button.Height = 200;
-                    button.Width = 200;
-                    button.Focusable = false;
-
-                    button.BorderThickness = new Thickness(0,0,0,0);
-                    button.Name = "Button" + i;
+                   button.Name = "Button" + i;
                     
-                    //button.Content = "Click Me";
-                    //Background = new SolidColorBrush(Colors.DeepPink);
                     switch (button.Name)
                     {
                         case "Button1":
@@ -146,9 +139,9 @@ namespace TheLearningCornerToo
                             }
                     }
                 };
-               button.Click += (sender1, routedEventArgs) => ButtonOnClick(button, sender1, routedEventArgs);
-               ScrollContent.Children.Add(button);
-
+                button.Style = TryFindResource("ColorButtonStyle") as Style;
+                button.Click += (sender1, routedEventArgs) => ButtonOnClick(button, sender1, routedEventArgs);
+                ScrollContent.Children.Add(button);
             }
             //give instructions once page is shown
             Player.Stream = Properties.Resources.color_instructions;

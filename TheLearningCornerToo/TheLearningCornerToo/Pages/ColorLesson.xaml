@@ -29,16 +29,16 @@
                 <RowDefinition Height="408*"/>
             </Grid.RowDefinitions>
             <Button x:Name="HomeButton" Content="Home" Grid.Row="0" HorizontalAlignment="Left" Margin="63,47,0,0"
-                    VerticalAlignment="Top"  Style="{StaticResource NavigationButtonStyle}"
+                    VerticalAlignment="Top" Style="{StaticResource NavigationButtonStyle}"
                     Click="HomeButton_OnClick">
-                <Button.Background>
+                <Button.Background >
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                         <GradientStop Color="#FFE56969" Offset="0"/>
                         <GradientStop Color="#FFE79243" Offset="1"/>
                     </LinearGradientBrush>
                 </Button.Background>
             </Button>
-            <Button x:Name="InstructButton" Content="Instructions" Grid.Row="0" Width="154" Height="34" FontFamily="Sitka Text" FontSize="21.333" Click="Instructions_OnClick" Margin="468,149,479,0.2" BorderBrush="#FFF4F2F2" BorderThickness="3" Opacity="0.91" UseLayoutRounding="False">
+            <Button x:Name="InstructButton" Content="Instructions" Grid.Row="0" Click="Instructions_OnClick" Margin="468,149,479,0.2" Style="{StaticResource NavigationButtonStyle}">
                 <Button.Background>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                         <GradientStop Color="#FF56DB00" Offset="0"/>
@@ -54,9 +54,8 @@
                     </LinearGradientBrush>
                 </k:KinectUserViewer.ImageBackground>
             </k:KinectUserViewer>
-            <Button x:Name="ExitButton" Content="Exit" Grid.Row="0" HorizontalAlignment="Left" Margin="963,47,0,0"
-                    VerticalAlignment="Top" Width="154" Height="34" FontFamily="Sitka Text" FontSize="21.333"
-                    Click="ExitButton_Click" BorderThickness="3" Opacity="0.905" >
+            <Button x:Name="ExitButton" Content="Exit" Grid.Row="0" HorizontalAlignment="Right" Margin="0,47,63,0" VerticalAlignment="Top" 
+                    Click="ExitButton_Click" Style="{StaticResource NavigationButtonStyle}">
                 <Button.BorderBrush>
                     <SolidColorBrush Color="#FFF6F1F1"/>
                 </Button.BorderBrush>
