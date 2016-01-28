@@ -10,6 +10,7 @@ using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
+using System.Windows.Media.Animation;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
@@ -47,6 +48,15 @@ namespace TheLearningCornerToo.Pages
                 Player.Load();
                 Player.Play();
             }
+            DoubleAnimation da = new DoubleAnimation();
+            da.From = 0;
+            da.To = 360;
+            da.Duration = new Duration(TimeSpan.FromSeconds(3));
+            //da.RepeatBehavior = RepeatBehavior.Forever;
+            RotateTransform rt = new RotateTransform();
+            BlackberryButton.RenderTransform = rt;
+            rt.BeginAnimation(RotateTransform.AngleProperty, da);
+            
         }
 
         private void KiwiButton_OnClickButton_Click(object sender, RoutedEventArgs e)
