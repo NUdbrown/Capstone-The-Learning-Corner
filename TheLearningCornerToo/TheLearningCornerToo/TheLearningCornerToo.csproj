@@ -262,7 +262,6 @@
   <ItemGroup>
     <Resource Include="Images\Colors\apple_red.png" />
     <Resource Include="Images\Colors\blackbberries_black.png" />
-    <Resource Include="Images\Colors\blueberrys_blue.png" />
     <Resource Include="Images\Colors\cupcake_pink.png" />
     <Resource Include="Images\Colors\Gallon_of_Milk_white.png" />
     <Resource Include="Images\Colors\Grapes_purple.png" />
@@ -305,6 +304,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\pears.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Colors\blueberries_blue.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

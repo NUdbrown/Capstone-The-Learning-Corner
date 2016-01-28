@@ -51,7 +51,7 @@
                     </Button>
                     <Button Content="" Name="BlueberryButton" Click="BlueberryButton_OnClickButton_Click" Style="{StaticResource ColorButtonStyle}">
                         <Button.Background>
-                            <ImageBrush ImageSource="/TheLearningCornerToo;component/Images/Colors/blueberrys_blue.png"/>
+                            <ImageBrush ImageSource="/TheLearningCornerToo;component/Images/Colors/blueberries_blue.png"/>
                         </Button.Background>
                     </Button>
                     <Button Content="" Name="GrapeButton" Click="GrapeButton_OnClickButton_Click" Style="{StaticResource ColorButtonStyle}">
