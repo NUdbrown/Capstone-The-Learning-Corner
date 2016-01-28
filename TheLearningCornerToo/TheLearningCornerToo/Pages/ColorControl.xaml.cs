@@ -158,7 +158,7 @@ namespace TheLearningCornerToo.Pages
             DoubleAnimation da = new DoubleAnimation();
             da.From = 360;
             da.To = 0;
-            da.Duration = new Duration(TimeSpan.FromSeconds(3));
+            da.Duration = new Duration(TimeSpan.FromSeconds(4));
             RotateTransform rt = new RotateTransform();
             button.RenderTransform = rt;
             rt.BeginAnimation(RotateTransform.AngleProperty, da);
