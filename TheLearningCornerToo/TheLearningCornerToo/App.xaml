@@ -58,8 +58,8 @@
                 </Setter>
             </Style>
             <Style x:Key="ColorButtonStyle" TargetType="Button">
-                <Setter Property="Height" Value="180"/>
-                <Setter Property="Width" Value="180"/>
+                <Setter Property="Height" Value="200"/>
+                <Setter Property="Width" Value="200"/>
                 <Setter Property="RenderTransformOrigin" Value="0.5,0.5"/>
                 <Setter Property="Template">
                     <Setter.Value>

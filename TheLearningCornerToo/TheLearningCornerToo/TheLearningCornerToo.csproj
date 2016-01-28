@@ -85,6 +85,7 @@
     <Compile Include="Pages\ColorLesson.xaml.cs">
       <DependentUpon>ColorLesson.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\DragDropElement.cs" />
     <Compile Include="Settings.cs" />
     <Compile Include="Pages\WordsLesson.xaml.cs">
       <DependentUpon>WordsLesson.xaml</DependentUpon>

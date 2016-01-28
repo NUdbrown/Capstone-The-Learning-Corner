@@ -35,6 +35,9 @@ namespace TheLearningCornerToo
             app.KinectRegion = KinectArea;
             app.KinectRegion.CursorSpriteSheetDefinition = new CursorSpriteSheetDefinition(new System.Uri("pack://application:,,,/Images/CursorSpriteSheetPurple.png"), 4, 20, 137, 137);
             this.KinectArea.KinectSensor = KinectSensor.GetDefault();
+
+            
+
         }
 
         private void ExitButton_Click(object sender, RoutedEventArgs e)
