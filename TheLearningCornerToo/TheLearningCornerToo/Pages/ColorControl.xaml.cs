@@ -48,14 +48,8 @@ namespace TheLearningCornerToo.Pages
                 Player.Load();
                 Player.Play();
             }
-            DoubleAnimation da = new DoubleAnimation();
-            da.From = 0;
-            da.To = 360;
-            da.Duration = new Duration(TimeSpan.FromSeconds(3));
-            //da.RepeatBehavior = RepeatBehavior.Forever;
-            RotateTransform rt = new RotateTransform();
-            BlackberryButton.RenderTransform = rt;
-            rt.BeginAnimation(RotateTransform.AngleProperty, da);
+            
+            DoAnimation(BlackberryButton);
             
         }
 
@@ -66,6 +60,7 @@ namespace TheLearningCornerToo.Pages
                 Player.Load();
                 Player.Play();
             }
+            DoAnimation(KiwiButton);
         }
 
         private void AppleButton_OnClickButton_Click(object sender, RoutedEventArgs e)
@@ -75,6 +70,7 @@ namespace TheLearningCornerToo.Pages
                 Player.Load();
                 Player.Play();
             }
+            DoAnimation(AppleButton);
         }
 
         private void OrangeButton_OnClickButton_Click(object sender, RoutedEventArgs e)
@@ -137,6 +133,17 @@ namespace TheLearningCornerToo.Pages
                 Player.Load();
                 Player.Play();
             }
+        }
+
+        private void DoAnimation(Button button)
+        {
+            DoubleAnimation da = new DoubleAnimation();
+            da.From = 0;
+            da.To = 360;
+            da.Duration = new Duration(TimeSpan.FromSeconds(3));
+            RotateTransform rt = new RotateTransform();
+            button.RenderTransform = rt;
+            rt.BeginAnimation(RotateTransform.AngleProperty, da);
         }
     }
 }
