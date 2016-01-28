@@ -9,7 +9,7 @@
              d:DesignHeight="400" d:DesignWidth="990" RenderTransformOrigin="0.5,0.5">
     <k:KinectRegion x:Name="KinectRegion">
         <WrapPanel x:Name="Food" Width="1000"  Margin="0,0.4,0,-0.4">
-            <Button Content="" Name="BlackberryButton" Click="BlackberryButton_OnClickButton_Click" Style="{StaticResource ColorButtonStyle}" RenderTransformOrigin="0.5,0.5">
+            <Button Content="" Name="BlackberryButton" Click="BlackberryButton_OnClickButton_Click" Style="{StaticResource ColorButtonStyle}">
                 <Button.Background>
                     <ImageBrush ImageSource="/TheLearningCornerToo;component/Images/Colors/blackbberries_black.png" />
                 </Button.Background>

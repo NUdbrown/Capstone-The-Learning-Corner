@@ -60,6 +60,7 @@
             <Style x:Key="ColorButtonStyle" TargetType="Button">
                 <Setter Property="Height" Value="180"/>
                 <Setter Property="Width" Value="180"/>
+                <Setter Property="RenderTransformOrigin" Value="0.5,0.5"/>
                 <Setter Property="Template">
                     <Setter.Value>
                         <ControlTemplate TargetType="Button">
@@ -79,7 +80,6 @@
                         </ControlTemplate>
                     </Setter.Value>
                 </Setter>
-                
             </Style>
         </ResourceDictionary>
     </Application.Resources>

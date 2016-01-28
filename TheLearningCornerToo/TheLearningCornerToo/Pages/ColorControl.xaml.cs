@@ -47,9 +47,9 @@ namespace TheLearningCornerToo.Pages
             {
                 Player.Load();
                 Player.Play();
+                DoRotationAnimation(BlackberryButton);
             }
             
-            DoAnimation(BlackberryButton);
             
         }
 
@@ -59,8 +59,8 @@ namespace TheLearningCornerToo.Pages
             {
                 Player.Load();
                 Player.Play();
+                DoRotationAnimation(KiwiButton);
             }
-            DoAnimation(KiwiButton);
         }
 
         private void AppleButton_OnClickButton_Click(object sender, RoutedEventArgs e)
@@ -69,8 +69,8 @@ namespace TheLearningCornerToo.Pages
             {
                 Player.Load();
                 Player.Play();
+                DoRotationAnimation(AppleButton);
             }
-            DoAnimation(AppleButton);
         }
 
         private void OrangeButton_OnClickButton_Click(object sender, RoutedEventArgs e)
@@ -79,6 +79,7 @@ namespace TheLearningCornerToo.Pages
             {
                 Player.Load();
                 Player.Play();
+                DoRotationAnimation(OrangesButton); 
             }
         }
         private void BananaButton_OnClickButton_Click(object sender, RoutedEventArgs e)
@@ -87,6 +88,7 @@ namespace TheLearningCornerToo.Pages
             {
                 Player.Load();
                 Player.Play();
+                DoRotationAnimation(BananaButton);
             }
         }
 
@@ -96,6 +98,7 @@ namespace TheLearningCornerToo.Pages
             {
                 Player.Load();
                 Player.Play();
+                DoOppositeRotationAnimation(PearButton);
             }
         }
 
@@ -105,6 +108,7 @@ namespace TheLearningCornerToo.Pages
             {
                 Player.Load();
                 Player.Play();
+                DoOppositeRotationAnimation(BlueberryButton);
             }
         }
 
@@ -114,6 +118,7 @@ namespace TheLearningCornerToo.Pages
             {
                 Player.Load();
                 Player.Play();
+                DoOppositeRotationAnimation(GrapeButton);
             }
         }
 
@@ -123,6 +128,7 @@ namespace TheLearningCornerToo.Pages
             {
                 Player.Load();
                 Player.Play();
+                DoOppositeRotationAnimation(CupcakeButton);
             }
         }
 
@@ -132,14 +138,26 @@ namespace TheLearningCornerToo.Pages
             {
                 Player.Load();
                 Player.Play();
+                DoOppositeRotationAnimation(MilkButton);
             }
         }
 
-        private void DoAnimation(Button button)
+        private void DoRotationAnimation(Button button)
         {
             DoubleAnimation da = new DoubleAnimation();
             da.From = 0;
             da.To = 360;
+            da.Duration = new Duration(TimeSpan.FromSeconds(3));
+            RotateTransform rt = new RotateTransform();
+            button.RenderTransform = rt;
+            rt.BeginAnimation(RotateTransform.AngleProperty, da);
+        }
+
+        private void DoOppositeRotationAnimation(Button button)
+        {
+            DoubleAnimation da = new DoubleAnimation();
+            da.From = 360;
+            da.To = 0;
             da.Duration = new Duration(TimeSpan.FromSeconds(3));
             RotateTransform rt = new RotateTransform();
             button.RenderTransform = rt;
