@@ -12,6 +12,9 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using Microsoft.Speech.AudioFormat;
+using Microsoft.Speech.Recognition;
+using System.IO;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Microsoft.Kinect;
@@ -29,15 +32,25 @@ namespace TheLearningCornerToo
     {
         public SoundPlayer Player { get; set; } = new SoundPlayer();
 
+        //Create an instance of your kinect sensor
+        public KinectSensor CurrentSensor;
+        //and the speech recognition engine (SRE)
+        private SpeechRecognitionEngine speechRecognizer;
+        //Get the speech recognizer (SR)
+        private static RecognizerInfo GetKinectRecognizer()
+        {
+            Func<RecognizerInfo, bool> matchingFunc = r =>
+            {
+                string value;
+                r.AdditionalInfo.TryGetValue("Kinect", out value);
+                return "True".Equals(value, StringComparison.InvariantCultureIgnoreCase) && "en-US".Equals(r.Culture.Name, StringComparison.InvariantCultureIgnoreCase);
+            };
+            return SpeechRecognitionEngine.InstalledRecognizers().Where(matchingFunc).FirstOrDefault();
+        }
+
         public ColorLesson()
         {
             InitializeComponent();
-
-            Loaded += OnLoad;
-
-        }
-        private void OnLoad(object sender, RoutedEventArgs e)
-        {
             //show person's body & moving cursor
             KinectRegion.SetKinectRegion(this, KinectArea);
 
@@ -47,7 +60,12 @@ namespace TheLearningCornerToo
             // Use the default sensor
             this.KinectArea.KinectSensor = KinectSensor.GetDefault();
 
+            Loaded += OnLoad;
 
+        }
+        private void OnLoad(object sender, RoutedEventArgs e)
+        {
+           
             //add buttons to screen
             for (int i = 1; i <= 10; i++)
             {
@@ -155,7 +173,7 @@ namespace TheLearningCornerToo
 
         private void ButtonOnClick(Button thebutton, object sender, RoutedEventArgs routedEventArgs)
         {          
-            string name = thebutton.Name;
+            var name = thebutton.Name;
             switch (name)
             {
                 case "Button1":

@@ -5,9 +5,9 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:k="http://schemas.microsoft.com/kinect/2014"           
              mc:Ignorable="d" 
-             d:DesignHeight="400" Width="854">
+             d:DesignHeight="400" Width="900">
     <k:KinectRegion x:Name="KinectRegion">
-        <WrapPanel x:Name="Food"  Margin="0,-2,0,-0.4">
+        <WrapPanel x:Name="Food"  Margin="0,-2,0,-0.4" Width="1000">
             <Button Content="" Name="BlackberryButton" Click="BlackberryButton_OnClickButton_Click" Style="{StaticResource ColorButtonStyle}">
                 <Button.Background>
                     <ImageBrush ImageSource="/TheLearningCornerToo;component/Images/Colors/blackbberries_black.png" />
