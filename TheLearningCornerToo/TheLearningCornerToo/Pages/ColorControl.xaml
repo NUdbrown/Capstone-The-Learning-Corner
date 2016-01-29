@@ -3,78 +3,63 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:k="http://schemas.microsoft.com/kinect/2014"
-             
+             xmlns:k="http://schemas.microsoft.com/kinect/2014"           
              mc:Ignorable="d" 
              d:DesignHeight="400" Width="854">
     <k:KinectRegion x:Name="KinectRegion">
         <WrapPanel x:Name="Food"  Margin="0,-2,0,-0.4">
-           <!--<Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
-           </Grid.ColumnDefinitions> 
-            <Canvas Grid.Column="0">
-                <WrapPanel Orientation="Vertical" Height="400" Width="250">
-                    <pages:DragDropElement>-->
-                        <Button Content="" Name="BlackberryButton" Click="BlackberryButton_OnClickButton_Click" Style="{StaticResource ColorButtonStyle}">
-                            <Button.Background>
-                                <ImageBrush ImageSource="/TheLearningCornerToo;component/Images/Colors/blackbberries_black.png" />
-                            </Button.Background>
-                        </Button>
-                    <!--</pages:DragDropElement>
-                    <pages:DragDropElement>-->
-                        <Button Content="" Name="KiwiButton" Click="KiwiButton_OnClickButton_Click" Style="{StaticResource ColorButtonStyle}">
-                            <Button.Background>
-                                <ImageBrush ImageSource="/TheLearningCornerToo;component/Images/Colors/kiwi_brown.png"/>
-                            </Button.Background>
-                        </Button>
-                    <!--</pages:DragDropElement>-->
-                    <Button Content="" Name="AppleButton" Click="AppleButton_OnClickButton_Click" Style="{StaticResource ColorButtonStyle}">
-                        <Button.Background>
-                            <ImageBrush ImageSource="/TheLearningCornerToo;component/Images/Colors/apple_red.png"/>
-                        </Button.Background>
-                    </Button>
-                    <Button Content="" Name="OrangesButton" Click="OrangeButton_OnClickButton_Click" Style="{StaticResource ColorButtonStyle}">
-                        <Button.Background>
-                            <ImageBrush ImageSource="/TheLearningCornerToo;component/Images/Colors/orange_orange.png"/>
-                        </Button.Background>
-                    </Button>
-                    <Button Content="" Name="BananaButton" Click="BananaButton_OnClickButton_Click" Style="{StaticResource ColorButtonStyle}">
-                        <Button.Background>
-                            <ImageBrush ImageSource="/TheLearningCornerToo;component/Images/Colors/banana_yellow.png"/>
-                        </Button.Background>
-                    </Button>
-                    <Button Content="" Name="PearButton" Click="PearButton_OnClickButton_Click" Style="{StaticResource ColorButtonStyle}">
-                        <Button.Background>
-                            <ImageBrush ImageSource="/TheLearningCornerToo;component/Images/Colors/pear_green.png"/>
-                        </Button.Background>
-                    </Button>
-                    <Button Content="" Name="BlueberryButton" Click="BlueberryButton_OnClickButton_Click" Style="{StaticResource ColorButtonStyle}">
-                        <Button.Background>
-                            <ImageBrush ImageSource="/TheLearningCornerToo;component/Images/Colors/blueberries_blue.png"/>
-                        </Button.Background>
-                    </Button>
-                    <Button Content="" Name="GrapeButton" Click="GrapeButton_OnClickButton_Click" Style="{StaticResource ColorButtonStyle}">
-                        <Button.Background>
-                            <ImageBrush ImageSource="/TheLearningCornerToo;component/Images/Colors/Grapes_purple.png"/>
-                        </Button.Background>
-                    </Button>
-                    <Button Content="" Name="CupcakeButton" Click="CupcakeButton_OnClickButton_Click" Style="{StaticResource ColorButtonStyle}">
-                        <Button.Background>
-                            <ImageBrush ImageSource="/TheLearningCornerToo;component/Images/Colors/cupcake_pink.png"/>
-                        </Button.Background>
-                    </Button>
-                    <Button Content="" Name="MilkButton" Click="MilkButton_OnClickButton_Click" Style="{StaticResource ColorButtonStyle}">
-                        <Button.Background>
-                            <ImageBrush ImageSource="/TheLearningCornerToo;component/Images/Colors/Gallon_of_Milk_white.png"/>
-                        </Button.Background>
-                    </Button>
-                <!--</WrapPanel>
-                <StackPanel Grid.Column="1">
-                    
-                </StackPanel>
-            </Canvas>-->
-            
+            <Button Content="" Name="BlackberryButton" Click="BlackberryButton_OnClickButton_Click" Style="{StaticResource ColorButtonStyle}">
+                <Button.Background>
+                    <ImageBrush ImageSource="/TheLearningCornerToo;component/Images/Colors/blackbberries_black.png" />
+                </Button.Background>
+            </Button>
+
+            <Button Content="" Name="KiwiButton" Click="KiwiButton_OnClickButton_Click" Style="{StaticResource ColorButtonStyle}">
+                <Button.Background>
+                    <ImageBrush ImageSource="/TheLearningCornerToo;component/Images/Colors/kiwi_brown.png"/>
+                </Button.Background>
+            </Button>
+
+            <Button Content="" Name="AppleButton" Click="AppleButton_OnClickButton_Click" Style="{StaticResource ColorButtonStyle}">
+                <Button.Background>
+                    <ImageBrush ImageSource="/TheLearningCornerToo;component/Images/Colors/apple_red.png"/>
+                </Button.Background>
+            </Button>
+            <Button Content="" Name="OrangesButton" Click="OrangeButton_OnClickButton_Click" Style="{StaticResource ColorButtonStyle}">
+                <Button.Background>
+                    <ImageBrush ImageSource="/TheLearningCornerToo;component/Images/Colors/orange_orange.png"/>
+                </Button.Background>
+            </Button>
+            <Button Content="" Name="BananaButton" Click="BananaButton_OnClickButton_Click" Style="{StaticResource ColorButtonStyle}">
+                <Button.Background>
+                    <ImageBrush ImageSource="/TheLearningCornerToo;component/Images/Colors/banana_yellow.png"/>
+                </Button.Background>
+            </Button>
+            <Button Content="" Name="PearButton" Click="PearButton_OnClickButton_Click" Style="{StaticResource ColorButtonStyle}">
+                <Button.Background>
+                    <ImageBrush ImageSource="/TheLearningCornerToo;component/Images/Colors/pear_green.png"/>
+                </Button.Background>
+            </Button>
+            <Button Content="" Name="BlueberryButton" Click="BlueberryButton_OnClickButton_Click" Style="{StaticResource ColorButtonStyle}">
+                <Button.Background>
+                    <ImageBrush ImageSource="/TheLearningCornerToo;component/Images/Colors/blueberries_blue.png"/>
+                </Button.Background>
+            </Button>
+            <Button Content="" Name="GrapeButton" Click="GrapeButton_OnClickButton_Click" Style="{StaticResource ColorButtonStyle}">
+                <Button.Background>
+                    <ImageBrush ImageSource="/TheLearningCornerToo;component/Images/Colors/Grapes_purple.png"/>
+                </Button.Background>
+            </Button>
+            <Button Content="" Name="CupcakeButton" Click="CupcakeButton_OnClickButton_Click" Style="{StaticResource ColorButtonStyle}">
+                <Button.Background>
+                    <ImageBrush ImageSource="/TheLearningCornerToo;component/Images/Colors/cupcake_pink.png"/>
+                </Button.Background>
+            </Button>
+            <Button Content="" Name="MilkButton" Click="MilkButton_OnClickButton_Click" Style="{StaticResource ColorButtonStyle}">
+                <Button.Background>
+                    <ImageBrush ImageSource="/TheLearningCornerToo;component/Images/Colors/Gallon_of_Milk_white.png"/>
+                </Button.Background>
+            </Button>
         </WrapPanel>
     </k:KinectRegion>
 </UserControl>

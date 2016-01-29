@@ -74,7 +74,7 @@
                     </StackPanel.Effect>
                 </StackPanel>
             </ScrollViewer>
-            <control:ColorControl Grid.Row="2"/>
+            <control:ColorControl Grid.Row="1" Margin="59,274.8,62.6,6.4" Grid.RowSpan="2"/>
         </Grid>
     </k:KinectRegion>
 </Window>
