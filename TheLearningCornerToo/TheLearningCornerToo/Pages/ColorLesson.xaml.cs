@@ -31,7 +31,26 @@ namespace TheLearningCornerToo
     public partial class ColorLesson : Window
     {
         public SoundPlayer Player { get; set; } = new SoundPlayer();
+        
+        private enum ColorEnum
+        {
+            BLACK,
+            BROWN,
+            RED,
+            ORANGE,
+            YELLOW,
+            GREEN,
+            BLUE,
+            PURPLE,
+            PINK,
+            WHITE
+        }
 
+        private ColorEnum PickRandomColor()
+        {
+            
+        }
+        
         //Create an instance of your kinect sensor
         public KinectSensor CurrentSensor;
         //and the speech recognition engine (SRE)
@@ -169,36 +188,6 @@ namespace TheLearningCornerToo
 
             }
 
-        }
-
-        //if speech is rejected
-        private void RejectSpeech(RecognitionResult result)
-        {
-            //make voice over that says to say the word again
-        }
-
-        //Speech is recognised
-        private void SreSpeechRecognized(object sender, SpeechRecognizedEventArgs e)
-        {
-            //Very important! - change this value to adjust accuracy - the higher the value
-            //the more accurate it will have to be, lower it if it is not recognizing you
-            if (e.Result.Confidence < .4)
-            {
-                RejectSpeech(e.Result);
-            }
-            //and finally, here we set what we want to happen when 
-            //the SRE recognizes a word
-            switch (e.Result.Text.ToUpperInvariant())
-            {
-                case "BLACK":
-                    //execute its button push
-                    break;
-                case "BROWN":
-                    
-                    break;
-                default:
-                    break;
-            }
         }
 
         private void ButtonOnClick(Button thebutton, object sender, RoutedEventArgs routedEventArgs)
