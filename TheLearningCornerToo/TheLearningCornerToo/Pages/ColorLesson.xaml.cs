@@ -58,11 +58,11 @@ namespace TheLearningCornerToo
             app.KinectRegion = KinectArea;
             app.KinectRegion.CursorSpriteSheetDefinition = new CursorSpriteSheetDefinition(new System.Uri("pack://application:,,,/Images/CursorSpriteSheetPurple.png"), 4, 20, 137, 137);
             // Use the default sensor
-            this.KinectArea.KinectSensor = KinectSensor.GetDefault();
-
+            CurrentSensor = KinectSensor.GetDefault();
+            this.KinectArea.KinectSensor = CurrentSensor;
             Loaded += OnLoad;
-
         }
+
         private void OnLoad(object sender, RoutedEventArgs e)
         {
            
@@ -169,6 +169,36 @@ namespace TheLearningCornerToo
 
             }
 
+        }
+
+        //if speech is rejected
+        private void RejectSpeech(RecognitionResult result)
+        {
+            //make voice over that says to say the word again
+        }
+
+        //Speech is recognised
+        private void SreSpeechRecognized(object sender, SpeechRecognizedEventArgs e)
+        {
+            //Very important! - change this value to adjust accuracy - the higher the value
+            //the more accurate it will have to be, lower it if it is not recognizing you
+            if (e.Result.Confidence < .4)
+            {
+                RejectSpeech(e.Result);
+            }
+            //and finally, here we set what we want to happen when 
+            //the SRE recognizes a word
+            switch (e.Result.Text.ToUpperInvariant())
+            {
+                case "BLACK":
+                    //execute its button push
+                    break;
+                case "BROWN":
+                    
+                    break;
+                default:
+                    break;
+            }
         }
 
         private void ButtonOnClick(Button thebutton, object sender, RoutedEventArgs routedEventArgs)
