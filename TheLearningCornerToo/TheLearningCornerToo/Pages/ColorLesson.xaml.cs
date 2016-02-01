@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Media;
 using System.Text;
@@ -15,6 +16,7 @@ using System.Windows.Media.Imaging;
 using Microsoft.Speech.AudioFormat;
 using Microsoft.Speech.Recognition;
 using System.IO;
+using System.Security.Cryptography;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Microsoft.Kinect;
@@ -30,27 +32,36 @@ namespace TheLearningCornerToo
     /// </summary>
     public partial class ColorLesson : Window
     {
-        public SoundPlayer Player { get; set; } = new SoundPlayer();
-        
-        private enum ColorEnum
+        private SoundPlayer Player { get; set; } = new SoundPlayer();
+        private Random random = new Random(10);
+        private List<SolidColorBrush> _colorBrushes = new List<SolidColorBrush>()
         {
-            BLACK,
-            BROWN,
-            RED,
-            ORANGE,
-            YELLOW,
-            GREEN,
-            BLUE,
-            PURPLE,
-            PINK,
-            WHITE
-        }
+            new SolidColorBrush(Colors.Black),
+            new SolidColorBrush(Colors.SaddleBrown),
+            new SolidColorBrush(Colors.Red),
+            new SolidColorBrush(Colors.DarkOrange),
+            new SolidColorBrush(Colors.Yellow),
+            new SolidColorBrush(Colors.Green),
+            new SolidColorBrush(Colors.Blue),
+            new SolidColorBrush(Colors.Purple),
+            new SolidColorBrush(Colors.HotPink),
+            new SolidColorBrush(Colors.White),           
+        };
 
-        private ColorEnum PickRandomColor()
+        private SolidColorBrush PickRandomColor()
         {
+            int theRandom = random.Next(_colorBrushes.Count);
+            int picked = int.TryParse(theRandom);
+            foreach (var color in _colorBrushes)
+            {
+                if (color.Equals(_colorBrushes.IndexOf(picked)))
+                {
+                    return color;
+                }
+            }
             
         }
-        
+
         //Create an instance of your kinect sensor
         public KinectSensor CurrentSensor;
         //and the speech recognition engine (SRE)
