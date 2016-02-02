@@ -33,8 +33,8 @@ namespace TheLearningCornerToo
     public partial class ColorLesson : Window
     {
         private SoundPlayer Player { get; set; } = new SoundPlayer();
-        private Random random = new Random(10);
-        private List<SolidColorBrush> _colorBrushes = new List<SolidColorBrush>()
+        private readonly Random _random = new Random(10);
+        private readonly List<SolidColorBrush> _colorBrushes = new List<SolidColorBrush>()
         {
             new SolidColorBrush(Colors.Black),
             new SolidColorBrush(Colors.SaddleBrown),
@@ -48,19 +48,7 @@ namespace TheLearningCornerToo
             new SolidColorBrush(Colors.White),           
         };
 
-        private SolidColorBrush PickRandomColor()
-        {
-            int theRandom = random.Next(_colorBrushes.Count);
-            int picked = int.TryParse(theRandom);
-            foreach (var color in _colorBrushes)
-            {
-                if (color.Equals(_colorBrushes.IndexOf(picked)))
-                {
-                    return color;
-                }
-            }
-            
-        }
+       
 
         //Create an instance of your kinect sensor
         public KinectSensor CurrentSensor;
@@ -199,6 +187,15 @@ namespace TheLearningCornerToo
 
             }
 
+        }
+
+        private SolidColorBrush PickRandomColor()
+        {
+            //int picked = 0;
+            //int theRandom = random.Next(_colorBrushes.Count);
+            //Int32.TryParse(theRandom.ToString(), out picked);
+            //return _colorBrushes.IndexOf(picked);
+            return _colorBrushes[_random.Next(_colorBrushes.Count)];
         }
 
         private void ButtonOnClick(Button thebutton, object sender, RoutedEventArgs routedEventArgs)
