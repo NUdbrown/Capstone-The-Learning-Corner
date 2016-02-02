@@ -1,0 +1,71 @@
+﻿<grammar version="1.0" xml:lang="en-US" root="rootRule" tag-format="semantics/1.0-literals" xmlns="http://www.w3.org/2001/06/grammar">
+  <rule id="rootRule">
+    <one-of>
+      <item>
+        <tag>BLACK</tag>
+        <one-of>
+          <item> black </item>
+        </one-of>
+      </item>
+      <item>
+        <tag>BROWN</tag>
+        <one-of>
+          <item> brown </item>
+          <item> bwown </item>
+        </one-of>
+      </item>
+      <item>
+        <tag>RED</tag>
+        <one-of>
+          <item> red </item>
+          <item> wed </item>
+        </one-of>
+      </item>
+      <item>
+        <tag>ORANGE</tag>
+        <one-of>
+          <item> orange </item>
+          <item> owange </item>
+        </one-of>
+      </item>
+      <item>
+        <tag>YELLOW</tag>
+        <one-of>
+          <item> yellow </item>
+        </one-of>
+      </item>
+      <item>
+        <tag>GREEN</tag>
+        <one-of>
+          <item> green </item>
+          <item> gween </item>
+        </one-of>
+      </item>
+      <item>
+        <tag>BLUE</tag>
+        <one-of>
+          <item> blue </item>
+        </one-of>
+      </item>
+      <item>
+        <tag>PURPLE</tag>
+        <one-of>
+          <item> purple </item>
+          <item> puwple </item>
+        </one-of>
+      </item>
+      <item>
+        <tag>PINK</tag>
+        <one-of>
+          <item> pink </item>
+        </one-of>
+      </item>
+      <item>
+        <tag>WHITE</tag>
+        <one-of>
+          <item> white </item>
+        </one-of>
+      </item>
+    </one-of>
+  </rule>
+</grammar>
