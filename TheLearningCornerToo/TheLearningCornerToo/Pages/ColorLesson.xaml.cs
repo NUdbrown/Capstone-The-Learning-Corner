@@ -16,12 +16,14 @@ using System.Windows.Media.Imaging;
 using Microsoft.Speech.AudioFormat;
 using Microsoft.Speech.Recognition;
 using System.IO;
+using System.Runtime.InteropServices;
 using System.Security.Cryptography;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Microsoft.Kinect;
 using Microsoft.Kinect.Toolkit.Input;
 using Microsoft.Kinect.Wpf.Controls;
+using Microsoft.Samples.Kinect.SpeechBasics;
 using TheLearningCornerToo.Pages;
 
 
@@ -32,7 +34,11 @@ namespace TheLearningCornerToo
     /// </summary>
     public partial class ColorLesson : Window
     {
-        private SoundPlayer Player { get; set; } = new SoundPlayer();
+       
+        /// <summary>
+        /// 
+        /// </summary>
+        private SoundPlayer Player { get; } = new SoundPlayer();
         private readonly Random _random = new Random(10);
         private readonly List<SolidColorBrush> _colorBrushes = new List<SolidColorBrush>()
         {
@@ -47,24 +53,25 @@ namespace TheLearningCornerToo
             new SolidColorBrush(Colors.HotPink),
             new SolidColorBrush(Colors.White),           
         };
+        
+        /// <summary>
+        /// Stream for 32b-16b conversion.
+        /// </summary>
+        private KinectAudioStream convertStream = null;
 
-       
+        /// <summary>
+        /// Speech recognition engine using audio data from Kinect.
+        /// </summary>
+        private SpeechRecognitionEngine speechEngine = null;
 
-        //Create an instance of your kinect sensor
+        /// <summary>
+        /// Create an instance of your kinect sensor
+        /// </summary>
         public KinectSensor CurrentSensor;
+
         //and the speech recognition engine (SRE)
         private SpeechRecognitionEngine speechRecognizer;
-        //Get the speech recognizer (SR)
-        private static RecognizerInfo GetKinectRecognizer()
-        {
-            Func<RecognizerInfo, bool> matchingFunc = r =>
-            {
-                string value;
-                r.AdditionalInfo.TryGetValue("Kinect", out value);
-                return "True".Equals(value, StringComparison.InvariantCultureIgnoreCase) && "en-US".Equals(r.Culture.Name, StringComparison.InvariantCultureIgnoreCase);
-            };
-            return SpeechRecognitionEngine.InstalledRecognizers().Where(matchingFunc).FirstOrDefault();
-        }
+
 
         public ColorLesson()
         {
@@ -75,11 +82,127 @@ namespace TheLearningCornerToo
             App app = ((App)Application.Current);
             app.KinectRegion = KinectArea;
             app.KinectRegion.CursorSpriteSheetDefinition = new CursorSpriteSheetDefinition(new System.Uri("pack://application:,,,/Images/CursorSpriteSheetPurple.png"), 4, 20, 137, 137);
-            // Use the default sensor
-            CurrentSensor = KinectSensor.GetDefault();
-            this.KinectArea.KinectSensor = CurrentSensor;
+
             Loaded += OnLoad;
         }
+
+        /// <summary>
+        /// Execute initialization tasks.
+        /// </summary>
+        /// <param name="sender">object sending the event</param>
+        /// <param name="e">event arguments</param>
+        private void WindowLoaded(object sender, RoutedEventArgs e)
+        {
+            // Only one sensor is supported
+           CurrentSensor = KinectSensor.GetDefault();
+
+            if (CurrentSensor != null)
+            {
+                // open the sensor
+                CurrentSensor.Open();
+
+                // grab the audio stream
+                IReadOnlyList<AudioBeam> audioBeamList = CurrentSensor.AudioSource.AudioBeams;
+                System.IO.Stream audioStream = audioBeamList[0].OpenInputStream();
+
+                // create the convert stream
+                this.convertStream = new KinectAudioStream(audioStream);
+            }
+            else
+            {
+                // on failure, set the status text
+                this.statusBarText.Text = Properties.Resources.NoKinectReady;
+                return;
+            }
+
+            RecognizerInfo ri = TryGetKinectRecognizer();
+
+            if (null != ri)
+            {
+                this.recognitionSpans = new List<Span> { forwardSpan, backSpan, rightSpan, leftSpan };
+
+                this.speechEngine = new SpeechRecognitionEngine(ri.Id);
+
+                /****************************************************************
+                * 
+                * Use this code to create grammar programmatically rather than from
+                * a grammar file.
+                * 
+                * var directions = new Choices();
+                * directions.Add(new SemanticResultValue("forward", "FORWARD"));
+                * directions.Add(new SemanticResultValue("forwards", "FORWARD"));
+                * directions.Add(new SemanticResultValue("straight", "FORWARD"));
+                * directions.Add(new SemanticResultValue("backward", "BACKWARD"));
+                * directions.Add(new SemanticResultValue("backwards", "BACKWARD"));
+                * directions.Add(new SemanticResultValue("back", "BACKWARD"));
+                * directions.Add(new SemanticResultValue("turn left", "LEFT"));
+                * directions.Add(new SemanticResultValue("turn right", "RIGHT"));
+                *
+                * var gb = new GrammarBuilder { Culture = ri.Culture };
+                * gb.Append(directions);
+                *
+                * var g = new Grammar(gb);
+                * 
+                ****************************************************************/
+
+                // Create a grammar from grammar definition XML file.
+                using (var memoryStream = new MemoryStream(Encoding.ASCII.GetBytes(Properties.Resources.SpeechGrammar)))
+                {
+                    var g = new Grammar(memoryStream);
+                    this.speechEngine.LoadGrammar(g);
+                }
+
+                this.speechEngine.SpeechRecognized += this.SpeechRecognized;
+                this.speechEngine.SpeechRecognitionRejected += this.SpeechRejected;
+
+                // let the convertStream know speech is going active
+                this.convertStream.SpeechActive = true;
+
+                // For long recognition sessions (a few hours or more), it may be beneficial to turn off adaptation of the acoustic model. 
+                // This will prevent recognition accuracy from degrading over time.
+                ////speechEngine.UpdateRecognizerSetting("AdaptationOn", 0);
+
+                this.speechEngine.SetInputToAudioStream(
+                    this.convertStream, new SpeechAudioFormatInfo(EncodingFormat.Pcm, 16000, 16, 1, 32000, 2, null));
+                this.speechEngine.RecognizeAsync(RecognizeMode.Multiple);
+            }
+            else
+            {
+                //this.statusBarText.Text = Properties.Resources.NoSpeechRecognizer;
+            }
+        }
+
+
+
+        //Get the speech recognizer (SR)
+        private static RecognizerInfo TryGetKinectRecognizer()
+        {
+            IEnumerable<RecognizerInfo> recognizers;
+
+            // This is required to catch the case when an expected recognizer is not installed.
+            // By default - the x86 Speech Runtime is always expected. 
+            try
+            {
+                recognizers = SpeechRecognitionEngine.InstalledRecognizers();
+            }
+            catch (COMException)
+            {
+                return null;
+            }
+
+            foreach (RecognizerInfo recognizer in recognizers)
+            {
+                string value;
+                recognizer.AdditionalInfo.TryGetValue("Kinect", out value);
+                if ("True".Equals(value, StringComparison.OrdinalIgnoreCase) && "en-US".Equals(recognizer.Culture.Name, StringComparison.OrdinalIgnoreCase))
+                {
+                    return recognizer;
+                }
+            }
+
+            return null;
+        }
+
 
         private void OnLoad(object sender, RoutedEventArgs e)
         {
@@ -189,6 +312,7 @@ namespace TheLearningCornerToo
 
         }
 
+        //returns one of the colors
         private SolidColorBrush PickRandomColor()
         {
             //int picked = 0;
@@ -197,6 +321,8 @@ namespace TheLearningCornerToo
             //return _colorBrushes.IndexOf(picked);
             return _colorBrushes[_random.Next(_colorBrushes.Count)];
         }
+
+        
 
         private void ButtonOnClick(Button thebutton, object sender, RoutedEventArgs routedEventArgs)
         {          
@@ -317,7 +443,11 @@ namespace TheLearningCornerToo
             Application.Current.Shutdown();
         }
 
-     }
+        private void LessonStart_OnClick(object sender, RoutedEventArgs e)
+        {
+           
+        }
+    }
 
 
 }

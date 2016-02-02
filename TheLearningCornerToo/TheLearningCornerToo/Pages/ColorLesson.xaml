@@ -16,7 +16,8 @@
         WindowStartupLocation="CenterScreen" 
         Title="Color Lesson"
         Icon="/Images/icon_TLC.png" 
-        WindowStyle="None">
+        WindowStyle="None"
+        >
     <Window.Background>
         <ImageBrush ImageSource="/Images/colorsbackground.jpg" />
     </Window.Background>
@@ -70,27 +71,7 @@
                     </StackPanel.Effect>
                 </StackPanel>
             </ScrollViewer>
-            <Canvas Grid.Row="2">
-                <Button Content="Start" Style="{StaticResource NavigationButtonStyle}" Canvas.Left="507" Canvas.Top="10">
-                    <Button.Background>
-                        <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
-                            <GradientStop Color="#FF8D2ED7" Offset="0.905"/>
-                            <GradientStop Color="#FFE34BCC"/>
-                        </LinearGradientBrush>
-                    </Button.Background>
-                </Button>
-                <Ellipse x:Name="ColoredCircle" Canvas.Left="453" Canvas.Top="94">
-                    <Ellipse.Fill>
-                        <SolidColorBrush Color="White"/>
-                    </Ellipse.Fill>
-                    <Ellipse.Height>
-                        <System:Double>262</System:Double>
-                    </Ellipse.Height>
-                    <Ellipse.Width>
-                        <System:Double>256</System:Double>
-                    </Ellipse.Width>
-                </Ellipse>
-            </Canvas>
+
             <!--<control:ColorControl Grid.Row="1" Margin="63,270.8,93.6,10.4" Grid.RowSpan="2"/>-->
         </Grid>
     </k:KinectRegion>

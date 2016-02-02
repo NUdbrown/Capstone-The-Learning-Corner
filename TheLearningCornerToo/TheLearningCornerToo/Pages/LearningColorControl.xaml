@@ -1,0 +1,51 @@
+﻿<UserControl x:Class="TheLearningCornerToo.Pages.LearningColorControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:TheLearningCornerToo.Pages"
+             xmlns:system="clr-namespace:System;assembly=mscorlib"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Viewbox Grid.Row="0" Stretch="Uniform">
+            <Canvas Name="PlayArea"  Width="600" Height="400">
+                <Canvas Grid.Row="2">
+                    <Button Content="Start" Style="{StaticResource NavigationButtonStyle}" Canvas.Left="507" Canvas.Top="10" Click="LessonStart_OnClick">
+                        <Button.Background>
+                            <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                                <GradientStop Color="#FF8D2ED7" Offset="0.905"/>
+                                <GradientStop Color="#FFE34BCC"/>
+                            </LinearGradientBrush>
+                        </Button.Background>
+                    </Button>
+                    <Ellipse x:Name="ColoredCircle" Canvas.Left="453" Canvas.Top="94" Stroke="Black" StrokeThickness="2">
+                        <Ellipse.Fill>
+                            <!--<SolidColorBrush Color="{Binding Converter=}"/>-->
+                            <SolidColorBrush></SolidColorBrush>
+                        </Ellipse.Fill>
+                        <Ellipse.Height>
+                            <system:Double>262</system:Double>
+                        </Ellipse.Height>
+                        <Ellipse.Width>
+                            <system:Double>256</system:Double>
+                        </Ellipse.Width>
+                    </Ellipse>
+                </Canvas>
+            </Canvas>
+        </Viewbox>
+        <TextBlock Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="16" Margin="0 10 0 10">
+            Say: "<Span Name="forwardSpan">Forward</Span>", "<Span Name="backSpan">Back</Span>", "<Span Name="leftSpan">Turn Left</Span>" or "<Span Name="rightSpan">Turn Right</Span>"
+        </TextBlock>
+        <StatusBar Grid.Row="3" Height="23" HorizontalAlignment="Stretch" Name="statusBar" VerticalAlignment="Bottom" Background="White" Foreground="{StaticResource MediumGreyBrush}">
+            <StatusBarItem Padding="0">
+                <TextBlock Name="statusBarText"></TextBlock>
+            </StatusBarItem>
+        </StatusBar>
+    </Grid>
+</UserControl>
