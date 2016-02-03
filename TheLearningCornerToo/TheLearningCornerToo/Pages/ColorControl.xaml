@@ -6,7 +6,6 @@
              xmlns:k="http://schemas.microsoft.com/kinect/2014"           
              mc:Ignorable="d" 
              d:DesignHeight="400" Width="900">
-    <k:KinectRegion x:Name="KinectRegion">
         <WrapPanel x:Name="Food"  Margin="0,-2,0,-0.4" Width="1000">
             <Button Content="" Name="BlackberryButton" Click="BlackberryButton_OnClickButton_Click" Style="{StaticResource ColorButtonStyle}">
                 <Button.Background>
@@ -61,7 +60,6 @@
                 </Button.Background>
             </Button>
         </WrapPanel>
-    </k:KinectRegion>
 </UserControl>
 
 

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.Linq;
 using System.Media;
 using System.Text;
@@ -18,6 +19,7 @@ using Microsoft.Speech.Recognition;
 using System.IO;
 using System.Runtime.InteropServices;
 using System.Security.Cryptography;
+using System.Windows.Media.Animation;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Microsoft.Kinect;
@@ -82,8 +84,7 @@ namespace TheLearningCornerToo
             App app = ((App)Application.Current);
             app.KinectRegion = KinectArea;
             app.KinectRegion.CursorSpriteSheetDefinition = new CursorSpriteSheetDefinition(new System.Uri("pack://application:,,,/Images/CursorSpriteSheetPurple.png"), 4, 20, 137, 137);
-
-            Loaded += OnLoad;
+            Loaded += WindowLoaded;
         }
 
         /// <summary>
@@ -93,6 +94,7 @@ namespace TheLearningCornerToo
         /// <param name="e">event arguments</param>
         private void WindowLoaded(object sender, RoutedEventArgs e)
         {
+           LoadCrayons(sender, e);
             // Only one sensor is supported
            CurrentSensor = KinectSensor.GetDefault();
 
@@ -110,8 +112,9 @@ namespace TheLearningCornerToo
             }
             else
             {
+                StatusBar.Visibility = Visibility.Visible;
                 // on failure, set the status text
-                this.statusBarText.Text = Properties.Resources.NoKinectReady;
+                this.StatusBarText.Text = Properties.Resources.NoKinectReady;
                 return;
             }
 
@@ -119,31 +122,7 @@ namespace TheLearningCornerToo
 
             if (null != ri)
             {
-                this.recognitionSpans = new List<Span> { forwardSpan, backSpan, rightSpan, leftSpan };
-
                 this.speechEngine = new SpeechRecognitionEngine(ri.Id);
-
-                /****************************************************************
-                * 
-                * Use this code to create grammar programmatically rather than from
-                * a grammar file.
-                * 
-                * var directions = new Choices();
-                * directions.Add(new SemanticResultValue("forward", "FORWARD"));
-                * directions.Add(new SemanticResultValue("forwards", "FORWARD"));
-                * directions.Add(new SemanticResultValue("straight", "FORWARD"));
-                * directions.Add(new SemanticResultValue("backward", "BACKWARD"));
-                * directions.Add(new SemanticResultValue("backwards", "BACKWARD"));
-                * directions.Add(new SemanticResultValue("back", "BACKWARD"));
-                * directions.Add(new SemanticResultValue("turn left", "LEFT"));
-                * directions.Add(new SemanticResultValue("turn right", "RIGHT"));
-                *
-                * var gb = new GrammarBuilder { Culture = ri.Culture };
-                * gb.Append(directions);
-                *
-                * var g = new Grammar(gb);
-                * 
-                ****************************************************************/
 
                 // Create a grammar from grammar definition XML file.
                 using (var memoryStream = new MemoryStream(Encoding.ASCII.GetBytes(Properties.Resources.SpeechGrammar)))
@@ -152,8 +131,8 @@ namespace TheLearningCornerToo
                     this.speechEngine.LoadGrammar(g);
                 }
 
-                this.speechEngine.SpeechRecognized += this.SpeechRecognized;
-                this.speechEngine.SpeechRecognitionRejected += this.SpeechRejected;
+                this.speechEngine.SpeechRecognized += SpeechRecognized;
+                this.speechEngine.SpeechRecognitionRejected += SpeechRejected;
 
                 // let the convertStream know speech is going active
                 this.convertStream.SpeechActive = true;
@@ -168,11 +147,10 @@ namespace TheLearningCornerToo
             }
             else
             {
-                //this.statusBarText.Text = Properties.Resources.NoSpeechRecognizer;
+                StatusBar.Visibility = Visibility.Visible;
+                this.StatusBarText.Text = Properties.Resources.NoSpeechRecognizer;
             }
         }
-
-
 
         //Get the speech recognizer (SR)
         private static RecognizerInfo TryGetKinectRecognizer()
@@ -204,9 +182,8 @@ namespace TheLearningCornerToo
         }
 
 
-        private void OnLoad(object sender, RoutedEventArgs e)
-        {
-           
+        private void LoadCrayons(object sender, RoutedEventArgs e)
+        {        
             //add buttons to screen
             for (int i = 1; i <= 10; i++)
             {
@@ -221,7 +198,7 @@ namespace TheLearningCornerToo
                                 button.Background =
                                     new ImageBrush(
                                         new BitmapImage(
-                                            new System.Uri("pack://application:,,,/Images/Colors/color_black.png")));
+                                            new System.Uri("pack://application:,,,/Images/Colors/color_black.png")));                              
                                 break;
                             }
                         case "Button2":
@@ -299,7 +276,7 @@ namespace TheLearningCornerToo
                     }
                 };
                 button.Style = TryFindResource("ColorButtonStyle") as Style;
-                button.Click += (sender1, routedEventArgs) => ButtonOnClick(button, sender1, routedEventArgs);
+                button.Click += (sender1, routedEventArgs) => Crayon_OnClick(button, sender1, routedEventArgs);
                 ScrollContent.Children.Add(button);
             }
             //give instructions once page is shown
@@ -324,7 +301,7 @@ namespace TheLearningCornerToo
 
         
 
-        private void ButtonOnClick(Button thebutton, object sender, RoutedEventArgs routedEventArgs)
+        private void Crayon_OnClick(Button thebutton, object sender, RoutedEventArgs routedEventArgs)
         {          
             var name = thebutton.Name;
             switch (name)
@@ -440,12 +417,113 @@ namespace TheLearningCornerToo
 
         private void ExitButton_Click(object sender, RoutedEventArgs e)
         {
+            if (null != this.convertStream)
+            {
+                this.convertStream.SpeechActive = false;
+            }
+
+            if (null != this.speechEngine)
+            {
+                this.speechEngine.SpeechRecognized -= this.SpeechRecognized;
+                this.speechEngine.SpeechRecognitionRejected -= this.SpeechRejected;
+                this.speechEngine.RecognizeAsyncStop();
+            }
+
+            if (null != CurrentSensor)
+            {
+                CurrentSensor.Close();
+                CurrentSensor = null;
+            }
+
             Application.Current.Shutdown();
         }
 
-        private void LessonStart_OnClick(object sender, RoutedEventArgs e)
+
+        /// <summary>
+        /// Handler for recognized speech events.
+        /// </summary>
+        /// <param name="sender">object sending the event.</param>
+        /// <param name="e">event arguments.</param>
+        private void SpeechRecognized(object sender, SpeechRecognizedEventArgs e)
         {
-           
+            // Speech utterance confidence below which we treat speech as if it hadn't been heard
+            const double confidenceThreshold = 0.5;
+ 
+            //this.ClearRecognitionHighlights();
+
+            if (e.Result.Confidence >= confidenceThreshold)
+            {
+                switch (e.Result.Semantics.Value.ToString())
+                {
+                    case "BLACK":
+                        ColoredCircle.Fill = new SolidColorBrush(Colors.Black);
+                        //DoubleAnimation da = new DoubleAnimation();
+                        //da.From = 360;
+                        //da.To = 0;
+                        //da.Duration = new Duration(TimeSpan.FromSeconds(4));
+                        //RotateTransform rt = new RotateTransform();
+                        //ColoredCircle.RenderTransform = rt;
+                        //rt.BeginAnimation(RotateTransform.AngleProperty, da);
+                        break;
+
+                    case "BROWN":
+                        ColoredCircle.Fill = new SolidColorBrush(Colors.SaddleBrown);
+
+                        break;
+
+                    case "RED":
+                        ColoredCircle.Fill = new SolidColorBrush(Colors.Red);
+
+                        break;
+
+                    case "ORANGE":
+                        ColoredCircle.Fill = new SolidColorBrush(Colors.DarkOrange);
+
+                        break;
+
+                    case "YELLOW":
+                        ColoredCircle.Fill = new SolidColorBrush(Colors.Yellow);
+
+                        break;
+
+                    case "GREEN":
+                        ColoredCircle.Fill = new SolidColorBrush(Colors.Green);
+
+                        break;
+
+                    case "BLUE":
+                        ColoredCircle.Fill = new SolidColorBrush(Colors.Blue);
+
+                        break;
+
+                    case "PURPLE":
+                        ColoredCircle.Fill = new SolidColorBrush(Colors.Purple);
+
+                        break;
+
+                    case "PINK":
+                        ColoredCircle.Fill = new SolidColorBrush(Colors.HotPink);
+
+                        break;
+
+                    case "WHITE":
+                        ColoredCircle.Fill = new SolidColorBrush(Colors.White);
+
+                        break;
+                }
+            }
+        }
+
+        /// <summary>
+        /// Handler for rejected speech events.
+        /// </summary>
+        /// <param name="sender">object sending the event.</param>
+        /// <param name="e">event arguments.</param>
+        private void SpeechRejected(object sender, SpeechRecognitionRejectedEventArgs e)
+        {
+            StatusBar.Visibility = Visibility.Visible;
+            this.StatusBarText.Text = Properties.Resources.DidNotUnderstand;
+
         }
     }
 

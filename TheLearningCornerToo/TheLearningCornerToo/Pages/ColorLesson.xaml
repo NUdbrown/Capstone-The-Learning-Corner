@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:k="http://schemas.microsoft.com/kinect/2014"
         xmlns:control="clr-namespace:TheLearningCornerToo.Pages"
-        xmlns:System="clr-namespace:System;assembly=mscorlib" x:Class="TheLearningCornerToo.ColorLesson"
+        xmlns:system="clr-namespace:System;assembly=mscorlib" 
+        x:Class="TheLearningCornerToo.ColorLesson"
         mc:Ignorable="d"
         d:DesignWidth="1200"
         d:DesignHeight="700"
@@ -16,8 +17,7 @@
         WindowStartupLocation="CenterScreen" 
         Title="Color Lesson"
         Icon="/Images/icon_TLC.png" 
-        WindowStyle="None"
-        >
+        WindowStyle="None">
     <Window.Background>
         <ImageBrush ImageSource="/Images/colorsbackground.jpg" />
     </Window.Background>
@@ -72,7 +72,25 @@
                 </StackPanel>
             </ScrollViewer>
 
-            <!--<control:ColorControl Grid.Row="1" Margin="63,270.8,93.6,10.4" Grid.RowSpan="2"/>-->
+            <Canvas Name="PlayArea" Width="400" Height="400" Grid.Row="2" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="0,0,0,10.4">
+                <Canvas.Effect>
+                    <BlurEffect KernelType="Box" Radius="8"/>
+                </Canvas.Effect>
+                <Ellipse x:Name="ColoredCircle" Stroke="Black" StrokeThickness="2" HorizontalAlignment="Center" VerticalAlignment="Center" Canvas.Top="70" Canvas.Left="72">
+                <Ellipse.Height>
+                        <system:Double>262</system:Double>
+                    </Ellipse.Height>
+                    <Ellipse.Width>
+                        <system:Double>256</system:Double>
+                    </Ellipse.Width>
+                </Ellipse>
+            </Canvas>
+            <control:ColorControl Grid.Row="2" HorizontalAlignment="Right" VerticalAlignment="Top" Height="383" Margin="0,0,-0.4,0" />
+            <StatusBar Grid.Row="2" Height="35" HorizontalAlignment="Stretch" Name="StatusBar" VerticalAlignment="Bottom" Background="White" HorizontalContentAlignment="Center" Margin="0,0,0,30" Opacity="0.69" >
+                <StatusBarItem Padding="0">
+                    <TextBlock Name="StatusBarText" Foreground="#FF080606" FontFamily="Javanese Text"/>
+                </StatusBarItem>
+            </StatusBar>
         </Grid>
     </k:KinectRegion>
 </Window>

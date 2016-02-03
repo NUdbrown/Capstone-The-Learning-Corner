@@ -142,6 +142,15 @@ namespace TheLearningCornerToo.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Sorry, didn&apos;t understand that. Please repeat..
+        /// </summary>
+        internal static string DidNotUnderstand {
+            get {
+                return ResourceManager.GetString("DidNotUnderstand", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
         /// </summary>
         internal static System.IO.UnmanagedMemoryStream grapes {
@@ -174,6 +183,24 @@ namespace TheLearningCornerToo.Properties {
         internal static System.IO.UnmanagedMemoryStream milk {
             get {
                 return ResourceManager.GetStream("milk", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to No ready Kinect found!.
+        /// </summary>
+        internal static string NoKinectReady {
+            get {
+                return ResourceManager.GetString("NoKinectReady", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Could not find Kinect speech recognizer. Please refer to the sample requirements..
+        /// </summary>
+        internal static string NoSpeechRecognizer {
+            get {
+                return ResourceManager.GetString("NoSpeechRecognizer", resourceCulture);
             }
         }
         
