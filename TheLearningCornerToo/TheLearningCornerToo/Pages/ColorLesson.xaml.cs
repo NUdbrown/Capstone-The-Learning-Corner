@@ -112,8 +112,7 @@ namespace TheLearningCornerToo
             }
             else
             {
-                StatusBar.Visibility = Visibility.Visible;
-                // on failure, set the status text
+               // on failure, set the status text
                 this.StatusBarText.Text = Properties.Resources.NoKinectReady;
                 return;
             }
@@ -147,7 +146,6 @@ namespace TheLearningCornerToo
             }
             else
             {
-                StatusBar.Visibility = Visibility.Visible;
                 this.StatusBarText.Text = Properties.Resources.NoSpeechRecognizer;
             }
         }
@@ -448,8 +446,8 @@ namespace TheLearningCornerToo
         {
             // Speech utterance confidence below which we treat speech as if it hadn't been heard
             const double confidenceThreshold = 0.5;
- 
-            //this.ClearRecognitionHighlights();
+
+            this.ClearRecognitionHighlights();
 
             if (e.Result.Confidence >= confidenceThreshold)
             {
@@ -457,61 +455,61 @@ namespace TheLearningCornerToo
                 {
                     case "BLACK":
                         ColoredCircle.Fill = new SolidColorBrush(Colors.Black);
-                        //DoubleAnimation da = new DoubleAnimation();
-                        //da.From = 360;
-                        //da.To = 0;
-                        //da.Duration = new Duration(TimeSpan.FromSeconds(4));
-                        //RotateTransform rt = new RotateTransform();
-                        //ColoredCircle.RenderTransform = rt;
-                        //rt.BeginAnimation(RotateTransform.AngleProperty, da);
+                        
                         break;
 
                     case "BROWN":
                         ColoredCircle.Fill = new SolidColorBrush(Colors.SaddleBrown);
-
+                        ColoredCircle.Stroke = new SolidColorBrush(Colors.GreenYellow);
                         break;
 
                     case "RED":
                         ColoredCircle.Fill = new SolidColorBrush(Colors.Red);
-
+                        ColoredCircle.Stroke = new SolidColorBrush(Colors.GreenYellow);
                         break;
 
                     case "ORANGE":
                         ColoredCircle.Fill = new SolidColorBrush(Colors.DarkOrange);
-
+                        ColoredCircle.Stroke = new SolidColorBrush(Colors.GreenYellow);
                         break;
 
                     case "YELLOW":
                         ColoredCircle.Fill = new SolidColorBrush(Colors.Yellow);
-
+                        ColoredCircle.Stroke = new SolidColorBrush(Colors.GreenYellow);
                         break;
 
                     case "GREEN":
                         ColoredCircle.Fill = new SolidColorBrush(Colors.Green);
-
+                        ColoredCircle.Stroke = new SolidColorBrush(Colors.GreenYellow);
                         break;
 
                     case "BLUE":
                         ColoredCircle.Fill = new SolidColorBrush(Colors.Blue);
-
+                        ColoredCircle.Stroke = new SolidColorBrush(Colors.GreenYellow);
                         break;
 
                     case "PURPLE":
                         ColoredCircle.Fill = new SolidColorBrush(Colors.Purple);
-
+                        ColoredCircle.Stroke = new SolidColorBrush(Colors.GreenYellow);
                         break;
 
                     case "PINK":
                         ColoredCircle.Fill = new SolidColorBrush(Colors.HotPink);
-
+                        ColoredCircle.Stroke = new SolidColorBrush(Colors.GreenYellow);
                         break;
 
                     case "WHITE":
                         ColoredCircle.Fill = new SolidColorBrush(Colors.White);
-
+                        ColoredCircle.Stroke = new SolidColorBrush(Colors.GreenYellow);
                         break;
                 }
             }
+        }
+
+        private void ClearRecognitionHighlights()
+        {
+            ColoredCircle.Fill = new SolidColorBrush(Colors.Transparent);
+            ColoredCircle.Stroke = new SolidColorBrush(Colors.Black);
         }
 
         /// <summary>
@@ -521,7 +519,6 @@ namespace TheLearningCornerToo
         /// <param name="e">event arguments.</param>
         private void SpeechRejected(object sender, SpeechRecognitionRejectedEventArgs e)
         {
-            StatusBar.Visibility = Visibility.Visible;
             this.StatusBarText.Text = Properties.Resources.DidNotUnderstand;
 
         }
