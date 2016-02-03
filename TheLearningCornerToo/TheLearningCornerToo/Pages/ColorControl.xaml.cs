@@ -28,118 +28,109 @@ namespace TheLearningCornerToo.Pages
         public SoundPlayer Player { get; set; } = new SoundPlayer();
 
         public ColorControl()
-        {
-            ////show moving cursor
-            //KinectRegion.SetKinectRegion(this, KinectRegion);
-
-            //App app = ((App)Application.Current);
-            //app.KinectRegion = KinectRegion;
-            //app.KinectRegion.CursorSpriteSheetDefinition = new CursorSpriteSheetDefinition(new System.Uri("pack://application:,,,/Images/CursorSpriteSheetPurple.png"), 4, 20, 137, 137);
-            //// Use the default sensor
-            //this.KinectRegion.KinectSensor = KinectSensor.GetDefault();
-           
+        {          
             InitializeComponent();
         }
 
-        private void BlackberryButton_OnClickButton_Click(object sender, RoutedEventArgs e)
+        private void BlackButton_OnClick(object sender, RoutedEventArgs e)
         {
-            Player.Stream = Properties.Resources.blackberries;
-            {
-                Player.Load();
-                Player.Play();
-                DoRotationAnimation(BlackberryButton);
-            }
-            
-            
+            //Player.Stream = Properties.Resources.blackberries;
+            //{
+            //    Player.Load();
+            //    Player.Play();
+            DoRotationAnimation(BlackButton);
+            //}
+
+
         }
 
-        private void KiwiButton_OnClickButton_Click(object sender, RoutedEventArgs e)
+        private void BrownButton_OnClick(object sender, RoutedEventArgs e)
         {
-            Player.Stream = Properties.Resources.kiwis;
-            {
-                Player.Load();
-                Player.Play();
-                DoRotationAnimation(KiwiButton);
-            }
+            //Player.Stream = Properties.Resources.kiwis;
+            //{
+            //    Player.Load();
+            //    Player.Play();
+            DoRotationAnimation(TeddyButton);
+            //}
         }
 
-        private void AppleButton_OnClickButton_Click(object sender, RoutedEventArgs e)
+        private void RedButton_OnClick(object sender, RoutedEventArgs e)
         {
-            Player.Stream = Properties.Resources.apples;
-            {
-                Player.Load();
-                Player.Play();
-                DoRotationAnimation(AppleButton);
-            }
+            //Player.Stream = Properties.Resources.apples;
+            //{
+            //    Player.Load();
+            //    Player.Play();
+            DoRotationAnimation(AppleButton);
+            //}
         }
 
-        private void OrangeButton_OnClickButton_Click(object sender, RoutedEventArgs e)
+        private void OrangeButton_OnClick(object sender, RoutedEventArgs e)
         {
-            Player.Stream = Properties.Resources.oranges;
-            {
-                Player.Load();
-                Player.Play();
-                DoRotationAnimation(OrangesButton); 
-            }
+            //Player.Stream = Properties.Resources.oranges;
+            //{
+            //    Player.Load();
+            //    Player.Play();
+            DoRotationAnimation(PumpkinButton);
+            //}
         }
-        private void BananaButton_OnClickButton_Click(object sender, RoutedEventArgs e)
+        private void YellowButton_OnClick(object sender, RoutedEventArgs e)
         {
-            Player.Stream = Properties.Resources.bananas;
-            {
-                Player.Load();
-                Player.Play();
-                DoRotationAnimation(BananaButton);
-            }
-        }
-
-        private void PearButton_OnClickButton_Click(object sender, RoutedEventArgs e)
-        {
-            Player.Stream = Properties.Resources.pears;
-            {
-                Player.Load();
-                Player.Play();
-                DoOppositeRotationAnimation(PearButton);
-            }
+            //Player.Stream = Properties.Resources.bananas;
+            //{
+            //    Player.Load();
+            //    Player.Play();
+            DoRotationAnimation(DuckiesButton);
+            //}
         }
 
-        private void BlueberryButton_OnClickButton_Click(object sender, RoutedEventArgs e)
+        private void GreenButton_OnClick(object sender, RoutedEventArgs e)
         {
-            Player.Stream = Properties.Resources.blueberries;
-            {
-                Player.Load();
-                Player.Play();
-                DoOppositeRotationAnimation(BlueberryButton);
-            }
+            //Player.Stream = Properties.Resources.pears;
+            //{
+            //    Player.Load();
+            //    Player.Play();
+            DoOppositeRotationAnimation(FroggyButton);
+            //}
         }
 
-        private void GrapeButton_OnClickButton_Click(object sender, RoutedEventArgs e)
+        private void BlueButton_OnClick(object sender, RoutedEventArgs e)
         {
-            Player.Stream = Properties.Resources.grapes;
-            {
-                Player.Load();
-                Player.Play();
-                DoOppositeRotationAnimation(GrapeButton);
-            }
+            //Player.Stream = Properties.Resources.blueberries;
+            //{
+            //    Player.Load();
+            //    Player.Play();
+            DoOppositeRotationAnimation(BaloonsButton);
+            //}
         }
 
-        private void CupcakeButton_OnClickButton_Click(object sender, RoutedEventArgs e)
+        private void PurpleButton_OnClick(object sender, RoutedEventArgs e)
         {
-            Player.Stream = Properties.Resources.cupcake;
-            {
-                Player.Load();
-                Player.Play();
-                DoOppositeRotationAnimation(CupcakeButton);
-            }
+            //Player.Stream = Properties.Resources.grapes;
+            //{
+            //    Player.Load();
+            //    Player.Play();
+            DoOppositeRotationAnimation(OctopusButton);
+            //}
         }
 
-        private void MilkButton_OnClickButton_Click(object sender, RoutedEventArgs e)
+        private void PinkButton_OnClick(object sender, RoutedEventArgs e)
         {
-            Player.Stream = Properties.Resources.milk;
-            {
-                Player.Load();
-                Player.Play();
-                DoOppositeRotationAnimation(MilkButton);
-            }
+            //Player.Stream = Properties.Resources.cupcake;
+            //{
+            //    Player.Load();
+            //    Player.Play();
+            DoOppositeRotationAnimation(PiggyButton);
+            //}
+        }
+
+        private void WhiteButton_OnClick(object sender, RoutedEventArgs e)
+        {
+            //Player.Stream = Properties.Resources.milk;
+            //{
+            //    Player.Load();
+            //    Player.Play();
+            DoOppositeRotationAnimation(CloudsButton);
+            //}
         }
 
         private void DoRotationAnimation(Button button)

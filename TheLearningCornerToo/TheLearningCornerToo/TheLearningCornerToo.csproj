@@ -265,19 +265,6 @@
     <None Include="Resources\Schooldays_intro.wav" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\Colors\apple_red.png" />
-    <Resource Include="Images\Colors\blackbberries_black.png" />
-    <Resource Include="Images\Colors\cupcake_pink.png" />
-    <Resource Include="Images\Colors\Gallon_of_Milk_white.png" />
-    <Resource Include="Images\Colors\Grapes_purple.png" />
-    <Resource Include="Images\Colors\kiwi_brown.png" />
-    <Resource Include="Images\Colors\orange_orange.png" />
-    <Resource Include="Images\Colors\pear_green.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Images\Colors\banana_yellow.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\apples.wav" />
   </ItemGroup>
   <ItemGroup>
@@ -311,10 +298,19 @@
     <None Include="Resources\pears.wav" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\Colors\blueberries_blue.png" />
+    <Resource Include="SpeechGrammar.xml" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="SpeechGrammar.xml" />
+    <Resource Include="Images\Colors\Objects\apple_red.png" />
+    <Resource Include="Images\Colors\Objects\balloons_blue.png" />
+    <Resource Include="Images\Colors\Objects\buttons_black.png" />
+    <Resource Include="Images\Colors\Objects\duckies_yellow.png" />
+    <Resource Include="Images\Colors\Objects\frog_green.png" />
+    <Resource Include="Images\Colors\Objects\octopus_purple.png" />
+    <Resource Include="Images\Colors\Objects\piggy_pink.png" />
+    <Resource Include="Images\Colors\Objects\pumpkin_orange.png" />
+    <Resource Include="Images\Colors\Objects\teddybear_brown.png" />
+    <Resource Include="Images\Colors\Objects\white-clouds.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
