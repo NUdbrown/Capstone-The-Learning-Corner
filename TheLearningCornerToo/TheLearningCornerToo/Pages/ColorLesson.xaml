@@ -87,14 +87,14 @@
                             <system:Double>256</system:Double>
                         </Ellipse.Width>
                     </Ellipse>
-                    <Button x:Name="DrawButton" Content="" Grid.Column="1" HorizontalAlignment="Left" Margin="50,49,0,0" VerticalAlignment="Top" Width="160" Height="69" Click="DrawButton_OnClick" Style="{StaticResource RegularStyle}">
+                    <Button x:Name="DrawButton" Content="" Grid.Column="1" HorizontalAlignment="Left" Margin="50,85,0,0" VerticalAlignment="Top" Width="160" Height="69" Click="DrawButton_OnClick" Style="{StaticResource RegularStyle}">
                         <Button.Background>
                             <ImageBrush ImageSource="/TheLearningCornerToo;component/Images/paintbrush.png"/>
                         </Button.Background>
                         <Button.ClickMode>Press</Button.ClickMode>
                     </Button>
                     
-                    <Button x:Name="EraserButton" Content="" Grid.Column="1" HorizontalAlignment="Left" Margin="50,0,0,41" VerticalAlignment="Bottom" Width="175" Height="69" Click="EraserButton_OnClick" Style="{StaticResource RegularStyle}">
+                    <Button x:Name="EraserButton" Content="" Grid.Column="1" HorizontalAlignment="Left" Margin="50,0,0,75" VerticalAlignment="Bottom" Width="175" Height="69" Click="EraserButton_OnClick" Style="{StaticResource RegularStyle}">
                         <Button.Background>
                             <ImageBrush ImageSource="/TheLearningCornerToo;component/Images/eraser.png"/>
                         </Button.Background>
