@@ -19,6 +19,7 @@ using Microsoft.Speech.Recognition;
 using System.IO;
 using System.Runtime.InteropServices;
 using System.Security.Cryptography;
+using System.Windows.Ink;
 using System.Windows.Media.Animation;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
@@ -455,52 +456,67 @@ namespace TheLearningCornerToo
                 {
                     case "BLACK":
                         ColoredCircle.Fill = new SolidColorBrush(Colors.Black);
-                        
+                        ColoredCircle.Stroke = new SolidColorBrush(Colors.DimGray);
+                        InkCanvas.DefaultDrawingAttributes.Color = new SolidColorBrush(Colors.Black).Color;
                         break;
 
                     case "BROWN":
                         ColoredCircle.Fill = new SolidColorBrush(Colors.SaddleBrown);
-                        ColoredCircle.Stroke = new SolidColorBrush(Colors.GreenYellow);
+                        ColoredCircle.Stroke = new SolidColorBrush(Colors.DimGray);
+                        InkCanvas.DefaultDrawingAttributes.Color = new SolidColorBrush(Colors.SaddleBrown).Color;
+
                         break;
 
                     case "RED":
                         ColoredCircle.Fill = new SolidColorBrush(Colors.Red);
-                        ColoredCircle.Stroke = new SolidColorBrush(Colors.GreenYellow);
+                        ColoredCircle.Stroke = new SolidColorBrush(Colors.DimGray);
+                        InkCanvas.DefaultDrawingAttributes.Color = new SolidColorBrush(Colors.Red).Color;
+
                         break;
 
                     case "ORANGE":
                         ColoredCircle.Fill = new SolidColorBrush(Colors.DarkOrange);
-                        ColoredCircle.Stroke = new SolidColorBrush(Colors.GreenYellow);
+                        ColoredCircle.Stroke = new SolidColorBrush(Colors.DimGray);
+                        InkCanvas.DefaultDrawingAttributes.Color = new SolidColorBrush(Colors.DarkOrange).Color;
+
                         break;
 
                     case "YELLOW":
                         ColoredCircle.Fill = new SolidColorBrush(Colors.Yellow);
-                        ColoredCircle.Stroke = new SolidColorBrush(Colors.GreenYellow);
+                        ColoredCircle.Stroke = new SolidColorBrush(Colors.DimGray);
+                        InkCanvas.DefaultDrawingAttributes.Color = new SolidColorBrush(Colors.Yellow).Color;
                         break;
 
                     case "GREEN":
                         ColoredCircle.Fill = new SolidColorBrush(Colors.Green);
-                        ColoredCircle.Stroke = new SolidColorBrush(Colors.GreenYellow);
+                        ColoredCircle.Stroke = new SolidColorBrush(Colors.DimGray);
+                        InkCanvas.DefaultDrawingAttributes.Color = new SolidColorBrush(Colors.Green).Color;
                         break;
 
                     case "BLUE":
                         ColoredCircle.Fill = new SolidColorBrush(Colors.Blue);
-                        ColoredCircle.Stroke = new SolidColorBrush(Colors.GreenYellow);
+                        ColoredCircle.Stroke = new SolidColorBrush(Colors.DimGray);
+                        InkCanvas.DefaultDrawingAttributes.Color = new SolidColorBrush(Colors.Blue).Color;
+
                         break;
 
                     case "PURPLE":
                         ColoredCircle.Fill = new SolidColorBrush(Colors.Purple);
-                        ColoredCircle.Stroke = new SolidColorBrush(Colors.GreenYellow);
+                        ColoredCircle.Stroke = new SolidColorBrush(Colors.DimGray);
+                        InkCanvas.DefaultDrawingAttributes.Color = new SolidColorBrush(Colors.Purple).Color;
+
                         break;
 
                     case "PINK":
                         ColoredCircle.Fill = new SolidColorBrush(Colors.HotPink);
-                        ColoredCircle.Stroke = new SolidColorBrush(Colors.GreenYellow);
+                        ColoredCircle.Stroke = new SolidColorBrush(Colors.DimGray);
+                        InkCanvas.DefaultDrawingAttributes.Color = new SolidColorBrush(Colors.HotPink).Color;
                         break;
 
                     case "WHITE":
                         ColoredCircle.Fill = new SolidColorBrush(Colors.White);
-                        ColoredCircle.Stroke = new SolidColorBrush(Colors.GreenYellow);
+                        ColoredCircle.Stroke = new SolidColorBrush(Colors.DimGray);
+                        InkCanvas.DefaultDrawingAttributes.Color = new SolidColorBrush(Colors.White).Color;
                         break;
                 }
             }
@@ -520,6 +536,22 @@ namespace TheLearningCornerToo
         private void SpeechRejected(object sender, SpeechRecognitionRejectedEventArgs e)
         {
             this.StatusBarText.Text = Properties.Resources.DidNotUnderstand;
+
+        }
+
+        private void DrawButton_OnClick(object sender, RoutedEventArgs e)
+        {
+            InkCanvas.EditingMode = InkCanvasEditingMode.InkAndGesture;
+            InkCanvas.UseCustomCursor = true;
+           
+
+        }
+
+        private void EraserButton_OnClick(object sender, RoutedEventArgs e)
+        {
+            InkCanvas.EditingMode = InkCanvasEditingMode.EraseByPoint;
+            InkCanvas.UseCustomCursor = false;
+            InkCanvas.EraserShape = new RectangleStylusShape(10, 10);
 
         }
     }

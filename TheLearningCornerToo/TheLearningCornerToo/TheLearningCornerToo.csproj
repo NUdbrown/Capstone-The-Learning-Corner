@@ -205,7 +205,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Images\Words\" />
-    <Folder Include="Styles\" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\treehouse.jpg" />
@@ -311,6 +310,10 @@
     <Resource Include="Images\Colors\Objects\pumpkin_orange.png" />
     <Resource Include="Images\Colors\Objects\teddybear_brown.png" />
     <Resource Include="Images\Colors\Objects\white-clouds.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\eraser.png" />
+    <Resource Include="Images\paintbrush.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
