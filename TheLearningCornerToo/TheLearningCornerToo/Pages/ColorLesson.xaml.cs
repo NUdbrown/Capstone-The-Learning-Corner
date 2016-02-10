@@ -39,34 +39,35 @@ namespace TheLearningCornerToo
     public partial class ColorLesson : Window
     {
        
+        //private readonly Random _random = new Random(10);
+        //private readonly List<SolidColorBrush> _colorBrushes = new List<SolidColorBrush>()
+        //{
+        //    new SolidColorBrush(Colors.Black),
+        //    new SolidColorBrush(Colors.SaddleBrown),
+        //    new SolidColorBrush(Colors.Red),
+        //    new SolidColorBrush(Colors.DarkOrange),
+        //    new SolidColorBrush(Colors.Yellow),
+        //    new SolidColorBrush(Colors.Green),
+        //    new SolidColorBrush(Colors.Blue),
+        //    new SolidColorBrush(Colors.Purple),
+        //    new SolidColorBrush(Colors.HotPink),
+        //    new SolidColorBrush(Colors.White),           
+        //};
+        
         /// <summary>
-        /// 
+        /// SoundPlayer for app audio
         /// </summary>
         private SoundPlayer Player { get; } = new SoundPlayer();
-        private readonly Random _random = new Random(10);
-        private readonly List<SolidColorBrush> _colorBrushes = new List<SolidColorBrush>()
-        {
-            new SolidColorBrush(Colors.Black),
-            new SolidColorBrush(Colors.SaddleBrown),
-            new SolidColorBrush(Colors.Red),
-            new SolidColorBrush(Colors.DarkOrange),
-            new SolidColorBrush(Colors.Yellow),
-            new SolidColorBrush(Colors.Green),
-            new SolidColorBrush(Colors.Blue),
-            new SolidColorBrush(Colors.Purple),
-            new SolidColorBrush(Colors.HotPink),
-            new SolidColorBrush(Colors.White),           
-        };
         
         /// <summary>
         /// Stream for 32b-16b conversion.
         /// </summary>
-        private KinectAudioStream convertStream = null;
+        private KinectAudioStream _convertStream = null;
 
         /// <summary>
         /// Speech recognition engine using audio data from Kinect.
         /// </summary>
-        private SpeechRecognitionEngine speechEngine = null;
+        private SpeechRecognitionEngine _speechEngine = null;
 
         /// <summary>
         /// Create an instance of your kinect sensor
@@ -74,8 +75,8 @@ namespace TheLearningCornerToo
         public KinectSensor CurrentSensor;
 
         //and the speech recognition engine (SRE)
-        private SpeechRecognitionEngine speechRecognizer;
-
+        private SpeechRecognitionEngine _speechRecognizer;
+        
 
         public ColorLesson()
         {
@@ -110,7 +111,7 @@ namespace TheLearningCornerToo
                 System.IO.Stream audioStream = audioBeamList[0].OpenInputStream();
 
                 // create the convert stream
-                this.convertStream = new KinectAudioStream(audioStream);
+                this._convertStream = new KinectAudioStream(audioStream);
             }
             else
             {
@@ -123,28 +124,28 @@ namespace TheLearningCornerToo
 
             if (null != ri)
             {
-                this.speechEngine = new SpeechRecognitionEngine(ri.Id);
+                this._speechEngine = new SpeechRecognitionEngine(ri.Id);
 
                 // Create a grammar from grammar definition XML file.
                 using (var memoryStream = new MemoryStream(Encoding.ASCII.GetBytes(Properties.Resources.SpeechGrammar)))
                 {
                     var g = new Grammar(memoryStream);
-                    this.speechEngine.LoadGrammar(g);
+                    this._speechEngine.LoadGrammar(g);
                 }
 
-                this.speechEngine.SpeechRecognized += SpeechRecognized;
-                this.speechEngine.SpeechRecognitionRejected += SpeechRejected;
+                this._speechEngine.SpeechRecognized += SpeechRecognized;
+                this._speechEngine.SpeechRecognitionRejected += SpeechRejected;
 
                 // let the convertStream know speech is going active
-                this.convertStream.SpeechActive = true;
+                this._convertStream.SpeechActive = true;
 
                 // For long recognition sessions (a few hours or more), it may be beneficial to turn off adaptation of the acoustic model. 
                 // This will prevent recognition accuracy from degrading over time.
                 ////speechEngine.UpdateRecognizerSetting("AdaptationOn", 0);
 
-                this.speechEngine.SetInputToAudioStream(
-                    this.convertStream, new SpeechAudioFormatInfo(EncodingFormat.Pcm, 16000, 16, 1, 32000, 2, null));
-                this.speechEngine.RecognizeAsync(RecognizeMode.Multiple);
+                this._speechEngine.SetInputToAudioStream(
+                    this._convertStream, new SpeechAudioFormatInfo(EncodingFormat.Pcm, 16000, 16, 1, 32000, 2, null));
+                this._speechEngine.RecognizeAsync(RecognizeMode.Multiple);
             }
             else
             {
@@ -290,14 +291,14 @@ namespace TheLearningCornerToo
         }
 
         //returns one of the colors
-        private SolidColorBrush PickRandomColor()
-        {
-            //int picked = 0;
-            //int theRandom = random.Next(_colorBrushes.Count);
-            //Int32.TryParse(theRandom.ToString(), out picked);
-            //return _colorBrushes.IndexOf(picked);
-            return _colorBrushes[_random.Next(_colorBrushes.Count)];
-        }
+        //private SolidColorBrush PickRandomColor()
+        //{
+        //    //int picked = 0;
+        //    //int theRandom = random.Next(_colorBrushes.Count);
+        //    //Int32.TryParse(theRandom.ToString(), out picked);
+        //    //return _colorBrushes.IndexOf(picked);
+        //    return _colorBrushes[_random.Next(_colorBrushes.Count)];
+        //}
 
         
 
@@ -417,16 +418,16 @@ namespace TheLearningCornerToo
 
         private void ExitButton_Click(object sender, RoutedEventArgs e)
         {
-            if (null != this.convertStream)
+            if (null != this._convertStream)
             {
-                this.convertStream.SpeechActive = false;
+                this._convertStream.SpeechActive = false;
             }
 
-            if (null != this.speechEngine)
+            if (null != this._speechEngine)
             {
-                this.speechEngine.SpeechRecognized -= this.SpeechRecognized;
-                this.speechEngine.SpeechRecognitionRejected -= this.SpeechRejected;
-                this.speechEngine.RecognizeAsyncStop();
+                this._speechEngine.SpeechRecognized -= this.SpeechRecognized;
+                this._speechEngine.SpeechRecognitionRejected -= this.SpeechRejected;
+                this._speechEngine.RecognizeAsyncStop();
             }
 
             if (null != CurrentSensor)

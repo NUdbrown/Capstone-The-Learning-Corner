@@ -104,6 +104,7 @@
                     </Button>
                     <!--<InkPresenter x:Name="InkCanvas" Grid.Column="2" ClipToBounds="True" Margin="9.4,0,9.6,-1" Cursor="Pen" OpacityMask="#FF999999">
                     </InkPresenter>-->
+                    
                     <InkCanvas x:Name="InkCanvas" Grid.Column="2" ClipToBounds="True" Margin="9.4,0,9.6,-1" Background="#FFC8C8C8" Cursor="Pen" ResizeEnabled="False">
                         <InkCanvas.DefaultDrawingAttributes>
                             <DrawingAttributes Height="5" Width="5"/>

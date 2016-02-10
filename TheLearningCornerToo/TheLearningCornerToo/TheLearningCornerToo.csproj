@@ -228,36 +228,6 @@
     <Resource Include="Images\CursorSpriteSheetPurple.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\black.wav" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\blue.wav" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\brown.wav" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\green.wav" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\orange.wav" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\pink.wav" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\purple.wav" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\red.wav" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\white.wav" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\yellow.wav" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\Schooldays.mp3" />
   </ItemGroup>
   <ItemGroup>
@@ -314,6 +284,39 @@
   <ItemGroup>
     <Resource Include="Images\eraser.png" />
     <Resource Include="Images\paintbrush.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\color_instrusctions.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\black.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\blue.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\brown.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\green.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\orange.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pink.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\purple.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\red.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\white.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\yellow.wav" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
