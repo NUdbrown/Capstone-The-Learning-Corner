@@ -222,9 +222,6 @@
     <Resource Include="Images\notebookBackground.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\colorsbackground.jpg" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Images\CursorSpriteSheetPurple.png" />
   </ItemGroup>
   <ItemGroup>
@@ -317,6 +314,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\yellow.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\colorsbackground.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

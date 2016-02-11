@@ -19,10 +19,10 @@
         Icon="/Images/icon_TLC.png" 
         WindowStyle="None">
     <Window.Background>
-        <ImageBrush ImageSource="/Images/colorsbackground.jpg" />
+        <ImageBrush ImageSource="/TheLearningCornerToo;component/Images/colorsbackground.jpg"/>
     </Window.Background>
     <k:KinectRegion x:Name="KinectArea">
-        <Grid x:Name ="ColorGrid" Margin="0,10,0,-10.4">
+        <Grid x:Name ="ColorGrid" Margin="0,10,0,-10.4" ToolTip="close your hand and slide the crayons.">
             <Grid.RowDefinitions>
                 <RowDefinition Height="191*"/>
                 <RowDefinition Height="274*"/>
@@ -64,12 +64,12 @@
                 </Button.Background>
             </Button>
 
-            <ScrollViewer x:Name="Scroller" Grid.Row="1" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Disabled" k:KinectRegion.IsScrollInertiaEnabled="true" BorderThickness="10" Margin="0,4.8,0,10.6">
+            <ScrollViewer x:Name="Scroller" Grid.Row="1" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Disabled" k:KinectRegion.IsScrollInertiaEnabled="true" BorderThickness="10" Margin="0,0,30,15" Width="994">
                 <StackPanel Orientation="Horizontal" x:Name="ScrollContent" Margin="0,0,0,0">
                     <StackPanel.Effect>
                         <DropShadowEffect Color="#FF0B0C0C" BlurRadius="10"/>
                     </StackPanel.Effect>
-                </StackPanel>
+                  </StackPanel>
             </ScrollViewer>
 
             <StackPanel Grid.Row="2">

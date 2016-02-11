@@ -191,7 +191,8 @@ namespace TheLearningCornerToo
                 var button = new Button();
                 {
                    button.Name = "Button" + i;
-                    
+                   button.RenderTransform = new RotateTransform(-60,0.5,0.5);
+                   
                     switch (button.Name)
                     {
                         case "Button1":
@@ -543,7 +544,6 @@ namespace TheLearningCornerToo
 
         private void DrawButton_OnClick(object sender, RoutedEventArgs e)
         {
-
             InkCanvas.EditingMode = InkCanvasEditingMode.Ink;
             InkCanvas.UseCustomCursor = true;
             InkCanvas.ForceCursor = true;
