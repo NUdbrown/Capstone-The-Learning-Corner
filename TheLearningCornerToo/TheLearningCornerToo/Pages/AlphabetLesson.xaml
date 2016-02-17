@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:k="http://schemas.microsoft.com/kinect/2014"
+        xmlns:control="clr-namespace:TheLearningCornerToo.Pages"
         mc:Ignorable="d"
         Icon="/Images/icon_TLC.png"
         Title="AlphabetLesson" 
@@ -17,11 +18,11 @@
     <k:KinectRegion x:Name="KinectArea" KinectSensor="{Binding Kinect}">
         <Grid >
             <Grid.RowDefinitions>
-                <RowDefinition Height="100" />
-                <RowDefinition Height="*" />
+                <RowDefinition Height="159.2" />
+                <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
             <Button x:Name="HomeButton" Content="Return Home" Grid.Row="0" HorizontalAlignment="Left" Margin="63,50,0,0" VerticalAlignment="Top" Width="154" Height="34" FontFamily="Sitka Text" FontSize="21.333" Click="HomeButton_OnClick"/>
-            <k:KinectUserViewer Height="100" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="328,50,309.4,0" Grid.RowSpan="2" >
+            <k:KinectUserViewer Height="100" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="328,50,309.4,0" >
                 <k:KinectUserViewer.ImageBackground>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                         <GradientStop Color="#FF90DCF3" Offset="0"/>
@@ -29,8 +30,8 @@
                     </LinearGradientBrush>
                 </k:KinectUserViewer.ImageBackground>
             </k:KinectUserViewer>
-            <Button x:Name="ExitButton" Content="Exit" Grid.Row="0" HorizontalAlignment="Left" Margin="1327,50,0,0" VerticalAlignment="Top" Width="154" Height="34" FontFamily="Sitka Text" FontSize="21.333" Click="ExitButton_Click"/>
-            
+            <Button x:Name="ExitButton" Content="Exit" Grid.Row="0" HorizontalAlignment="Left" Margin="1327,50,-722.6,0" VerticalAlignment="Top" Width="154" Height="34" FontFamily="Sitka Text" FontSize="21.333" Click="ExitButton_Click"/>
+            <control:AlphabetControl Grid.Row="1" Margin="0,2.8,0.4,-0.2"/>
         </Grid>
     </k:KinectRegion>
 </Window>

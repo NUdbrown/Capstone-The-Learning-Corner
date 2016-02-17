@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,9 +21,28 @@ namespace TheLearningCornerToo.Pages
     /// </summary>
     public partial class AlphabetControl : UserControl
     {
+
         public AlphabetControl()
         {
             InitializeComponent();
+            Loaded += OnLoaded;
+        }
+
+        private void OnLoaded(object sender, RoutedEventArgs routedEventArgs)
+        {
+           
+        }
+
+
+        public void DisplayRandomImage()
+        {
+            Random random = new Random();
+            int num = random.Next(26) + 1;
+        }
+
+        public void DisplayTheAlphabet()
+        {
+
         }
     }
 }

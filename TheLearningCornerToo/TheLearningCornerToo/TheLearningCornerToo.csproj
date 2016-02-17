@@ -81,6 +81,9 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="KinectAudioStream.cs" />
+    <Compile Include="Pages\AlphabetControl.xaml.cs">
+      <DependentUpon>AlphabetControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\AlphabetLesson.xaml.cs">
       <DependentUpon>AlphabetLesson.xaml</DependentUpon>
     </Compile>
@@ -95,6 +98,10 @@
     <Compile Include="Pages\WordsLesson.xaml.cs">
       <DependentUpon>WordsLesson.xaml</DependentUpon>
     </Compile>
+    <Page Include="Pages\AlphabetControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\AlphabetLesson.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
