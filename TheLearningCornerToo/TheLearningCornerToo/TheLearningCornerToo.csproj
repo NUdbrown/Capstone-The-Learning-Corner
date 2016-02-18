@@ -271,16 +271,12 @@
     <Resource Include="SpeechGrammar.xml" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\Colors\Objects\apple_red.png" />
-    <Resource Include="Images\Colors\Objects\balloons_blue.png" />
-    <Resource Include="Images\Colors\Objects\buttons_black.png" />
-    <Resource Include="Images\Colors\Objects\duckies_yellow.png" />
-    <Resource Include="Images\Colors\Objects\frog_green.png" />
-    <Resource Include="Images\Colors\Objects\octopus_purple.png" />
-    <Resource Include="Images\Colors\Objects\piggy_pink.png" />
-    <Resource Include="Images\Colors\Objects\pumpkin_orange.png" />
-    <Resource Include="Images\Colors\Objects\teddybear_brown.png" />
-    <Resource Include="Images\Colors\Objects\white-clouds.png" />
+    <Resource Include="Images\Objects\apple_red.png" />
+    <Resource Include="Images\Objects\balloons_blue.png" />
+    <Resource Include="Images\Objects\duckies_yellow.png" />
+    <Resource Include="Images\Objects\frog_green.png" />
+    <Resource Include="Images\Objects\octopus_purple.png" />
+    <Resource Include="Images\Objects\piggy_pink.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\eraser.png" />
@@ -324,6 +320,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\AlphabetBackground.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Objects\car_blue.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

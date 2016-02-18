@@ -13,8 +13,10 @@
             <RowDefinition Height="217*"/>
         </Grid.RowDefinitions>
         <Canvas Grid.Row="0">
-           <Image Source="../Images/Colors/Objects/apple_red.png" Style="{StaticResource ForImagesStyle}"/>
-           
+           <Image Source="../Images/Objects/apple_red.png" Style="{StaticResource ForImagesStyle}"/>
+           <Image Source="../Images/Objects/balloons_blue.png" Canvas.Left="80" Style="{StaticResource ForImagesStyle}"/>
+            <Image Source="../Images/Objects/duckies_yellow.png" Canvas.Left="155" Style="{StaticResource ForImagesStyle}"/>
+            <Image Source="../Images/Objects/car_blue.png" Canvas.Left="255" Style="{StaticResource ForImagesStyle}"/>
         </Canvas>
         
         <Canvas Name="ImagesPanel" Grid.Row="1">
