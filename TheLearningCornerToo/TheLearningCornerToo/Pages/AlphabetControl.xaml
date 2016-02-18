@@ -4,7 +4,6 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:control="clr-namespace:TheLearningCornerToo"
-             xmlns:theLearningCornerToo="clr-namespace:TheLearningCornerToo"
              mc:Ignorable="d" 
              d:DesignHeight="900" d:DesignWidth="900">
     <Grid>
@@ -12,13 +11,22 @@
             <RowDefinition Height="83*"/>
             <RowDefinition Height="217*"/>
         </Grid.RowDefinitions>
+
         <Canvas Grid.Row="0">
-           <Image Source="../Images/Objects/apple_red.png" Style="{StaticResource ForImagesStyle}"/>
-           <Image Source="../Images/Objects/balloons_blue.png" Canvas.Left="80" Style="{StaticResource ForImagesStyle}"/>
-            <Image Source="../Images/Objects/duckies_yellow.png" Canvas.Left="155" Style="{StaticResource ForImagesStyle}"/>
-            <Image Source="../Images/Objects/car_blue.png" Canvas.Left="255" Style="{StaticResource ForImagesStyle}"/>
+            <control:DragDropElement>
+                <Image Source="../Images/Objects/apple_red.png" Style="{StaticResource ForImagesStyle}"/>
+            </control:DragDropElement>
+            <control:DragDropElement>
+                <Image Source="../Images/Objects/balloons_blue.png" Canvas.Left="80" Style="{StaticResource ForImagesStyle}"/>
+            </control:DragDropElement>
+            <control:DragDropElement>
+                <Image Source="../Images/Objects/duckies_yellow.png" Canvas.Left="155" Style="{StaticResource ForImagesStyle}"/>
+            </control:DragDropElement>
+            <control:DragDropElement>
+                <Image Source="../Images/Objects/car_blue.png" Canvas.Left="255" Style="{StaticResource ForImagesStyle}"/>
+            </control:DragDropElement>
         </Canvas>
-        
+
         <Canvas Name="ImagesPanel" Grid.Row="1">
             <Grid>
                 <Grid.RowDefinitions>
@@ -36,7 +44,7 @@
                     <ColumnDefinition/>
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
-                
+
                 <Image Name="LetterAImg" Grid.Row="0" Grid.Column="0" Source="../Images/Alphabet/letter_A.png" Style="{StaticResource ForImagesStyle}" Margin="25,0,25.4,0" />
                 <Rectangle Grid.Row="0" Grid.Column="1" Height="100" Width="100" Fill="AliceBlue"/>
                 <Image Name="LetterEImg" Grid.Row="0" Grid.Column="2" Source="../Images/Alphabet/letter_E.png" Style="{StaticResource ForImagesStyle}" Margin="24.6,0,25,0"/>
