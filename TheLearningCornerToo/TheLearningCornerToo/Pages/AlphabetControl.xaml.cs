@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -30,7 +31,7 @@ namespace TheLearningCornerToo.Pages
 
         private void OnLoaded(object sender, RoutedEventArgs routedEventArgs)
         {
-           
+           //DisplayRandomImage();
         }
 
 
@@ -38,11 +39,13 @@ namespace TheLearningCornerToo.Pages
         {
             Random random = new Random();
             int num = random.Next(26) + 1;
+            
+            //RandomImage.Source = new BitmapImage(new Uri("../Images/Alphabet/{num}"));
         }
 
         public void DisplayTheAlphabet()
         {
-
+            
         }
     }
 }

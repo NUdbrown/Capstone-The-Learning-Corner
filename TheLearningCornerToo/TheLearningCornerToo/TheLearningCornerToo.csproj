@@ -80,6 +80,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="DragDropElement.cs" />
     <Compile Include="KinectAudioStream.cs" />
     <Compile Include="Pages\AlphabetControl.xaml.cs">
       <DependentUpon>AlphabetControl.xaml</DependentUpon>
@@ -93,7 +94,6 @@
     <Compile Include="Pages\ColorLesson.xaml.cs">
       <DependentUpon>ColorLesson.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\DragDropElement.cs" />
     <Compile Include="Settings.cs" />
     <Compile Include="Pages\WordsLesson.xaml.cs">
       <DependentUpon>WordsLesson.xaml</DependentUpon>
@@ -223,9 +223,6 @@
     <Resource Include="Images\icon_TLC.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\AlphabetBackground.jpg" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Images\notebookBackground.jpg" />
   </ItemGroup>
   <ItemGroup>
@@ -324,6 +321,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\colorsbackground.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\AlphabetBackground.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

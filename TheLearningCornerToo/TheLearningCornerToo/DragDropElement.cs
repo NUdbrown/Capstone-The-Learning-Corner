@@ -1,14 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using Microsoft.Kinect.Toolkit.Input;
 using Microsoft.Kinect.Wpf.Controls;
 
-namespace TheLearningCornerToo.Pages
+namespace TheLearningCornerToo
 {
     public class DragDropElement : Decorator, IKinectControl
     {
