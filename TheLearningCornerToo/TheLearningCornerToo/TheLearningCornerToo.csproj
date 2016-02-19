@@ -13,6 +13,7 @@
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <WarningLevel>4</WarningLevel>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -25,7 +26,6 @@
     <MapFileExtensions>true</MapFileExtensions>
     <ApplicationRevision>0</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
@@ -80,37 +80,37 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="AlphabetLesson.xaml.cs">
+      <DependentUpon>AlphabetLesson.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ColorLesson.xaml.cs">
+      <DependentUpon>ColorLesson.xaml</DependentUpon>
+    </Compile>
     <Compile Include="DragDropElement.cs" />
     <Compile Include="KinectAudioStream.cs" />
     <Compile Include="Pages\AlphabetControl.xaml.cs">
       <DependentUpon>AlphabetControl.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\AlphabetLesson.xaml.cs">
-      <DependentUpon>AlphabetLesson.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Pages\ColorControl.xaml.cs">
       <DependentUpon>ColorControl.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\ColorLesson.xaml.cs">
-      <DependentUpon>ColorLesson.xaml</DependentUpon>
     </Compile>
     <Compile Include="Settings.cs" />
     <Compile Include="Pages\WordsLesson.xaml.cs">
       <DependentUpon>WordsLesson.xaml</DependentUpon>
     </Compile>
+    <Page Include="AlphabetLesson.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ColorLesson.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Pages\AlphabetControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\AlphabetLesson.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="Pages\ColorControl.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Pages\ColorLesson.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
