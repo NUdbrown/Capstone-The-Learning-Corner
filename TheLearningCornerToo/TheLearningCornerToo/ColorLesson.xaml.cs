@@ -58,11 +58,7 @@ namespace TheLearningCornerToo
         /// Create an instance of your kinect sensor
         /// </summary>
         public KinectSensor CurrentSensor;
-
-        //and the speech recognition engine (SRE)
-        private SpeechRecognitionEngine _speechRecognizer;
         
-
         public ColorLesson()
         {
             InitializeComponent();
@@ -126,7 +122,7 @@ namespace TheLearningCornerToo
 
                 // For long recognition sessions (a few hours or more), it may be beneficial to turn off adaptation of the acoustic model. 
                 // This will prevent recognition accuracy from degrading over time.
-                ////speechEngine.UpdateRecognizerSetting("AdaptationOn", 0);
+               // _speechEngine.UpdateRecognizerSetting("AdaptationOn", 0);
 
                 this._speechEngine.SetInputToAudioStream(
                     this._convertStream, new SpeechAudioFormatInfo(EncodingFormat.Pcm, 16000, 16, 1, 32000, 2, null));
@@ -433,8 +429,8 @@ namespace TheLearningCornerToo
         /// <param name="e">event arguments.</param>
         private void SpeechRecognized(object sender, SpeechRecognizedEventArgs e)
         {
-            // Speech utterance confidence below which we treat speech as if it hadn't been heard
-            const double confidenceThreshold = 0.5;
+            // Speech utterance confidence = we treat speech as if it hadn't been heard
+            const double confidenceThreshold = 0.4;
 
             this.ClearRecognitionHighlights();
 
@@ -524,6 +520,7 @@ namespace TheLearningCornerToo
         private void SpeechRejected(object sender, SpeechRecognitionRejectedEventArgs e)
         {
             this.StatusBarText.Text = Properties.Resources.DidNotUnderstand;
+            //add new voice-over that tells the child to repeat the color because the software didn't understand
 
         }
 

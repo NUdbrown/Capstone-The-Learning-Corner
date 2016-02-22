@@ -12,7 +12,7 @@
             <RowDefinition Height="217*"/>
         </Grid.RowDefinitions>
 
-        <!--<Canvas Grid.Row="0">
+        <Canvas Grid.Row="0">
             <control:DragDropElement>
                 <Image Source="../Images/Objects/apple_red.png" Style="{StaticResource ForImagesStyle}"/>
             </control:DragDropElement>
@@ -28,7 +28,7 @@
             <control:DragDropElement>
                 <Image Source="../Images/Objects/frog_green.png" Canvas.Left="355" Style="{StaticResource ForImagesStyle}"/>
             </control:DragDropElement>
-        </Canvas>-->      
+        </Canvas>      
         
         <Canvas Name="ImagesPanel" Grid.Row="1">
             <Grid>
