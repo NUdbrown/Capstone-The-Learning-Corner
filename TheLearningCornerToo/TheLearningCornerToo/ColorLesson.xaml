@@ -90,26 +90,22 @@
                             <system:Double>256</system:Double>
                         </Ellipse.Width>
                     </Ellipse>
-                    <Button x:Name="DrawButton" Content="" Grid.Column="1" HorizontalAlignment="Left" Margin="50,85,0,0" VerticalAlignment="Top" Width="160" Height="69" Click="DrawButton_OnClick" Style="{StaticResource RegularStyle}">
+                    <Button x:Name="DrawButton" Content="" Grid.Column="1" HorizontalAlignment="Left" Margin="43,137,0,0" VerticalAlignment="Top" Width="160" Height="69" Click="DrawButton_OnClick" Style="{StaticResource RegularStyle}">
                         <Button.Background>
                             <ImageBrush ImageSource="/TheLearningCornerToo;component/Images/paintbrush.png"/>
                         </Button.Background>
                         <Button.ClickMode>Press</Button.ClickMode>
                     </Button>
                     
-                    <Button x:Name="EraserButton" Content="" Grid.Column="1" HorizontalAlignment="Left" Margin="50,0,0,75" VerticalAlignment="Bottom" Width="175" Height="69" Click="EraserButton_OnClick" Style="{StaticResource RegularStyle}">
+                    <!--<Button x:Name="EraserButton" Content="" Grid.Column="1" HorizontalAlignment="Left" Margin="50,0,0,75" VerticalAlignment="Bottom" Width="175" Height="69" Click="EraserButton_OnClick" Style="{StaticResource RegularStyle}">
                         <Button.Background>
                             <ImageBrush ImageSource="/TheLearningCornerToo;component/Images/eraser.png"/>
                         </Button.Background>
-                    </Button>
-                    <!--<InkPresenter x:Name="InkCanvas" Grid.Column="2" ClipToBounds="True" Margin="9.4,0,9.6,-1" Cursor="Pen" OpacityMask="#FF999999">
-                    </InkPresenter>-->
+                    </Button>-->
                     
-                    <InkCanvas x:Name="InkCanvas" Grid.Column="2" ClipToBounds="True" Margin="9.4,0,9.6,-1" Background="#FFC8C8C8" Cursor="Pen" ResizeEnabled="False">
-                        <InkCanvas.DefaultDrawingAttributes>
-                            <DrawingAttributes Height="5" Width="5"/>
-                        </InkCanvas.DefaultDrawingAttributes>
-                    </InkCanvas>
+                    <Canvas x:Name="DrawingCanvas" Grid.Column="2" ClipToBounds="True" Margin="9.4,0,9.6,-1" Background="#FFC8C8C8" Cursor="Pen">
+                        <Polyline Name="PaintLine" StrokeThickness="5"/>
+                    </Canvas>
                 </Grid>
             </StackPanel>
 

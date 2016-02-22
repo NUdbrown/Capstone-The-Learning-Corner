@@ -1,12 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Media;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Ink;
+using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using Microsoft.Kinect;
@@ -22,24 +24,22 @@ namespace TheLearningCornerToo
     /// Interaction logic for ColorLesson.xaml
     /// </summary>
     public partial class ColorLesson : Window
-    {
-       
-        //private readonly Random _random = new Random(10);
-        //private readonly List<SolidColorBrush> _colorBrushes = new List<SolidColorBrush>()
-        //{
-        //    new SolidColorBrush(Colors.Black),
-        //    new SolidColorBrush(Colors.SaddleBrown),
-        //    new SolidColorBrush(Colors.Red),
-        //    new SolidColorBrush(Colors.DarkOrange),
-        //    new SolidColorBrush(Colors.Yellow),
-        //    new SolidColorBrush(Colors.Green),
-        //    new SolidColorBrush(Colors.Blue),
-        //    new SolidColorBrush(Colors.Purple),
-        //    new SolidColorBrush(Colors.HotPink),
-        //    new SolidColorBrush(Colors.White),           
-        //};
-        
-        /// <summary>
+    {   
+        private readonly SolidColorBrush _blackbSolidColorBrush = new SolidColorBrush(Colors.Black);
+        private readonly SolidColorBrush _brownSolidColorBrush = new SolidColorBrush(Colors.SaddleBrown);
+        private readonly SolidColorBrush _redSolidColorBrush =   new SolidColorBrush(Colors.Red);
+        private readonly SolidColorBrush _orangeSolidColorBrush = new SolidColorBrush(Colors.DarkOrange);
+        private readonly SolidColorBrush _yellowSolidColorBrush = new SolidColorBrush(Colors.Yellow);
+        private readonly SolidColorBrush _greenSolidColorBrush = new SolidColorBrush(Colors.Green);
+        private readonly SolidColorBrush _blueSolidColorBrush = new SolidColorBrush(Colors.Blue);
+        private readonly SolidColorBrush _purpleSolidColorBrush = new SolidColorBrush(Colors.Purple);
+        private readonly SolidColorBrush _pinkSolidColorBrush = new SolidColorBrush(Colors.HotPink);
+        private readonly SolidColorBrush _whiteSolidColorBrush = new SolidColorBrush(Colors.White);
+
+        private BodyFrameReader _bodyReader = null;
+        private IList<Body> _bodies = null;
+
+       /// <summary>
         /// SoundPlayer for app audio
         /// </summary>
         private SoundPlayer Player { get; } = new SoundPlayer();
@@ -93,6 +93,12 @@ namespace TheLearningCornerToo
 
                 // create the convert stream
                 this._convertStream = new KinectAudioStream(audioStream);
+                
+                _bodyReader = CurrentSensor.BodyFrameSource.OpenReader();
+                _bodyReader.FrameArrived += BodyReader_FrameArrived;
+
+                _bodies = new Body[CurrentSensor.BodyFrameSource.BodyCount];
+                
             }
             else
             {
@@ -130,6 +136,7 @@ namespace TheLearningCornerToo
             }
             else
             {
+                this.StatusBarText.FontSize = 45;
                 this.StatusBarText.Text = Properties.Resources.NoSpeechRecognizer;
             }
         }
@@ -270,19 +277,7 @@ namespace TheLearningCornerToo
 
             }
 
-        }
-
-        //returns one of the colors
-        //private SolidColorBrush PickRandomColor()
-        //{
-        //    //int picked = 0;
-        //    //int theRandom = random.Next(_colorBrushes.Count);
-        //    //Int32.TryParse(theRandom.ToString(), out picked);
-        //    //return _colorBrushes.IndexOf(picked);
-        //    return _colorBrushes[_random.Next(_colorBrushes.Count)];
-        //}
-
-        
+        }       
 
         private void Crayon_OnClick(Button thebutton, object sender, RoutedEventArgs routedEventArgs)
         {          
@@ -412,6 +407,8 @@ namespace TheLearningCornerToo
                 this._speechEngine.RecognizeAsyncStop();
             }
 
+            _bodyReader?.Dispose();
+
             if (null != CurrentSensor)
             {
                 CurrentSensor.Close();
@@ -439,68 +436,68 @@ namespace TheLearningCornerToo
                 switch (e.Result.Semantics.Value.ToString())
                 {
                     case "BLACK":
-                        ColoredCircle.Fill = new SolidColorBrush(Colors.Black);
+                        ColoredCircle.Fill = _blackbSolidColorBrush;
                         ColoredCircle.Stroke = new SolidColorBrush(Colors.YellowGreen);
-                        InkCanvas.DefaultDrawingAttributes.Color = new SolidColorBrush(Colors.Black).Color;
+                        PaintLine.Stroke = _blackbSolidColorBrush;
                         break;
 
                     case "BROWN":
-                        ColoredCircle.Fill = new SolidColorBrush(Colors.SaddleBrown);
+                        ColoredCircle.Fill = _brownSolidColorBrush;
                         ColoredCircle.Stroke = new SolidColorBrush(Colors.YellowGreen);
-                        InkCanvas.DefaultDrawingAttributes.Color = new SolidColorBrush(Colors.SaddleBrown).Color;
+                        PaintLine.Stroke = _brownSolidColorBrush;
 
                         break;
 
                     case "RED":
-                        ColoredCircle.Fill = new SolidColorBrush(Colors.Red);
+                        ColoredCircle.Fill = _redSolidColorBrush;
                         ColoredCircle.Stroke = new SolidColorBrush(Colors.YellowGreen);
-                        InkCanvas.DefaultDrawingAttributes.Color = new SolidColorBrush(Colors.Red).Color;
+                        PaintLine.Stroke = _redSolidColorBrush;
 
                         break;
 
                     case "ORANGE":
-                        ColoredCircle.Fill = new SolidColorBrush(Colors.DarkOrange);
+                        ColoredCircle.Fill = _orangeSolidColorBrush;
                         ColoredCircle.Stroke = new SolidColorBrush(Colors.YellowGreen);
-                        InkCanvas.DefaultDrawingAttributes.Color = new SolidColorBrush(Colors.DarkOrange).Color;
+                        PaintLine.Stroke = _orangeSolidColorBrush;
 
                         break;
 
                     case "YELLOW":
-                        ColoredCircle.Fill = new SolidColorBrush(Colors.Yellow);
+                        ColoredCircle.Fill = _yellowSolidColorBrush;
                         ColoredCircle.Stroke = new SolidColorBrush(Colors.YellowGreen);
-                        InkCanvas.DefaultDrawingAttributes.Color = new SolidColorBrush(Colors.Yellow).Color;
+                        PaintLine.Stroke = _yellowSolidColorBrush;
                         break;
 
                     case "GREEN":
                         ColoredCircle.Fill = new SolidColorBrush(Colors.Green);
                         ColoredCircle.Stroke = new SolidColorBrush(Colors.YellowGreen);
-                        InkCanvas.DefaultDrawingAttributes.Color = new SolidColorBrush(Colors.Green).Color;
+                        PaintLine.Stroke = _greenSolidColorBrush;
                         break;
 
                     case "BLUE":
-                        ColoredCircle.Fill = new SolidColorBrush(Colors.Blue);
+                        ColoredCircle.Fill = _blueSolidColorBrush;
                         ColoredCircle.Stroke = new SolidColorBrush(Colors.YellowGreen);
-                        InkCanvas.DefaultDrawingAttributes.Color = new SolidColorBrush(Colors.Blue).Color;
+                        PaintLine.Stroke = _blueSolidColorBrush;
 
                         break;
 
                     case "PURPLE":
-                        ColoredCircle.Fill = new SolidColorBrush(Colors.Purple);
+                        ColoredCircle.Fill =_purpleSolidColorBrush;
                         ColoredCircle.Stroke = new SolidColorBrush(Colors.YellowGreen);
-                        InkCanvas.DefaultDrawingAttributes.Color = new SolidColorBrush(Colors.Purple).Color;
+                        PaintLine.Stroke = _purpleSolidColorBrush;
 
                         break;
 
                     case "PINK":
-                        ColoredCircle.Fill = new SolidColorBrush(Colors.HotPink);
+                        ColoredCircle.Fill = _pinkSolidColorBrush;
                         ColoredCircle.Stroke = new SolidColorBrush(Colors.YellowGreen);
-                        InkCanvas.DefaultDrawingAttributes.Color = new SolidColorBrush(Colors.HotPink).Color;
+                        PaintLine.Stroke = _pinkSolidColorBrush;
                         break;
 
                     case "WHITE":
-                        ColoredCircle.Fill = new SolidColorBrush(Colors.White);
+                        ColoredCircle.Fill = _whiteSolidColorBrush;
                         ColoredCircle.Stroke = new SolidColorBrush(Colors.YellowGreen);
-                        InkCanvas.DefaultDrawingAttributes.Color = new SolidColorBrush(Colors.White).Color;
+                        PaintLine.Stroke = _whiteSolidColorBrush;
                         break;
                 }
             }
@@ -526,19 +523,74 @@ namespace TheLearningCornerToo
 
         private void DrawButton_OnClick(object sender, RoutedEventArgs e)
         {
-            InkCanvas.EditingMode = InkCanvasEditingMode.Ink;
-            InkCanvas.UseCustomCursor = true;
-            InkCanvas.ForceCursor = true;
+            Body body = _bodies.Where(b => b.IsTracked).FirstOrDefault();
+
+
+            if (body != null)
+            {
+                Joint handRight = body.Joints[JointType.HandRight];
+
+                if (handRight.TrackingState != TrackingState.NotTracked)
+                {
+                    CameraSpacePoint handRightPosition = handRight.Position;
+                    ColorSpacePoint handRightPoint = CurrentSensor.CoordinateMapper.MapCameraPointToColorSpace(handRightPosition);
+
+                    float x = handRightPoint.X;
+                    float y = handRightPoint.Y;
+
+                    if (!float.IsInfinity(x) && !float.IsInfinity(y))
+                    {
+                        // DRAW!
+                        PaintLine.Points.Add(new Point {X = x, Y = y});
+
+                    }
+                }
+            }
 
         }
 
-        private void EraserButton_OnClick(object sender, RoutedEventArgs e)
+        private void BodyReader_FrameArrived(object sender, BodyFrameArrivedEventArgs e)
         {
-            InkCanvas.EditingMode = InkCanvasEditingMode.EraseByPoint;
-            InkCanvas.UseCustomCursor = false;
-            InkCanvas.EraserShape = new RectangleStylusShape(10, 10);
+            using (var frame = e.FrameReference.AcquireFrame())
+            {
+                if (frame != null)
+                {
+                    frame.GetAndRefreshBodyData(_bodies);
 
+                    DrawButton.Click += (sender1, routedEventArgs) => DrawButton_OnClick(sender1, routedEventArgs);
+                    
+                }
+            }
         }
+
+        //private void EraserButton_OnClick(object sender, RoutedEventArgs e)
+        //{
+        //    var body = _bodies.FirstOrDefault(b => b.IsTracked);
+
+        //    if (body != null)
+        //    {
+        //        Joint handRight = body.Joints[JointType.HandRight];
+
+        //        if (handRight.TrackingState != TrackingState.NotTracked)
+        //        {
+        //            CameraSpacePoint handRightPosition = handRight.Position;
+        //            ColorSpacePoint handRightPoint = CurrentSensor.CoordinateMapper.MapCameraPointToColorSpace(handRightPosition);
+
+        //            float x = handRightPoint.X;
+        //            float y = handRightPoint.Y;
+
+        //            if (!float.IsInfinity(x) && !float.IsInfinity(y))
+        //            {
+        //                // DRAW!
+                        
+
+        //                //Canvas.SetLeft(brush, x - brush.Width / 2.0);
+        //                //Canvas.SetTop(brush, y - brush.Height);
+        //            }
+        //        }
+        //    }
+
+        //}
     }
 
 
