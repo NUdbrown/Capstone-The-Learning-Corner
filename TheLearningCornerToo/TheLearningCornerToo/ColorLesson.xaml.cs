@@ -521,11 +521,6 @@ namespace TheLearningCornerToo
 
         }
 
-        private void DrawButton_OnClick(object sender, RoutedEventArgs e)
-        {
-           
-
-        }
 
         private void BodyReader_FrameArrived(object sender, BodyFrameArrivedEventArgs e)
         {
