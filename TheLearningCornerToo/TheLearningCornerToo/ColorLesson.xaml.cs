@@ -523,29 +523,7 @@ namespace TheLearningCornerToo
 
         private void DrawButton_OnClick(object sender, RoutedEventArgs e)
         {
-            Body body = _bodies.Where(b => b.IsTracked).FirstOrDefault();
-
-
-            if (body != null)
-            {
-                Joint handRight = body.Joints[JointType.HandRight];
-
-                if (handRight.TrackingState != TrackingState.NotTracked)
-                {
-                    CameraSpacePoint handRightPosition = handRight.Position;
-                    ColorSpacePoint handRightPoint = CurrentSensor.CoordinateMapper.MapCameraPointToColorSpace(handRightPosition);
-
-                    float x = handRightPoint.X;
-                    float y = handRightPoint.Y;
-
-                    if (!float.IsInfinity(x) && !float.IsInfinity(y))
-                    {
-                        // DRAW!
-                        PaintLine.Points.Add(new Point {X = x, Y = y});
-
-                    }
-                }
-            }
+           
 
         }
 
@@ -557,8 +535,33 @@ namespace TheLearningCornerToo
                 {
                     frame.GetAndRefreshBodyData(_bodies);
 
-                    DrawButton.Click += (sender1, routedEventArgs) => DrawButton_OnClick(sender1, routedEventArgs);
-                    
+                    Body body = _bodies.Where(b => b.IsTracked).FirstOrDefault();
+
+
+                    if (body != null)
+                    {
+                        Joint handRight = body.Joints[JointType.HandRight];
+
+                        if (handRight.TrackingState != TrackingState.NotTracked)
+                        {
+                            this.StatusBarText.Text = "Hey, Tracked your hand tho!";
+                            CameraSpacePoint handRightPosition = handRight.Position;
+                            ColorSpacePoint handRightPoint = CurrentSensor.CoordinateMapper.MapCameraPointToColorSpace(handRightPosition);
+
+                            float x = handRightPoint.X;
+                            float y = handRightPoint.Y;
+
+                            if (!float.IsInfinity(x) && !float.IsInfinity(y))
+                            {
+                                // DRAW!
+                                PaintLine.Points.Add(new Point { X = x, Y = y });
+
+                                Canvas.SetLeft(ThePaintBrush, x - ThePaintBrush.Width / 2.0);
+                                Canvas.SetTop(ThePaintBrush, y - ThePaintBrush.Height);
+                            }
+                        }
+                    }
+
                 }
             }
         }
