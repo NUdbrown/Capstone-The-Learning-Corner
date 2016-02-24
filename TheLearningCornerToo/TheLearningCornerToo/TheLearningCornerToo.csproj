@@ -94,6 +94,9 @@
     <Compile Include="Pages\ColorControl.xaml.cs">
       <DependentUpon>ColorControl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\PaintBrush.xaml.cs">
+      <DependentUpon>PaintBrush.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Settings.cs" />
     <Compile Include="Pages\WordsLesson.xaml.cs">
       <DependentUpon>WordsLesson.xaml</DependentUpon>
@@ -126,6 +129,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Pages\PaintBrush.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\WordsLesson.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -323,6 +330,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\Objects\car_blue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AlphabetSong.wav" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -29,17 +29,16 @@
                 <Image Source="../Images/Objects/frog_green.png" Canvas.Left="355" Style="{StaticResource ForImagesStyle}"/>
             </control:DragDropElement>
         <control:DragDropElement>
-                <Image Source="../Images/Objects/frog_green.png" Canvas.Left="355" Style="{StaticResource ForImagesStyle}"/>
+                <Image Source="../Images/Objects/frog_green.png" Canvas.Left="455" Style="{StaticResource ForImagesStyle}"/>
             </control:DragDropElement>
         <control:DragDropElement>
-                <Image Source="../Images/Objects/frog_green.png" Canvas.Left="355" Style="{StaticResource ForImagesStyle}"/>
+                <Image Source="../Images/Objects/frog_green.png" Canvas.Left="555" Style="{StaticResource ForImagesStyle}"/>
             </control:DragDropElement>
         </Canvas>-->      
         
         <Canvas Name="ImagesPanel" Grid.Row="1">
             <Grid>
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="*"/>
                     <RowDefinition Height="*"/>
                     <RowDefinition Height="*"/>
                     <RowDefinition Height="*"/>
@@ -52,46 +51,37 @@
                     <ColumnDefinition/>
                     <ColumnDefinition/>
                     <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
 
-                <Image Name="LetterAImg" Grid.Row="0" Grid.Column="0" Source="../Images/Alphabet/letter_A.png" Style="{StaticResource ForImagesStyle}" Margin="25,0,25.4,0" />
-                <Rectangle Grid.Row="0" Grid.Column="1" Height="100" Width="100" Fill="AliceBlue"/>
-                <Image Name="LetterEImg" Grid.Row="0" Grid.Column="2" Source="../Images/Alphabet/letter_E.png" Style="{StaticResource ForImagesStyle}" Margin="24.6,0,25,0"/>
-                <Rectangle Grid.Row="0" Grid.Column="3" Height="100" Width="100" Fill="AliceBlue"/>
-                <Image Name="LetterIImg"  Grid.Row="0" Grid.Column="4"  Source="../Images/Alphabet/letter_I.png" Style="{StaticResource ForImagesStyle}" Margin="25,0,25.4,0"/>
-                <Rectangle Grid.Row="0" Grid.Column="5" Height="100" Width="100" Fill="AliceBlue"/>
-                <Image Name="LetterBImg"  Grid.Row="1" Grid.Column="0"  Source="../Images/Alphabet/letter_B.png" Style="{StaticResource ForImagesStyle}" Margin="24.6,0,25,0"/>
-                <Rectangle Grid.Row="1" Grid.Column="1" Height="100" Width="100" Fill="AliceBlue"/>
-                <Image Name="LetterFImg" Grid.Row="1" Grid.Column="2"  Source="../Images/Alphabet/letter_F.png" Style="{StaticResource ForImagesStyle}" Margin="25,0,25.4,0"/>
-                <Rectangle Grid.Row="1" Grid.Column="3" Height="100" Width="100" Fill="AliceBlue"/>
-                <Image Name="LetterJImg" Grid.Row="1" Grid.Column="4"  Source="../Images/Alphabet/letter_J.png" Style="{StaticResource ForImagesStyle}" Margin="24.6,0,25,0"/>
-                <Rectangle Grid.Row="1" Grid.Column="5" Height="100" Width="100" Fill="AliceBlue"/>
-                <Image Name="LettercImg" Grid.Row="2" Grid.Column="0"  Source="../Images/Alphabet/letter_C.png" Style="{StaticResource ForImagesStyle}" Margin="25,0,25.4,0"/>
-                <Rectangle Grid.Row="2" Grid.Column="1" Height="100" Width="100" Fill="AliceBlue"/>
-                <Image Name="LetterGImg" Grid.Row="2" Grid.Column="2"  Source="../Images/Alphabet/letter_G.png" Style="{StaticResource ForImagesStyle}" Margin="24.6,0,25,0"/>
-                <Rectangle Grid.Row="2" Grid.Column="3" Height="100" Width="100" Fill="AliceBlue"/>
-                <Image Name="LetterKImg" Grid.Row="2" Grid.Column="4"  Source="../Images/Alphabet/letter_K.png" Style="{StaticResource ForImagesStyle}" Margin="25,0,25.4,0"/>
-                <Rectangle Grid.Row="2" Grid.Column="5" Height="100" Width="100" Fill="AliceBlue"/>
-                <Image Name="LetterDImg" Grid.Row="3" Grid.Column="0"  Source="../Images/Alphabet/letter_D.png" Style="{StaticResource ForImagesStyle}" Margin="24.6,0,25,0"/>
-                <Rectangle Grid.Row="3" Grid.Column="1" Height="100" Width="100" Fill="AliceBlue"/>
-                <Image Name="LetterHImg" Grid.Row="3" Grid.Column="2"  Source="../Images/Alphabet/letter_H.png" Style="{StaticResource ForImagesStyle}" Margin="25,0,25.4,0"/>
-                <Rectangle Grid.Row="3" Grid.Column="3" Height="100" Width="100" Fill="AliceBlue"/>
-                <Image Name="LetterLImg" Grid.Row="3" Grid.Column="4"  Source="../Images/Alphabet/letter_L.png" Style="{StaticResource ForImagesStyle}" Margin="24.6,0,25,0"/>
-                <Rectangle Grid.Row="3" Grid.Column="5" Height="100" Width="100" Fill="AliceBlue"/>
-                <!--<Image Grid.Row="2" Grid.Column="0"  Source="../Images/Alphabet/letter_M.png" Style="{StaticResource ForImagesStyle}" Margin="25,0,25.4,0"/>
-                <Image Grid.Row="2" Grid.Column="1"  Source="../Images/Alphabet/letter_N.png" Style="{StaticResource ForImagesStyle}" Margin="24.6,0,25,0"/>
-                <Image Grid.Row="2" Grid.Column="2"  Source="../Images/Alphabet/letter_O.png" Style="{StaticResource ForImagesStyle}" Margin="25,0,25.4,0"/>
-                <Image Grid.Row="2" Grid.Column="3"  Source="../Images/Alphabet/letter_P.png" Style="{StaticResource ForImagesStyle}" Margin="24.6,0,25,0"/>
-                <Image Grid.Row="2" Grid.Column="4"  Source="../Images/Alphabet/letter_Q.png" Style="{StaticResource ForImagesStyle}" Margin="25,0,25.4,0"/>
-                <Image Grid.Row="2" Grid.Column="5"  Source="../Images/Alphabet/letter_R.png" Style="{StaticResource ForImagesStyle}" Margin="24.6,0,25,0"/>
-                <Image Grid.Row="3" Grid.Column="0"  Source="../Images/Alphabet/letter_S.png" Style="{StaticResource ForImagesStyle}" Margin="25,0,25.4,0" />
-                <Image Grid.Row="3" Grid.Column="1"  Source="../Images/Alphabet/letter_T.png" Style="{StaticResource ForImagesStyle}" Margin="24.6,0,25,0" />
-                <Image Grid.Row="3" Grid.Column="2"  Source="../Images/Alphabet/letter_U.png" Style="{StaticResource ForImagesStyle}" Margin="25,0,25.4,0" />
-                <Image Grid.Row="3" Grid.Column="3"  Source="../Images/Alphabet/letter_V.png" Style="{StaticResource ForImagesStyle}" Margin="24.6,0,25,0" />
-                <Image Grid.Row="3" Grid.Column="4"  Source="../Images/Alphabet/letter_W.png" Style="{StaticResource ForImagesStyle}" Margin="25,0,25.4,0" />
-                <Image Grid.Row="3" Grid.Column="5"  Source="../Images/Alphabet/letter_x.png" Style="{StaticResource ForImagesStyle}" Margin="24.6,0,25,0" />
-                <Image Grid.Row="4" Grid.Column="2"  Source="../Images/Alphabet/letter_Y.png" Style="{StaticResource ForImagesStyle}" Margin="24.6,0,25,0" />
-                <Image Grid.Row="4" Grid.Column="3"  Source="../Images/Alphabet/letter_Z.png" Style="{StaticResource ForImagesStyle}" Margin="24.6,0,25,0" />-->
+                <Image Name="LetterA" Grid.Row="0" Grid.Column="0" Source="../Images/Alphabet/letter_A.png" Style="{StaticResource ForImagesStyle}" Margin="25,0,25.4,0" />
+                <Image Name="LetterE" Grid.Row="0" Grid.Column="2" Source="../Images/Alphabet/letter_E.png" Style="{StaticResource ForImagesStyle}" Margin="24.6,0,25,0"/>
+                <Image Name="LetterI"  Grid.Row="0" Grid.Column="4"  Source="../Images/Alphabet/letter_I.png" Style="{StaticResource ForImagesStyle}" Margin="25,0,25.4,0"/>
+                <Image Name="LetterB"  Grid.Row="1" Grid.Column="0"  Source="../Images/Alphabet/letter_B.png" Style="{StaticResource ForImagesStyle}" Margin="24.6,0,25,0"/>
+                <Image Name="LetterF" Grid.Row="1" Grid.Column="2"  Source="../Images/Alphabet/letter_F.png" Style="{StaticResource ForImagesStyle}" Margin="25,0,25.4,0"/>
+                <Image Name="LetterJ" Grid.Row="1" Grid.Column="4"  Source="../Images/Alphabet/letter_J.png" Style="{StaticResource ForImagesStyle}" Margin="24.6,0,25,0"/>
+                <Image Name="LetterC" Grid.Row="2" Grid.Column="0"  Source="../Images/Alphabet/letter_C.png" Style="{StaticResource ForImagesStyle}" Margin="25,0,25.4,0"/>
+                <Image Name="LetterG" Grid.Row="2" Grid.Column="2"  Source="../Images/Alphabet/letter_G.png" Style="{StaticResource ForImagesStyle}" Margin="24.6,0,25,0"/>
+                <Image Name="LetterK" Grid.Row="2" Grid.Column="4"  Source="../Images/Alphabet/letter_K.png" Style="{StaticResource ForImagesStyle}" Margin="25,0,25.4,0"/>
+                <Image Name="LetterD" Grid.Row="3" Grid.Column="0"  Source="../Images/Alphabet/letter_D.png" Style="{StaticResource ForImagesStyle}" Margin="24.6,0,25,0"/>
+                <Image Name="LetterH" Grid.Row="3" Grid.Column="2"  Source="../Images/Alphabet/letter_H.png" Style="{StaticResource ForImagesStyle}" Margin="25,0,25.4,0"/>
+                <Image Name="LetterL" Grid.Row="3" Grid.Column="4"  Source="../Images/Alphabet/letter_L.png" Style="{StaticResource ForImagesStyle}" Margin="24.6,0,25,0"/>
+                <Image Name="LetterM"  Grid.Row="0" Grid.Column="5"  Source="../Images/Alphabet/letter_M.png" Style="{StaticResource ForImagesStyle}" Margin="25,0,25.4,0"/>
+                <Image Name="LetterN" Grid.Row="1" Grid.Column="5"  Source="../Images/Alphabet/letter_N.png" Style="{StaticResource ForImagesStyle}" Margin="24.6,0,25,0"/>
+                <Image Name="LetterO" Grid.Row="2" Grid.Column="5"  Source="../Images/Alphabet/letter_O.png" Style="{StaticResource ForImagesStyle}" Margin="25,0,25.4,0"/>
+                <Image Name="LetterP" Grid.Row="3" Grid.Column="5"  Source="../Images/Alphabet/letter_P.png" Style="{StaticResource ForImagesStyle}" Margin="24.6,0,25,0"/>
+                <Image Name="LetterQ" Grid.Row="0" Grid.Column="6"  Source="../Images/Alphabet/letter_Q.png" Style="{StaticResource ForImagesStyle}" Margin="25,0,25.4,0"/>
+                <Image Name="LetterR" Grid.Row="1" Grid.Column="6"  Source="../Images/Alphabet/letter_R.png" Style="{StaticResource ForImagesStyle}" Margin="24.6,0,25,0"/>
+                <Image Name="LetterS" Grid.Row="2" Grid.Column="6"  Source="../Images/Alphabet/letter_S.png" Style="{StaticResource ForImagesStyle}" Margin="25,0,25.4,0" />
+                <Image Name="LetterT" Grid.Row="3" Grid.Column="6"  Source="../Images/Alphabet/letter_T.png" Style="{StaticResource ForImagesStyle}" Margin="24.6,0,25,0" />
+                <Image Name="LetterU" Grid.Row="0" Grid.Column="7"  Source="../Images/Alphabet/letter_U.png" Style="{StaticResource ForImagesStyle}" Margin="25,0,25.4,0" />
+                <Image Name="LetterV" Grid.Row="1" Grid.Column="7"  Source="../Images/Alphabet/letter_V.png" Style="{StaticResource ForImagesStyle}" Margin="24.6,0,25,0" />
+                <Image Name="LetterW" Grid.Row="2" Grid.Column="7"  Source="../Images/Alphabet/letter_W.png" Style="{StaticResource ForImagesStyle}" Margin="25,0,25.4,0" />
+                <Image Name="LetterX" Grid.Row="3" Grid.Column="7"  Source="../Images/Alphabet/letter_x.png" Style="{StaticResource ForImagesStyle}" Margin="24.6,0,25,0" />
+                <Image Name="LetterY" Grid.Row="0" Grid.Column="8"  Source="../Images/Alphabet/letter_Y.png" Style="{StaticResource ForImagesStyle}" Margin="24.6,0,25,0" />
+                <Image Name="LetterZ" Grid.Row="1" Grid.Column="8"  Source="../Images/Alphabet/letter_Z.png" Style="{StaticResource ForImagesStyle}" Margin="24.6,0,25,0" />
             </Grid>
         </Canvas>
     </Grid>
