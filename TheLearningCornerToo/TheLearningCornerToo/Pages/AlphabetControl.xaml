@@ -29,10 +29,10 @@
                 <Image Source="../Images/Objects/frog_green.png" Canvas.Left="355" Style="{StaticResource ForImagesStyle}"/>
             </control:DragDropElement>
         <control:DragDropElement>
-                <Image Source="../Images/Objects/frog_green.png" Canvas.Left="455" Style="{StaticResource ForImagesStyle}"/>
+                <Image Source="../Images/Objects/elephant_grey.png" Canvas.Left="455" Style="{StaticResource ForImagesStyle}"/>
             </control:DragDropElement>
         <control:DragDropElement>
-                <Image Source="../Images/Objects/frog_green.png" Canvas.Left="555" Style="{StaticResource ForImagesStyle}"/>
+                <Image Source="../Images/Objects/hat_red.png" Canvas.Left="555" Style="{StaticResource ForImagesStyle}"/>
             </control:DragDropElement>
         </Canvas>-->      
         
