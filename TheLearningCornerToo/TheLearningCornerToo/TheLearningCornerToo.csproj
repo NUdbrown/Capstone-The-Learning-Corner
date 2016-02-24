@@ -326,13 +326,36 @@
     <Resource Include="Images\colorsbackground.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\AlphabetBackground.jpg" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Images\Objects\car_blue.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AlphabetSong.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Objects\elephant_grey.png" />
+    <Resource Include="Images\Objects\hat_red.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Objects\guitar_brown.png" />
+    <Resource Include="Images\Objects\ice_blue.png" />
+    <Resource Include="Images\Objects\juicebox_yellow.png" />
+    <Resource Include="Images\Objects\kite_multicolor.png" />
+    <Resource Include="Images\Objects\lion_brown.png" />
+    <Resource Include="Images\Objects\monkey_brown.png" />
+    <Resource Include="Images\Objects\nest_brown.png" />
+    <Resource Include="Images\Objects\quarter_grey.png" />
+    <Resource Include="Images\Objects\robots_multicolor.png" />
+    <Resource Include="Images\Objects\sun_yellow.png" />
+    <Resource Include="Images\Objects\turtle_green.png" />
+    <Resource Include="Images\Objects\umbrella_multicolor.png" />
+    <Resource Include="Images\Objects\vacuum_pink.png" />
+    <Resource Include="Images\Objects\whale_blue.png" />
+    <Resource Include="Images\Objects\xylophone_multicolor.png" />
+    <Resource Include="Images\Objects\yarn_pink.png" />
+    <Resource Include="Images\Objects\zebra_black.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\alphabetbackground.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

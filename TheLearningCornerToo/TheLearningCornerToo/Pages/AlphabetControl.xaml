@@ -33,10 +33,10 @@
             </control:DragDropElement>
         <control:DragDropElement>
                 <Image Source="../Images/Objects/hat_red.png" Canvas.Left="555" Style="{StaticResource ForImagesStyle}"/>
-            </control:DragDropElement>
+        </control:DragDropElement>
         </Canvas>-->      
         
-        <Canvas Name="ImagesPanel" Grid.Row="1">
+        <Canvas Name="ImagesPanel" Grid.Row="1" Margin="29,0.2,-29,0">
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*"/>
