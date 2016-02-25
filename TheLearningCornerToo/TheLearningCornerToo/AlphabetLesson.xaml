@@ -20,9 +20,16 @@
                 <RowDefinition Height="159.2" />
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
-            <Button x:Name="HomeButton" Content="Return Home" Grid.Row="0" HorizontalAlignment="Left" Margin="63,50,0,0" VerticalAlignment="Top" Width="154" Height="34" FontFamily="Sitka Text" FontSize="21.333" Click="HomeButton_OnClick"/>
-            <k:KinectUserViewer Height="100" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="328,50,309.4,0" ImageBackground="#FF4E693E" />
-            <Button x:Name="ExitButton" Content="Exit" Grid.Row="0" HorizontalAlignment="Left" Margin="1327,50,-722.6,0" VerticalAlignment="Top" Width="154" Height="34" FontFamily="Sitka Text" FontSize="21.333" Click="ExitButton_Click"/>
+            <Button x:Name="HomeButton" Content="Return Home" Grid.Row="0" HorizontalAlignment="Left" Margin="63,70,0,0" VerticalAlignment="Top" Width="154" Height="34" FontFamily="Sitka Text" FontSize="21.333" Click="HomeButton_OnClick" Style="{StaticResource NavigationButtonStyle}"/>
+            <k:KinectUserViewer Height="100" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="328,50,309.4,0" >
+                <k:KinectUserViewer.ImageBackground>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FF1A5D35" Offset="0.062"/>
+                        <GradientStop Color="#FF2C874E" Offset="0.303"/>
+                    </LinearGradientBrush>
+                </k:KinectUserViewer.ImageBackground>
+            </k:KinectUserViewer>
+            <Button x:Name="ExitButton" Content="Exit" Grid.Row="0" HorizontalAlignment="Left" Margin="1327,70,-722.6,0" VerticalAlignment="Top" Width="154" Height="34" FontFamily="Sitka Text" FontSize="21.333" Click="ExitButton_Click" Style="{StaticResource NavigationButtonStyle}"/>
             <control:AlphabetControl Grid.Row="1" Margin="0,2.8,0.4,-0.2"/>
         </Grid>
     </k:KinectRegion>
