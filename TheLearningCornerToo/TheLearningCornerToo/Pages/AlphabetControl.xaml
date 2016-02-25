@@ -13,85 +13,86 @@
         </Grid.RowDefinitions>
 
         <Canvas Grid.Row="0" Margin="67,0,-67,651" Grid.RowSpan="2">
-            <!--<control:DragDropElement>-->
-            <Image Source="../Images/Objects/apple_red.png" Style="{StaticResource ForImagesStyle}" Canvas.Top="-5" Canvas.Left="530"/>
-            <!--</control:DragDropElement>
-            <control:DragDropElement>-->
-            <Image Source="../Images/Objects/balloons_blue.png" Canvas.Left="10" Style="{StaticResource ForImagesStyle}" Canvas.Top="10"/>
-            <!--</control:DragDropElement>
-            <control:DragDropElement>-->
-            <Image Source="../Images/Objects/duckies_yellow.png" Canvas.Right="155" Style="{StaticResource ForImagesStyle}" Canvas.Left="545" Canvas.Top="100"/>
-            <!--</control:DragDropElement>
-            <control:DragDropElement>-->
-            <Image Source="../Images/Objects/car_blue.png" Canvas.Left="1139" Style="{StaticResource ForImagesStyle}" Canvas.Top="10"/>
-            <!--</control:DragDropElement>
-            <control:DragDropElement>-->
-            <Image Source="../Images/Objects/frog_green.png" Canvas.Right="355" Style="{StaticResource ForImagesStyle}" Canvas.Left="425" Canvas.Top="5"/>
-            <!--</control:DragDropElement>-->
-            <!--
-        <control:DragDropElement>-->
-            <Image Source="../Images/Objects/elephant_grey.png" Canvas.Left="220" Style="{StaticResource ForImagesStyle}" Canvas.Top="95"/>
-            <!--</control:DragDropElement>
-        <control:DragDropElement>-->
-            <Image Source="../Images/Objects/hat_red.png" Canvas.Right="555"  Style="{StaticResource ForImagesStyle}" Canvas.Left="110" Canvas.Top="115"/>
-            <!--</control:DragDropElement>-->
-            <!--<control:DragDropElement>-->
-            <Image Source="../Images/Objects/zebra_black.png"  Style="{StaticResource ForImagesStyle}" Canvas.Left="115" Canvas.Top="5"/>
-            <!--</control:DragDropElement>
-        <control:DragDropElement>-->
-            <Image Source="../Images/Objects/vacuum_pink.png"  Style="{StaticResource ForImagesStyle}" Canvas.Left="325" Canvas.Top="105"/>
-            <!--</control:DragDropElement>
-        <control:DragDropElement>-->
-            <Image Source="../Images/Objects/ice_blue.png" Style="{StaticResource ForImagesStyle}" Canvas.Left="650" Canvas.Top="95"/>
-            <!--</control:DragDropElement>
-        <control:DragDropElement>-->
-            <Image Source="../Images/Objects/juicebox_yellow.png"  Style="{StaticResource ForImagesStyle}" Canvas.Left="10" Canvas.Top="115"/>
-            <!--</control:DragDropElement>
-        <control:DragDropElement>-->
-            <Image Source="../Images/Objects/guitar_brown.png" Style="{StaticResource ForImagesStyle}" Canvas.Left="320"/>
-            <!--</control:DragDropElement>
-        <control:DragDropElement>-->
-            <Image Source="../Images/Objects/kite_multicolor.png" Style="{StaticResource ForImagesStyle}" Canvas.Left="645" Canvas.Top="10"/>
-            <!--</control:DragDropElement>
-        <control:DragDropElement>-->
-            <Image Source="../Images/Objects/lion_brown.png" Style="{StaticResource ForImagesStyle}" Canvas.Left="755" Canvas.Top="115"/>
-            <!--</control:DragDropElement>
-        <control:DragDropElement>-->
-            <Image Source="../Images/Objects/quarter_grey.png" Style="{StaticResource ForImagesStyle}" Canvas.Left="745" Canvas.Top="15"/>
-            <!--</control:DragDropElement>
-        <control:DragDropElement>-->
+            <control:DragDropElement Canvas.Top="-5" Canvas.Left="530">
+            <Image Source="../Images/Objects/apple_red.png" Style="{StaticResource ForImagesStyle}" />
+            </control:DragDropElement>
+            <control:DragDropElement Canvas.Left="10" Canvas.Top="10">
+            <Image Source="../Images/Objects/balloons_blue.png"  Style="{StaticResource ForImagesStyle}"/>
+            </control:DragDropElement>
+            <control:DragDropElement Canvas.Left="545" Canvas.Top="100" Canvas.Right="155">
+            <Image Source="../Images/Objects/duckies_yellow.png" Style="{StaticResource ForImagesStyle}" />
+            </control:DragDropElement>
+            <control:DragDropElement Canvas.Top="10" Canvas.Left="1139">
+            <Image Source="../Images/Objects/car_blue.png" Style="{StaticResource ForImagesStyle}" />
+            </control:DragDropElement>
+            <control:DragDropElement Canvas.Right="355" Canvas.Left="425" Canvas.Top="5">
+                <Image Source="../Images/Objects/frog_green.png" Style="{StaticResource ForImagesStyle}" />
+            </control:DragDropElement>
+
+            <control:DragDropElement Canvas.Left="220" Canvas.Top="95">
+                <Image Source="../Images/Objects/elephant_grey.png" Style="{StaticResource ForImagesStyle}" />
+            </control:DragDropElement>
+            <control:DragDropElement Canvas.Right="555"  Canvas.Left="110" Canvas.Top="115">
+                <Image Source="../Images/Objects/hat_red.png" Style="{StaticResource ForImagesStyle}"/>
+            </control:DragDropElement>
+            <control:DragDropElement Canvas.Left="115" Canvas.Top="5">
+            <Image Source="../Images/Objects/zebra_black.png"  Style="{StaticResource ForImagesStyle}" />
+            </control:DragDropElement>
+            <control:DragDropElement Canvas.Left="325" Canvas.Top="105">
+            <Image Source="../Images/Objects/vacuum_pink.png"  Style="{StaticResource ForImagesStyle}" />
+            </control:DragDropElement>
+            <control:DragDropElement Canvas.Left="650" Canvas.Top="95">
+            <Image Source="../Images/Objects/ice_blue.png" Style="{StaticResource ForImagesStyle}" />
+            </control:DragDropElement>
+            <control:DragDropElement Canvas.Left="10" Canvas.Top="115">
+            <Image Source="../Images/Objects/juicebox_yellow.png"  Style="{StaticResource ForImagesStyle}" />
+            </control:DragDropElement>
+            <control:DragDropElement Canvas.Left="320">
+            <Image Source="../Images/Objects/guitar_brown.png" Style="{StaticResource ForImagesStyle}" />
+            </control:DragDropElement>
+            <control:DragDropElement Canvas.Left="645" Canvas.Top="10">
+            <Image Source="../Images/Objects/kite_multicolor.png" Style="{StaticResource ForImagesStyle}" />
+            </control:DragDropElement>
+            <control:DragDropElement Canvas.Left="755" Canvas.Top="115">
+            <Image Source="../Images/Objects/lion_brown.png" Style="{StaticResource ForImagesStyle}" />
+            </control:DragDropElement>
+            <control:DragDropElement Canvas.Left="745" Canvas.Top="15">
+            <Image Source="../Images/Objects/quarter_grey.png" Style="{StaticResource ForImagesStyle}" />
+            </control:DragDropElement>
+            
+        <control:DragDropElement>
             <Image Source="../Images/Objects/robots_multicolor.png" Style="{StaticResource ForImagesStyle}" Canvas.Left="905" Canvas.Top="5"/>
-            <!--</control:DragDropElement>
-        <control:DragDropElement>-->
+            </control:DragDropElement>
+        <control:DragDropElement>
             <Image Source="../Images/Objects/turtle_green.png" Style="{StaticResource ForImagesStyle}" Canvas.Left="1239" Canvas.Top="20"/>
-            <!--</control:DragDropElement>
-        <control:DragDropElement>-->
+            </control:DragDropElement>
+        <control:DragDropElement>
             <Image Source="../Images/Objects/sun_yellow.png" Style="{StaticResource ForImagesStyle}" Canvas.Left="1005" Canvas.Top="10"/>
-            <!--</control:DragDropElement>
-        <control:DragDropElement>-->
+            </control:DragDropElement>
+        <control:DragDropElement>
             <Image Source="../Images/Objects/whale_blue.png" Style="{StaticResource ForImagesStyle}" Canvas.Left="945" Canvas.Top="115"/>
-            <!--</control:DragDropElement>
-        <control:DragDropElement>-->
+            </control:DragDropElement>
+        <control:DragDropElement>
             <Image Source="../Images/Objects/umbrella_multicolor.png" Style="{StaticResource ForImagesStyle}" Canvas.Left="215" Canvas.Top="10"/>
-            <!--</control:DragDropElement>
-        <control:DragDropElement>-->
+            </control:DragDropElement>
+        <control:DragDropElement>
             <Image Source="../Images/Objects/yarn_pink.png" Style="{StaticResource ForImagesStyle}" Canvas.Left="845" Canvas.Top="15"/>
-            <!--</control:DragDropElement>
-        <control:DragDropElement>-->
+            </control:DragDropElement>
+        <control:DragDropElement>
             <Image Source="../Images/Objects/xylophone_multicolor.png" Style="{StaticResource ForImagesStyle}" Canvas.Left="1050" Canvas.Top="115"/>
-            <!--</control:DragDropElement>
-        <control:DragDropElement>-->
+            </control:DragDropElement>
+        <control:DragDropElement>
             <Image Source="../Images/Objects/piggy_pink.png" Style="{StaticResource ForImagesStyle}" Canvas.Left="1150" Canvas.Top="110"/>
-            <!--</control:DragDropElement>
-        <control:DragDropElement>-->
+            </control:DragDropElement>
+        <control:DragDropElement>
             <Image Source="../Images/Objects/octopus_purple.png" Style="{StaticResource ForImagesStyle}" Canvas.Left="425" Canvas.Top="110"/>
-            <!--</control:DragDropElement>
-        <control:DragDropElement>-->
+            </control:DragDropElement>
+        <control:DragDropElement>
             <Image Source="../Images/Objects/nest_brown.png" Style="{StaticResource ForImagesStyle}" Canvas.Left="840" Canvas.Top="120"/>
-            <!--</control:DragDropElement>
-        <control:DragDropElement>-->
+            </control:DragDropElement>
+        <control:DragDropElement>
             <Image Source="../Images/Objects/monkey_brown.png" Style="{StaticResource ForImagesStyle}" Canvas.Left="1250" Canvas.Top="120"/>
-            <!--</control:DragDropElement>-->
+            </control:DragDropElement>
         </Canvas>
 
         <Canvas Name="ImagesPanel" Grid.Row="1" Margin="29,0.2,-29,0">
