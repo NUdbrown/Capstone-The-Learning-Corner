@@ -14,7 +14,7 @@
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <WarningLevel>4</WarningLevel>
     <IsWebBootstrapper>false</IsWebBootstrapper>
-    <PublishUrl>publish\</PublishUrl>
+    <PublishUrl>C:\Users\dbrown\Desktop\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
     <UpdateEnabled>false</UpdateEnabled>
@@ -356,6 +356,45 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\alphabetbackground.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\a_apple.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\b_ballons.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\c_car.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\d_ducks.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\e_elephant.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\f_frog.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\g_guitar.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\h_hat.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\I_ice.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\j_juice.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\l_lion.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\m_monkey.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\alphabet_instructions.wav" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

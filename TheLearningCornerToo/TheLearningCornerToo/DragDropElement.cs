@@ -4,6 +4,7 @@ using System.Windows.Controls;
 using Microsoft.Kinect.Input;
 using Microsoft.Kinect.Toolkit.Input;
 using Microsoft.Kinect.Wpf.Controls;
+using TheLearningCornerToo.Pages;
 
 namespace TheLearningCornerToo
 {
@@ -31,53 +32,55 @@ namespace TheLearningCornerToo
     /// </summary>
     public class DragDropElementController : IKinectManipulatableController
     {
-        private DragDropElement dragDropElement;
+        private DragDropElement _dragDropElement;
 
-        private ManipulatableModel inputModel;
-        private KinectRegion kinectRegion;
+        private ManipulatableModel _inputModel;
+        private KinectRegion _kinectRegion;
 
         public DragDropElementController(IInputModel inputModel, KinectRegion kinectRegion)
         {
-            this.inputModel = inputModel as ManipulatableModel;
-            this.kinectRegion = kinectRegion;
-            dragDropElement = this.inputModel.Element as DragDropElement;
+            this._inputModel = inputModel as ManipulatableModel;
+            this._kinectRegion = kinectRegion;
+            var manipulatableModel = this._inputModel;
+            if (manipulatableModel != null)
+            {
+                _dragDropElement = manipulatableModel.Element as DragDropElement;
 
-            this.inputModel.ManipulationStarted += InputModel_ManipulationStarted;
-            this.inputModel.ManipulationUpdated += InputModel_ManipulationUpdated;
-            this.inputModel.ManipulationCompleted += InputModel_ManipulationCompleted;
+                manipulatableModel.ManipulationStarted += InputModel_ManipulationStarted;
+                manipulatableModel.ManipulationUpdated += InputModel_ManipulationUpdated;
+                manipulatableModel.ManipulationCompleted += InputModel_ManipulationCompleted;
+            }
         }
 
-        FrameworkElement IKinectController.Element
-        {
-            get { return inputModel.Element as FrameworkElement; }
-        }
+        FrameworkElement IKinectController.Element => _inputModel.Element as FrameworkElement;
 
         ManipulatableModel IKinectManipulatableController.ManipulatableInputModel
         {
-            get { return inputModel; }
+            get { return _inputModel; }
         }
 
         private void InputModel_ManipulationCompleted(object sender, KinectManipulationCompletedEventArgs e)
         {
+            
         }
 
         private void InputModel_ManipulationUpdated(object sender, KinectManipulationUpdatedEventArgs e)
         {
-            var parentCanvas = dragDropElement.Parent as Canvas;
+            var parentCanvas = _dragDropElement.Parent as Canvas;
             if (parentCanvas != null)
             {
                 var delta = e.Delta.Translation;
-                var y = Canvas.GetTop(dragDropElement);
-                var x = Canvas.GetLeft(dragDropElement);
+                var y = Canvas.GetTop(_dragDropElement);
+                var x = Canvas.GetLeft(_dragDropElement);
                 if (double.IsNaN(y)) y = 0;
                 if (double.IsNaN(x)) x = 0;
 
                 // delta values are 0.0 to 1.0, so we need to scale it to the number of pixels in the kinect region
-                var yDelta = delta.Y*kinectRegion.ActualHeight;
-                var xDelta = delta.X*kinectRegion.ActualWidth;
+                var yDelta = delta.Y*_kinectRegion.ActualHeight;
+                var xDelta = delta.X*_kinectRegion.ActualWidth;
 
-                Canvas.SetTop(dragDropElement, y + yDelta);
-                Canvas.SetLeft(dragDropElement, x + xDelta);
+                Canvas.SetTop(_dragDropElement, y + yDelta);
+                Canvas.SetLeft(_dragDropElement, x + xDelta);
             }
         }
 
@@ -98,13 +101,13 @@ namespace TheLearningCornerToo
                     // TODO: dispose managed state (managed objects).          
                 }
 
-                kinectRegion = null;
-                inputModel = null;
-                dragDropElement = null;
+                _kinectRegion = null;
+                _inputModel = null;
+                _dragDropElement = null;
 
-                inputModel.ManipulationStarted -= InputModel_ManipulationStarted;
-                inputModel.ManipulationUpdated -= InputModel_ManipulationUpdated;
-                inputModel.ManipulationCompleted -= InputModel_ManipulationCompleted;
+                _inputModel.ManipulationStarted -= InputModel_ManipulationStarted;
+                _inputModel.ManipulationUpdated -= InputModel_ManipulationUpdated;
+                _inputModel.ManipulationCompleted -= InputModel_ManipulationCompleted;
 
                 disposedValue = true;
             }

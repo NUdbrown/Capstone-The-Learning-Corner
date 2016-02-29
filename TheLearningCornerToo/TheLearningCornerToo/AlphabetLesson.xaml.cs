@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using System.Media;
+using System.Windows;
 using Microsoft.Kinect;
 using Microsoft.Kinect.Toolkit.Input;
 using Microsoft.Kinect.Wpf.Controls;
@@ -10,11 +11,14 @@ namespace TheLearningCornerToo
     /// </summary>
     public partial class AlphabetLesson : Window
     {
+        private SoundPlayer Player { get; } = new SoundPlayer();    
+
         public AlphabetLesson()
         {
             InitializeComponent();
             Loaded += OnLoad;
         }
+
 
         private void OnLoad(object sender, RoutedEventArgs e)
         {
@@ -38,6 +42,14 @@ namespace TheLearningCornerToo
             MainWindow mainWin = new MainWindow();
             mainWin.Show();
             Close();
+        }
+
+        private void InstructionButton_OnClick(object sender, RoutedEventArgs e)
+        {
+            Player.Stream = Properties.Resources.alphabet_instructions;
+            {
+                Player.LoadAsync();
+            }
         }
     }
 }

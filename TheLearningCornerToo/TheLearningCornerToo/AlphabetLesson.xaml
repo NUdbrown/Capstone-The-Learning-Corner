@@ -29,8 +29,14 @@
                     </LinearGradientBrush>
                 </k:KinectUserViewer.ImageBackground>
             </k:KinectUserViewer>
+            <Button x:Name="InstructionButton" Content="Instructions" Grid.Row="0" Width="154" Height="34" FontFamily="Sitka Text" FontSize="21.333" Click="InstructionButton_OnClick" Style="{StaticResource NavigationButtonStyle}" Margin="316,159,297,336.2" Grid.RowSpan="2"/>
             <Button x:Name="ExitButton" Content="Exit" Grid.Row="0" HorizontalAlignment="Left" Margin="1327,70,-722.6,0" VerticalAlignment="Top" Width="154" Height="34" FontFamily="Sitka Text" FontSize="21.333" Click="ExitButton_Click" Style="{StaticResource NavigationButtonStyle}"/>
             <control:AlphabetControl Grid.Row="1" Margin="0,2.8,0.4,-0.2"/>
+            <Button x:Name="SingingKids" Width="180" Height="100" Style="{StaticResource ColorButtonStyle}" Margin="547,220.8,41,55.2" Grid.Row="1">
+                <Button.Background>
+                    <ImageBrush/>
+                </Button.Background>
+            </Button>
         </Grid>
     </k:KinectRegion>
 </Window>

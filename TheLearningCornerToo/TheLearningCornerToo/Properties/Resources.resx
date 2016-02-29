@@ -199,4 +199,43 @@
   <data name="AlphabetSong" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\AlphabetSong.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="a_apple" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\a_apple.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="b_ballons" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\b_ballons.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="c_car" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\c_car.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="d_ducks" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\d_ducks.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="e_elephant" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\e_elephant.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="f_frog" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\f_frog.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="g_guitar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\g_guitar.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="h_hat" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\h_hat.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="I_ice" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\I_ice.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="j_juice" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\j_juice.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="l_lion" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\l_lion.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="m_monkey" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\m_monkey.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="alphabet_instructions" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\alphabet_instructions.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
 </root>

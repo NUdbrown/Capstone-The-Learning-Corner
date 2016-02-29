@@ -63,6 +63,24 @@ namespace TheLearningCornerToo.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
         /// </summary>
+        internal static System.IO.UnmanagedMemoryStream a_apple {
+            get {
+                return ResourceManager.GetStream("a_apple", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream alphabet_instructions {
+            get {
+                return ResourceManager.GetStream("alphabet_instructions", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
         internal static System.IO.UnmanagedMemoryStream AlphabetSong {
             get {
                 return ResourceManager.GetStream("AlphabetSong", resourceCulture);
@@ -75,6 +93,15 @@ namespace TheLearningCornerToo.Properties {
         internal static System.IO.UnmanagedMemoryStream apples {
             get {
                 return ResourceManager.GetStream("apples", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream b_ballons {
+            get {
+                return ResourceManager.GetStream("b_ballons", resourceCulture);
             }
         }
         
@@ -135,6 +162,15 @@ namespace TheLearningCornerToo.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
         /// </summary>
+        internal static System.IO.UnmanagedMemoryStream c_car {
+            get {
+                return ResourceManager.GetStream("c_car", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
         internal static System.IO.UnmanagedMemoryStream color_instructions {
             get {
                 return ResourceManager.GetStream("color_instructions", resourceCulture);
@@ -151,11 +187,47 @@ namespace TheLearningCornerToo.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream d_ducks {
+            get {
+                return ResourceManager.GetStream("d_ducks", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Sorry, didn&apos;t understand that. Please repeat..
         /// </summary>
         internal static string DidNotUnderstand {
             get {
                 return ResourceManager.GetString("DidNotUnderstand", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream e_elephant {
+            get {
+                return ResourceManager.GetStream("e_elephant", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream f_frog {
+            get {
+                return ResourceManager.GetStream("f_frog", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream g_guitar {
+            get {
+                return ResourceManager.GetStream("g_guitar", resourceCulture);
             }
         }
         
@@ -180,9 +252,54 @@ namespace TheLearningCornerToo.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
         /// </summary>
+        internal static System.IO.UnmanagedMemoryStream h_hat {
+            get {
+                return ResourceManager.GetStream("h_hat", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream I_ice {
+            get {
+                return ResourceManager.GetStream("I_ice", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream j_juice {
+            get {
+                return ResourceManager.GetStream("j_juice", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
         internal static System.IO.UnmanagedMemoryStream kiwis {
             get {
                 return ResourceManager.GetStream("kiwis", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream l_lion {
+            get {
+                return ResourceManager.GetStream("l_lion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream m_monkey {
+            get {
+                return ResourceManager.GetStream("m_monkey", resourceCulture);
             }
         }
         
