@@ -30,7 +30,7 @@
                     </LinearGradientBrush>
                 </Button.Background>
             </Button>
-            <Button x:Name="InstructButton" Content="Instructions" Grid.Row="0" Click="Instructions_OnClick" Margin="315,97,298,33.4" Style="{StaticResource NavigationButtonStyle}">
+            <Button x:Name="InstructButton" Content="Instructions" Grid.Row="0" Click="Instructions_OnClick" Margin="300,97,313,33.4" Style="{StaticResource NavigationButtonStyle}">
                 <Button.Background>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                         <GradientStop Color="#FF195B34" Offset="0.101"/>
