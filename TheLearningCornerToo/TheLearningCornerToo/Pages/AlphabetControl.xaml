@@ -12,7 +12,7 @@
             <RowDefinition Height="217*"/>
         </Grid.RowDefinitions>
 
-        <Canvas Grid.Row="0" Margin="67,0,-67,651" Grid.RowSpan="2">
+        <Canvas Grid.Row="0" Margin="107,12,-107,539" Grid.RowSpan="2">
             <!--<control:DragDropElement x:Name="AppleDragDrop" Canvas.Top="-5" Canvas.Left="530">
             <Image Source="../Images/Objects/apple_red.png" Style="{StaticResource ForImagesStyle}" />
             </control:DragDropElement>
@@ -94,7 +94,7 @@
             </control:DragDropElement>-->
         </Canvas>
 
-        <Canvas Name="AlphabetContainer" Grid.Row="1" Margin="29,0.2,-29,0">
+        <Canvas Name="AlphabetContainer" Grid.Row="1" Margin="65,0.2,-65,0">
             <Grid Name="AlphabetGrid">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*"/>
@@ -113,12 +113,13 @@
                     <ColumnDefinition/>
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
-                
-                <Image Name="LetterA" Grid.Row="0" Grid.Column="0" Source="../Images/Alphabet/letter_A.png" Style="{StaticResource ForImagesStyle}" Margin="25,0,25.4,0" />
-                <Image Name="LetterE" Grid.Row="0" Grid.Column="2" Source="../Images/Alphabet/letter_E.png" Style="{StaticResource ForImagesStyle}" Margin="24.6,0,25,0"/>
-                <Image Name="LetterI"  Grid.Row="0" Grid.Column="4"  Source="../Images/Alphabet/letter_I.png" Style="{StaticResource ForImagesStyle}" Margin="25,0,25.4,0"/>
-                <Image Name="LetterB"  Grid.Row="1" Grid.Column="0"  Source="../Images/Alphabet/letter_B.png" Style="{StaticResource ForImagesStyle}" Margin="24.6,0,25,0"/>
-                <Image Name="LetterF" Grid.Row="1" Grid.Column="2"  Source="../Images/Alphabet/letter_F.png" Style="{StaticResource ForImagesStyle}" Margin="25,0,25.4,0"/>
+
+                <!--The images-->
+                <Image Name="LetterA" Grid.Row="0" Grid.Column="0" Source="../Images/Alphabet/letter_A.png" Style="{StaticResource ForImagesStyle}" Margin="25,0,25.4,0" MouseEnter="Image_MouseEnter" />
+                <Image Name="LetterE" Grid.Row="0" Grid.Column="2" Source="../Images/Alphabet/letter_E.png" Style="{StaticResource ForImagesStyle}" Margin="24.6,0,25,0" MouseEnter="Image_MouseEnter"/>
+                <Image Name="LetterI"  Grid.Row="0" Grid.Column="4"  Source="../Images/Alphabet/letter_I.png" Style="{StaticResource ForImagesStyle}" Margin="25,0,25.4,0" MouseEnter="Image_MouseEnter"/>
+                <Image Name="LetterB"  Grid.Row="1" Grid.Column="0"  Source="../Images/Alphabet/letter_B.png" Style="{StaticResource ForImagesStyle}" Margin="24.6,0,25,0" MouseEnter="Image_MouseEnter" />
+                <Image Name="LetterF" Grid.Row="1" Grid.Column="2"  Source="../Images/Alphabet/letter_F.png" Style="{StaticResource ForImagesStyle}" Margin="25,0,25.4,0" MouseEnter="Image_MouseEnter"/>
                 <Image Name="LetterJ" Grid.Row="1" Grid.Column="4"  Source="../Images/Alphabet/letter_J.png" Style="{StaticResource ForImagesStyle}" Margin="24.6,0,25,0"/>
                 <Image Name="LetterC" Grid.Row="2" Grid.Column="0"  Source="../Images/Alphabet/letter_C.png" Style="{StaticResource ForImagesStyle}" Margin="25,0,25.4,0"/>
                 <Image Name="LetterG" Grid.Row="2" Grid.Column="2"  Source="../Images/Alphabet/letter_G.png" Style="{StaticResource ForImagesStyle}" Margin="24.6,0,25,0"/>

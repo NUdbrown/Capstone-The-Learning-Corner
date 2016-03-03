@@ -44,11 +44,12 @@ namespace TheLearningCornerToo
             Close();
         }
 
-        private void InstructionButton_OnClick(object sender, RoutedEventArgs e)
+        private void Instructions_OnClick(object sender, RoutedEventArgs e)
         {
             Player.Stream = Properties.Resources.alphabet_instructions;
             {
-                Player.LoadAsync();
+                Player.Load();
+                Player.Play();
             }
         }
     }
