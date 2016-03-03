@@ -238,4 +238,43 @@
   <data name="alphabet_instructions" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\alphabet_instructions.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="n_nest" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\n_nest.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="o_octopus" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\o_octopus.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="p_pig" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\p_pig.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="q_quarter" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\q_quarter.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="r_robot" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\r_robot.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="s_sun" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\s_sun.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="t_turtle" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\t_turtle.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="u_umbrella" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\u_umbrella.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="v_vacuum" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\v_vacuum.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="w_whale" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\w_whale.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="x_xylophone" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\x_xylophone.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="y_yarn" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\y_yarn.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="z_zebra" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\z_zebra.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
 </root>

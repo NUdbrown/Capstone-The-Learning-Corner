@@ -13,7 +13,7 @@
         </Grid.RowDefinitions>
 
         <Canvas Grid.Row="0" Margin="67,0,-67,651" Grid.RowSpan="2">
-            <control:DragDropElement x:Name="AppleDragDrop" Canvas.Top="-5" Canvas.Left="530">
+            <!--<control:DragDropElement x:Name="AppleDragDrop" Canvas.Top="-5" Canvas.Left="530">
             <Image Source="../Images/Objects/apple_red.png" Style="{StaticResource ForImagesStyle}" />
             </control:DragDropElement>
             <control:DragDropElement Canvas.Left="10" Canvas.Top="10">
@@ -91,11 +91,11 @@
             </control:DragDropElement>
             <control:DragDropElement  Canvas.Left="1250" Canvas.Top="120">
             <Image Source="../Images/Objects/monkey_brown.png" Style="{StaticResource ForImagesStyle}"/>
-            </control:DragDropElement>
+            </control:DragDropElement>-->
         </Canvas>
 
-        <Canvas Name="ImagesPanel" Grid.Row="1" Margin="29,0.2,-29,0">
-            <Grid>
+        <Canvas Name="AlphabetContainer" Grid.Row="1" Margin="29,0.2,-29,0">
+            <Grid Name="AlphabetGrid">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*"/>
                     <RowDefinition Height="*"/>
@@ -113,7 +113,7 @@
                     <ColumnDefinition/>
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
-
+                
                 <Image Name="LetterA" Grid.Row="0" Grid.Column="0" Source="../Images/Alphabet/letter_A.png" Style="{StaticResource ForImagesStyle}" Margin="25,0,25.4,0" />
                 <Image Name="LetterE" Grid.Row="0" Grid.Column="2" Source="../Images/Alphabet/letter_E.png" Style="{StaticResource ForImagesStyle}" Margin="24.6,0,25,0"/>
                 <Image Name="LetterI"  Grid.Row="0" Grid.Column="4"  Source="../Images/Alphabet/letter_I.png" Style="{StaticResource ForImagesStyle}" Margin="25,0,25.4,0"/>

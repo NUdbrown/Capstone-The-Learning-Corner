@@ -396,6 +396,45 @@
   <ItemGroup>
     <None Include="Resources\alphabet_instructions.wav" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\n_nest.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\o_octopus.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\p_pig.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\q_quarter.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\r_robot.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\s_sun.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\t_turtle.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\u_umbrella.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\v_vacuum.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\w_whale.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\x_xylophone.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\y_yarn.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\z_zebra.wav" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

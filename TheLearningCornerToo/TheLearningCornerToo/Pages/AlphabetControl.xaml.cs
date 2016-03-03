@@ -43,9 +43,31 @@ namespace TheLearningCornerToo.Pages
             //RandomImage.Source = new BitmapImage(new Uri("../Images/Alphabet/{num}"));
         }
 
-        public void DisplayTheAlphabet()
+        public void DisplayTheAlphabetButtons()
         {
-            
+            var button = new Button();
+
+            for (int i = 0; i <= 26; i++)
+            {
+                button.Name = "Button" + i;
+                AlphabetGrid.Children.Add(button);
+            }
+
+            switch (button.Name)
+            {
+                case "Button0":
+                    break;
+                case "Button1":
+                    break;
+            }
+        }
+
+        private void Button_OnClick(object sender, RoutedEventArgs e)
+        {          
+            //switch ()
+            //{
+                    
+            //}
         }
     }
 }
