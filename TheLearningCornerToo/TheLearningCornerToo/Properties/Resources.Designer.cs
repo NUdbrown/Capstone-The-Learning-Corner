@@ -279,6 +279,15 @@ namespace TheLearningCornerToo.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
         /// </summary>
+        internal static System.IO.UnmanagedMemoryStream k_kite {
+            get {
+                return ResourceManager.GetStream("k_kite", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
         internal static System.IO.UnmanagedMemoryStream kiwis {
             get {
                 return ResourceManager.GetStream("kiwis", resourceCulture);

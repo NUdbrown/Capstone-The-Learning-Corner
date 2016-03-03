@@ -52,5 +52,14 @@ namespace TheLearningCornerToo
                 Player.Play();
             }
         }
+
+        private void SingingKids_OnClick(object sender, RoutedEventArgs e)
+        {
+            Player.Stream = Properties.Resources.AlphabetSong;
+            {
+                Player.Load();
+                Player.Play();
+            }
+        }
     }
 }

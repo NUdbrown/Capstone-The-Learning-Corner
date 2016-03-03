@@ -23,7 +23,7 @@ namespace TheLearningCornerToo.Pages
     /// </summary>
     public partial class AlphabetControl : UserControl
     {
-        private SoundPlayer _player = new SoundPlayer();
+        private readonly SoundPlayer _player = new SoundPlayer();
 
         public AlphabetControl()
         {
@@ -42,133 +42,234 @@ namespace TheLearningCornerToo.Pages
         }
 
 
-        //public void DisplayRandomImage()
-        //{
-        //    Random random = new Random();
-        //    int num = random.Next(26) + 1;
-
-        //    //RandomImage.Source = new BitmapImage(new Uri("../Images/Alphabet/{num}"));
-        //}
-
-        //public void DisplayTheAlphabetButtons()
-        //{
-
-
-        //    for (int i = 1; i <= 26; i++)
-        //    {
-        //        var button = new Button();
-        //        {
-        //            button.Name = "Button" + i;
-        //            button.Style = TryFindResource("RegularStyle") as Style;
-
-
-        //        };
-
-        //    }
-        //}
-
-
-        private void Image_MouseEnter(object sender, MouseEventArgs mouseEventArgs)
+        private void ImageA_MouseEnter(object sender, MouseEventArgs mouseEventArgs)
         {
-            SoundPlayer player = new SoundPlayer();
-            var image = AlphabetGrid.Children.OfType<Image>();
-            string theName = image.GetType().Name;
-
-            switch (theName)
+            _player.Stream = Properties.Resources.a_apple;
             {
-                case "LetterA":
-                    {
-                        player.Stream = Properties.Resources.a_apple;
-                        {
-                            player.Load();
-                            player.Play();
-                        }
-                        break;
-                    }
-                case "LetterB":
-                    {
-                        player.Stream = Properties.Resources.b_ballons;
-                        {
-                            player.Load();
-                            player.Play();
-                        }
-                        break;
-                    }
-                case "LetterC":
-                    {
-                        player.Stream = Properties.Resources.c_car;
-                        {
-                            player.Load();
-                            player.Play();
-                        }
-                        break;
-                    }
-                case "LetterD":
-                    {
-                        player.Stream = Properties.Resources.d_ducks;
-                        {
-                            player.Load();
-                            player.Play();
-                        }
-                        break;
-                    }
-                case "LetterE":
-                    {
-                        player.Stream = Properties.Resources.e_elephant;
-                        {
-                            player.Load();
-                            player.Play();
-                        }
-                        break;
-                    }
-                case "LetterF":
-                    {
-                        player.Stream = Properties.Resources.f_frog;
-                        {
-                            player.Load();
-                            player.Play();
-                        }
-                        break;
-                    }
-                case "LetterG":
-                    {
-                        player.Stream = Properties.Resources.g_guitar;
-                        {
-                            player.Load();
-                            player.Play();
-                        }
-
-                        break;
-                    }
-                case "ButtonH":
-                    {
-                        player.Stream = Properties.Resources.h_hat;
-                        {
-                            player.Load();
-                            player.Play();
-                        }
-                        break;
-                    }
-                case "ButtonI":
-                    {
-                        player.Stream = Properties.Resources.I_ice;
-                        {
-                            player.Load();
-                            player.Play();
-                        }
-                        break;
-                    }
-                case "ButtonJ":
-                    {
-                        player.Stream = Properties.Resources.j_juice;
-                        {
-                            player.Load();
-                            player.Play();
-                        }
-                        break;
-                    }
+                _player.Load();
+                _player.Play();
             }
         }
 
+        private void ImageB_MouseEnter(object sender, MouseEventArgs mouseEventArgs)
+        {
+            _player.Stream = Properties.Resources.b_ballons;
+            {
+                _player.Load();
+                _player.Play();
+            }
+        }
+
+        private void ImageC_MouseEnter(object sender, MouseEventArgs mouseEventArgs)
+        {
+            _player.Stream = Properties.Resources.c_car;
+            {
+                _player.Load();
+                _player.Play();
+            }
+        }
+
+        private void ImageD_MouseEnter(object sender, MouseEventArgs mouseEventArgs)
+        {
+            _player.Stream = Properties.Resources.d_ducks;
+            {
+                _player.Load();
+                _player.Play();
+            }
+        }
+
+        private void ImageE_MouseEnter(object sender, MouseEventArgs mouseEventArgs)
+        {
+            _player.Stream = Properties.Resources.e_elephant;
+            {
+                _player.Load();
+                _player.Play();
+            }
+        }
+
+        private void ImageF_MouseEnter(object sender, MouseEventArgs mouseEventArgs)
+        {
+            _player.Stream = Properties.Resources.f_frog;
+            {
+                _player.Load();
+                _player.Play();
+            }
+        }
+        private void ImageG_MouseEnter(object sender, MouseEventArgs mouseEventArgs)
+        {
+            _player.Stream = Properties.Resources.g_guitar;
+            {
+                _player.Load();
+                _player.Play();
+            }
+        }
+
+        private void ImageH_MouseEnter(object sender, MouseEventArgs mouseEventArgs)
+        {
+            _player.Stream = Properties.Resources.h_hat;
+            {
+                _player.Load();
+                _player.Play();
+            }
+        }
+
+        private void ImageI_MouseEnter(object sender, MouseEventArgs mouseEventArgs)
+        {
+            _player.Stream = Properties.Resources.I_ice;
+            {
+                _player.Load();
+                _player.Play();
+            }
+        }
+
+        private void ImageJ_MouseEnter(object sender, MouseEventArgs mouseEventArgs)
+        {
+            _player.Stream = Properties.Resources.j_juice;
+            {
+                _player.Load();
+                _player.Play();
+            }
+        }
+
+        private void ImageK_MouseEnter(object sender, MouseEventArgs mouseEventArgs)
+        {
+            _player.Stream = Properties.Resources.k_kite;
+            {
+                _player.Load();
+                _player.Play();
+            }
+        }
+
+        private void ImageL_MouseEnter(object sender, MouseEventArgs mouseEventArgs)
+        {
+            _player.Stream = Properties.Resources.l_lion;
+            {
+                _player.Load();
+                _player.Play();
+            }
+        }
+        private void ImageM_MouseEnter(object sender, MouseEventArgs mouseEventArgs)
+        {
+            _player.Stream = Properties.Resources.m_monkey;
+            {
+                _player.Load();
+                _player.Play();
+            }
+        }
+
+        private void ImageN_MouseEnter(object sender, MouseEventArgs mouseEventArgs)
+        {
+            _player.Stream = Properties.Resources.n_nest;
+            {
+                _player.Load();
+                _player.Play();
+            }
+        }
+
+        private void ImageO_MouseEnter(object sender, MouseEventArgs mouseEventArgs)
+        {
+            _player.Stream = Properties.Resources.o_octopus;
+            {
+                _player.Load();
+                _player.Play();
+            }
+        }
+
+        private void ImageP_MouseEnter(object sender, MouseEventArgs mouseEventArgs)
+        {
+            _player.Stream = Properties.Resources.p_pig;
+            {
+                _player.Load();
+                _player.Play();
+            }
+        }
+
+        private void ImageQ_MouseEnter(object sender, MouseEventArgs mouseEventArgs)
+        {
+            _player.Stream = Properties.Resources.q_quarter;
+            {
+                _player.Load();
+                _player.Play();
+            }
+        }
+
+        private void ImageR_MouseEnter(object sender, MouseEventArgs mouseEventArgs)
+        {
+            _player.Stream = Properties.Resources.r_robot;
+            {
+                _player.Load();
+                _player.Play();
+            }
+        }
+
+        private void ImageS_MouseEnter(object sender, MouseEventArgs mouseEventArgs)
+        {
+            _player.Stream = Properties.Resources.s_sun;
+            {
+                _player.Load();
+                _player.Play();
+            }
+        }
+
+        private void ImageT_MouseEnter(object sender, MouseEventArgs mouseEventArgs)
+        {
+            _player.Stream = Properties.Resources.t_turtle;
+            {
+                _player.Load();
+                _player.Play();
+            }
+        }
+        private void ImageU_MouseEnter(object sender, MouseEventArgs mouseEventArgs)
+        {
+            _player.Stream = Properties.Resources.u_umbrella;
+            {
+                _player.Load();
+                _player.Play();
+            }
+        }
+
+        private void ImageV_MouseEnter(object sender, MouseEventArgs mouseEventArgs)
+        {
+            _player.Stream = Properties.Resources.v_vacuum;
+            {
+                _player.Load();
+                _player.Play();
+            }
+        }
+        private void ImageW_MouseEnter(object sender, MouseEventArgs mouseEventArgs)
+        {
+            _player.Stream = Properties.Resources.w_whale;
+            {
+                _player.Load();
+                _player.Play();
+            }
+        }
+
+        private void ImageX_MouseEnter(object sender, MouseEventArgs mouseEventArgs)
+        {
+            _player.Stream = Properties.Resources.x_xylophone;
+            {
+                _player.Load();
+                _player.Play();
+            }
+        }
+
+        private void ImageY_MouseEnter(object sender, MouseEventArgs mouseEventArgs)
+        {
+            _player.Stream = Properties.Resources.y_yarn;
+            {
+                _player.Load();
+                _player.Play();
+            }
+        }
+
+        private void ImageZ_MouseEnter(object sender, MouseEventArgs mouseEventArgs)
+        {
+            _player.Stream = Properties.Resources.z_zebra;
+            {
+                _player.Load();
+                _player.Play();
+            }
+        }
     }
 }
