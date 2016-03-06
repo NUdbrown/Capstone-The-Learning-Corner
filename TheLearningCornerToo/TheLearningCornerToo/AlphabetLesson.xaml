@@ -55,7 +55,7 @@
                     </LinearGradientBrush>
                 </Button.Background>
             </Button>
-            <control:AlphabetControl Margin="0,164,0,6.2" Grid.RowSpan="2"/>
+            <control:AlphabetControl Grid.Row="1"/>
             <Button x:Name="SingingKids" Width="180" Height="100" Style="{StaticResource ColorButtonStyle}" Margin="919,298.6,-331,-33.8" Grid.Row="1" Click="SingingKids_OnClick">
                 <Button.Background>
                     <ImageBrush ImageSource="Images/children-singing.png"/>
