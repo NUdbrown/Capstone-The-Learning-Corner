@@ -427,7 +427,7 @@ namespace TheLearningCornerToo
         private void SpeechRecognized(object sender, SpeechRecognizedEventArgs e)
         {
             // Speech utterance confidence = we treat speech as if it hadn't been heard
-            const double confidenceThreshold = 0.4;
+            const double confidenceThreshold = 0.5;
 
             this.ClearRecognitionHighlights();
 
@@ -536,16 +536,16 @@ namespace TheLearningCornerToo
                     if (body != null)
                     {
                         Joint handRight = body.Joints[JointType.HandRight];
+                        //Joint handLeft = body.Joints[JointType.HandLeft];
 
                         if (handRight.TrackingState != TrackingState.NotTracked)
                         {
-                            this.StatusBarText.Text = "Hey, Tracked your hand tho!";
                             CameraSpacePoint handRightPosition = handRight.Position;
                             ColorSpacePoint handRightPoint = CurrentSensor.CoordinateMapper.MapCameraPointToColorSpace(handRightPosition);
 
                             float x = handRightPoint.X;
                             float y = handRightPoint.Y;
-
+                            
                             if (!float.IsInfinity(x) && !float.IsInfinity(y))
                             {
                                 // DRAW!
